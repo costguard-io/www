@@ -1,73 +1,129 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>noSite</title>
+    <title>Responsive Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no, shrink-to-fit=no">
 
-    <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="//thebackoffice.github.io/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="//thebackoffice.github.io//favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="//thebackoffice.github.io//favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="//thebackoffice.github.io//favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="//thebackoffice.github.io//favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="//thebackoffice.github.io//favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="//thebackoffice.github.io//favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="//thebackoffice.github.io//favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="//thebackoffice.github.io//favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="//thebackoffice.github.io//favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="//thebackoffice.github.io//favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="//thebackoffice.github.io//favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="//thebackoffice.github.io//favicon/favicon-16x16.png">
-    <link rel="manifest" href="//thebackoffice.github.io//favicon/manifest.json">
+    <link rel="icon" type="image/x-icon" href="//favicon.CostGuard.io/favicon.ico">
+    <link rel="shortcut icon" href="//favicon.CostGuard.io/favicon.ico"/>
+    <link rel="icon" type="image/png" href="//favicon.CostGuard.io/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="//favicon.CostGuard.io/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="//favicon.CostGuard.io/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
+        body, html {
             height: 100%;
-            color: #999999;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
+            font-family: 'Lato', sans-serif;
+
+            margin: 0px;
+            padding: 0px;
+
+            background-image: url('assets/bg.webp');
+            background-repeat: no-repeat;
+            background-position: bottom 50% left 50%;
+            background-size: cover;
         }
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+        .bg-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+
+            background-image: url('assets/plaque.webp');
+            background-repeat: no-repeat;
+            background-position: bottom 0% left 10%;
+            background-size: contain;
+            z-index: 0;
         }
 
-        .content {
-            text-align: center;
-            display: inline-block;
+        .content-area {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
-        .title {
-            font-size: 96px;
-            margin-bottom: 40px;
+        /* Wide View */
+        @media (min-aspect-ratio: 3/4) {
+            .content-area {
+                top: 0;
+                right: 0;
+                width: 30%;
+                height: 100%;
+            }
         }
 
-        .title span{
-            color: #666666;
+        /* Tall View */
+        @media (max-aspect-ratio: 3/4) {
+            .bg-image {
+                top: 0;
+                height: 40%;
+                background-position: bottom 0% left 50%;
+            }
+            .content-area {
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 60%;
+            }
         }
 
-        .quote {
-            font-size: 24px;
-            color: #333333;
+
+
+        .checklist label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checklist input {
+            margin-right: 10px;
+        }
+
+        .signup-form input, .signup-form button {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="content">
-        <div class="title">no<span>Site</span></div>
-        <div class="quote">
-            status :: 200
-        </div>
+
+<div class="bg-image"></div>
+
+<div class="content-area">
+    <div class="checklist">
+        <h3 class="fs-4">Checklist</h3>
+        <label><input type="checkbox"> <span class="fs-6" style="font-weight: lighter;">Item 1</span></label>
+        <label><input type="checkbox"> <span class="fs-6">Item 2</span></label>
+        <label><input type="checkbox"> <span class="fs-6"><b>Item 3</b></span></label>
+    </div>
+
+    <div class="signup-form">
+        <h3 class="fs-4">Sign Up</h3>
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
     </div>
 </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 </body>
-<!-- is copilot running? -->
-
 </html>
-
