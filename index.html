@@ -2559,8 +2559,8 @@
     $(document).ready(function () {
         const defaultLanguage = "en";
         const apiUrl = window.location.hostname.includes('.test')
-            ? "http://api.costguard.test/api/languages"
-            : "https://api.costguard.io/api/languages";
+            ? "http://api.costguard.test"
+            : "https://api.costguard.io";
 
         function updateLanguageContent(selectedLanguage) {
             $("[data-lang]").removeClass("active");
@@ -2593,7 +2593,7 @@
         }
 
         function populateLanguages() {
-            $.getJSON(apiUrl, function (data) {
+            $.getJSON(apiUrl.concat('/api/languages'), function (data) {
                 const dropdown = $("#language-dropdown");
                 dropdown.empty();
                 const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
