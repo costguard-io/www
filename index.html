@@ -77,18 +77,24 @@
             position: absolute;
             background-color: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
-            padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+
+            padding: 20px;
+
+        }
+        .content-area>*{
+            width: 450px;
+            margin: auto;
         }
 
-        .checklist label {
+        .information label {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
 
-        .checklist input {
+        .information input {
             margin-right: 10px;
         }
 
@@ -96,10 +102,7 @@
             margin-bottom: 10px;
         }
 
-        .content-area>*{
-            width: 450px;
-            margin: auto;
-        }
+
 
         /* Wide View */
         @media (min-aspect-ratio: 3/4) {
@@ -133,13 +136,29 @@
 
 <div class="bg-image"></div>
 
-<div class="content-area">
-    <div class="checklist">
-        <h3 class="fs-4">Checklist</h3>
-        <label><input type="checkbox"> <span class="fs-6" style="font-weight: lighter;">Item 1</span></label>
-        <label><input type="checkbox"> <span class="fs-6">Item 2</span></label>
-        <label><input type="checkbox"> <span class="fs-6"><b>Item 3</b></span></label>
+<div class="content-area d-flex flex-column justify-content-end">
+    <div class="information">
+        <h1 class="text-center mt-4" style="font-weight: 100;">CostGuard</h1>
+        <h4 class="text-center" style="font-weight: 100; padding: 0;">Simply Smarter Spending</h4>
+        <p class="text-center">Smart | Efficient | Reliable</p>
+        <p class="text-center">AI-powered insights to keep your project spending on track.</p>
+        <ul>
+            <li><i class="fas fa-check"></i>
+                <strong>Flag irrelevant purchases:</strong>
+                Our AI evaluates every transaction to identify items that don’t align with your project’s goals, saving you from unnecessary spending.
+            </li>
+            <li><i class="fas fa-check"></i>
+                <strong>Detect excessive quantities:</strong>
+                Stay within budget by automatically identifying over-orders or duplicate purchases before they impact your bottom line.
+            </li>
+            <li><i class="fas fa-check"></i>
+                <strong>Chase missing receipts:</strong>
+                Never lose track of important documents—our system identifies gaps in your records and sends reminders to ensure compliance.
+            </li>
+        </ul>
+
     </div>
+
 
     <div class="signup-form">
         <h3 class="fs-4">Sign Up</h3>
@@ -152,6 +171,7 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Submit</button>
         </form>
+        <p>Already have an account? <a href="#">Login here</a></p>
     </div>
 </div>
 
