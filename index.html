@@ -73,9 +73,6 @@
             }
         }
 
-
-
-
         .content-area {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.3);
@@ -85,12 +82,32 @@
             overflow: hidden;
         }
 
+        .checklist label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checklist input {
+            margin-right: 10px;
+        }
+
+        .signup-form input, .signup-form button {
+            margin-bottom: 10px;
+        }
+
+        .content-area>*{
+            width: 450px;
+            margin: auto;
+        }
+
         /* Wide View */
         @media (min-aspect-ratio: 3/4) {
             .content-area {
                 top: 0;
                 right: 0;
                 width: 30%;
+                min-width: fit-content;
                 height: 100%;
             }
         }
@@ -108,22 +125,7 @@
                 width: 100%;
                 height: 60%;
             }
-        }
 
-
-
-        .checklist label {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .checklist input {
-            margin-right: 10px;
-        }
-
-        .signup-form input, .signup-form button {
-            margin-bottom: 10px;
         }
     </style>
 </head>
