@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Responsive Template</title>
     <meta charset="UTF-8">
@@ -15,29 +14,23 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
         body, html {
-            height: 100%;
-            font-family: 'Lato', sans-serif;
-
-            margin: 0px;
-            padding: 0px;
-
             background-image: url('assets/bg.webp');
             background-repeat: no-repeat;
             background-position: bottom 50% left 50%;
             background-size: cover;
+            font-family: 'Lato', sans-serif;
+            margin: 0px;
+            padding: 0px;
         }
 
         .bg-image {
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            background-image: url('assets/plaque.webp');
             width: 100%;
             height: 90%;
-
-            background-image: url('assets/plaque.webp');
             background-repeat: no-repeat;
             background-position: bottom 0% left 10%;
             background-size: contain;
@@ -52,7 +45,7 @@
                 opacity: 0.76;
             }
             8% {
-                transform: scale(1.005); /* Smaller first beat */
+                transform: scale(1.005);
                 opacity: 0.765;
             }
             15% {
@@ -60,7 +53,7 @@
                 opacity: 0.762;
             }
             20% {
-                transform: scale(1.01); /* Stronger second beat closer to the first */
+                transform: scale(1.01);
                 opacity: 0.77;
             }
             30% {
@@ -78,34 +71,31 @@
             background-color: rgba(255, 255, 255, 0.37);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-
+            overflow: scroll;
             padding: 20px;
-
         }
-        .content-area>*{
-            width: 450px;
+
+        .content-area > * {
+            width: 100%;
+            max-width: min(100vw, 450px);
             margin: auto;
         }
 
-        .information label {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        [data-lang] {
+            display: none;
         }
 
-        .information input {
-            margin-right: 10px;
+        .active {
+            display: block !important;
         }
-
-        .signup-form input, .signup-form button {
-            margin-bottom: 10px;
-        }
-
-
 
         /* Wide View */
         @media (min-aspect-ratio: 3/4) {
+            .bg-image{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
             .content-area {
                 top: 0;
                 right: 0;
@@ -120,62 +110,2509 @@
             .bg-image {
                 top: 0;
                 height: 40%;
-                background-position: bottom 0% left 50%;
+                background-position: bottom 0 left 50%;
             }
+
             .content-area {
-                bottom: 0;
+                bottom:0;
                 left: 0;
                 width: 100%;
                 height: 60%;
             }
-
         }
+
+        [data-lang] h1,
+        [data-lang] h4{
+            font-weight: 100;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="bg-image"></div>
 
-<div class="content-area d-flex flex-column justify-content-end">
+<div class="content-area d-flex flex-column ">
     <div class="information">
-        <h1 class="text-center mt-4" style="font-weight: 100;">CostGuard</h1>
-        <h4 class="text-center" style="font-weight: 100;">Simply Smarter Spending</h4>
-        <p class="text-center" >Smart | Efficient | Reliable</p>
-        <p class="text-center">AI-powered insights to keep your project spending on track.</p>
-        <ul>
-            <li><i class="fas fa-check"></i>
-                <strong>Flag irrelevant purchases:</strong>
-                Our AI evaluates every transaction to identify items that don’t align with your project’s goals, saving you from unnecessary spending.
-            </li>
-            <li><i class="fas fa-check"></i>
-                <strong>Detect excessive quantities:</strong>
-                Stay within budget by automatically identifying over-orders or duplicate purchases before they impact your bottom line.
-            </li>
-            <li><i class="fas fa-check"></i>
-                <strong>Chase missing receipts:</strong>
-                Never lose track of important documents—our system identifies gaps in your records and sends reminders to ensure compliance.
-            </li>
-        </ul>
+        <div data-lang="af">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Eenvoudig slimmer besteding</h4>
+            <p class="text-center">Slim | Doeltreffend | Betroubaar</p>
+            <p class="text-center">KI-aangedrewe insigte om jou projekbesteding op koers te hou.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Merk irrelevante aankope:</strong>
+                    Ons KI evalueer elke transaksie om items te identifiseer wat nie by jou projekdoelwitte pas nie, en spaar jou onnodige uitgawes.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Bespeur oormatige hoeveelhede:</strong>
+                    Bly binne begroting deur oorbestellings of dubbele aankope outomaties te identifiseer voordat dit jou bottom line beïnvloed.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Jaag ontbrekende kwitansies na:</strong>
+                    Moet nooit belangrike dokumente verloor nie—ons stelsel identifiseer gapings in jou rekords en stuur herinneringe om nakoming te verseker.
+                </li>
+            </ul>
+        </div>
 
+
+        <div data-lang="sq">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Shpenzime më të zgjuara</h4>
+            <p class="text-center">I zgjuar | Efikas | I besueshëm</p>
+            <p class="text-center">Njohuri të fuqizuara nga IA për të mbajtur nën kontroll shpenzimet e projektit tuaj.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Shëno blerjet e parëndësishme:</strong>
+                    IA jonë vlerëson çdo transaksion për të identifikuar artikujt që nuk përputhen me objektivat e projektit tuaj, duke ju kursyer nga shpenzimet e panevojshme.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Zbuloni sasitë e tepërta:</strong>
+                    Qëndroni brenda buxhetit duke identifikuar automatikisht porositë e tepërta ose blerjet e dyfishta përpara se të ndikojnë në bilancin tuaj përfundimtar.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Gjurmoni faturat e humbura:</strong>
+                    Mos humbni kurrë dokumente të rëndësishme—sistemi ynë identifikon boshllëqet në të dhënat tuaja dhe dërgon kujtesa për të siguruar përputhshmërinë.
+                </li>
+            </ul>
+        </div>
+
+
+        <div data-lang="am">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ቀላልና ብልህ የምዝናና አስተዳደር</h4>
+            <p class="text-center">ብልህ | ተገቢ | ታመን</p>
+            <p class="text-center">የዕቅድ ወጪዎችን በቁጥጥር ለማቆየት በሠዎች ሃይል የተቻለ እውቀት።</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>የተላላፊ ግዢዎችን አስተካክል:</strong>
+                    አይ ቀረጻችን ያንን ግዢ የዕቅድ አላማዎችን የማይስማማበትን እቃዎችን ለማስረዳት እያንዳንዱን ግንዛቤ ያነሳል።
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>በከፍተኛ ብዛት የተጣለ እቃዎችን ያግኙ:</strong>
+                    በተደጋጋሚ የተደላውን እና እንደ ተደላው ያለውን በማስተካከል ወጪዎትን በእቅፍ አቅም ውስጥ አስቀምጡ።
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ጠፋባቸውን ክፍያዎችን ያነሱ:</strong>
+                    አስፈላጊ ሰነዶችን ፈጽሞ አታጣሩ፤ ስርዓታችን እንደሚረዳ ሰነዶች እናንተን ይማሩ እና ያንን ይከበራሉ።
+                </li>
+            </ul>
+        </div>
+
+
+        <div data-lang="ar">
+            <h1 class="text-center mt-4" >كوست جارد</h1>
+            <h4 class="text-center" >إنفاق أكثر ذكاءً</h4>
+            <p class="text-center">ذكي | فعال | موثوق</p>
+            <p class="text-center">رؤى مدعومة بالذكاء الاصطناعي لإبقاء إنفاق مشروعك تحت السيطرة.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>تحديد المشتريات غير ذات الصلة:</strong>
+                    يقوم الذكاء الاصطناعي لدينا بتقييم كل معاملة لتحديد العناصر التي لا تتماشى مع أهداف مشروعك، مما يوفر عليك الإنفاق غير الضروري.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>الكشف عن الكميات الزائدة:</strong>
+                    ابقَ ضمن الميزانية من خلال تحديد الطلبات المفرطة أو المشتريات المكررة تلقائيًا قبل أن تؤثر على ميزانيتك النهائية.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>متابعة الإيصالات المفقودة:</strong>
+                    لا تفقد أبدًا المستندات المهمة—نظامنا يحدد الفجوات في سجلاتك ويرسل التذكيرات لضمان الامتثال.
+                </li>
+            </ul>
+        </div>
+
+        <div data-lang="hy">
+            <h1 class="text-center mt-4" >ԿոստԳարդ</h1>
+            <h4 class="text-center" >Պարզապես խելացի ծախսում</h4>
+            <p class="text-center">Խելացի | Արդյունավետ | Վստահելի</p>
+            <p class="text-center">Արհեստական բանականությամբ առաջնորդվող լուծումներ՝ ձեր նախագծի ծախսերը վերահսկելու համար։</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Դասակարգեք անկարևոր գնումները.</strong>
+                    Մեր ԱԲ-ն գնահատում է յուրաքանչյուր գործարք՝ հայտնաբերելու այն ապրանքները, որոնք չեն համապատասխանում ձեր նախագծի նպատակներին՝ խնայելով ավելորդ ծախսերից։
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Բացահայտեք ավելորդ քանակները.</strong>
+                    Մնացեք բյուջեում՝ ավտոմատ կերպով հայտնաբերելով ավելորդ պատվերներ կամ կրկնվող գնումներ՝ նախքան դրանք կազդեն ձեր ֆինանսական հաշվեկշռի վրա։
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Հետևեք բացակայող անդորրագրերին.</strong>
+                    Երբեք մի կորցրեք կարևոր փաստաթղթեր. մեր համակարգը հայտնաբերում է ձեր տվյալների բացերը և ուղարկում է հիշեցումներ՝ համապատասխանությունը ապահովելու համար։
+                </li>
+            </ul>
+        </div>
+
+        <div data-lang="az">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Sadəcə Daha Ağıllı Xərcləmələr</h4>
+            <p class="text-center">Ağıllı | Effektiv | Etibarlı</p>
+            <p class="text-center">Layihə xərclərinizi nəzarət altında saxlamaq üçün AI-dan güc alan anlayışlar.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Əlaqəsiz alışları işarələyin:</strong>
+                    AI hər bir əməliyyatı qiymətləndirir və layihənizin məqsədlərinə uyğun olmayan maddələri müəyyən edir, sizi lazımsız xərclərdən xilas edir.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Artıq miqdarları aşkarlayın:</strong>
+                    Büdcə daxilində qalmaq üçün artıq sifarişləri və ya təkrarlanan alışları avtomatik olaraq müəyyənləşdirin.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>İtkin qəbzləri izləyin:</strong>
+                    Vacib sənədləri heç vaxt itirməyin—sistemimiz qeydlərinizdəki boşluqları müəyyən edir və uyğunluğu təmin etmək üçün xatırlatmalar göndərir.
+                </li>
+            </ul>
+        </div>
+
+        <div data-lang="eu">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Gastatze adimentsuagoa</h4>
+            <p class="text-center">Adimentsua | Eraginkorra | Fidagarria</p>
+            <p class="text-center">AI-ak gidatutako ikuspegiak zure proiektuko gastuak kontrolpean mantentzeko.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Markatu garrantzirik gabeko erosketak:</strong>
+                    Gure AIk transakzio bakoitza ebaluatzen du zure proiektuaren helburuekin bat ez datozen elementuak identifikatzeko, gastu alferrikakoak saihestuz.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detektatu gehiegizko kantitateak:</strong>
+                    Aurrekontu barruan mantendu automatikoki gehiegizko eskaerak edo erosketa bikoiztuak identifikatuz, zure azken irabaziari eragin aurretik.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Jarraitu falta diren erreziboak:</strong>
+                    Ez galdu inoiz dokumentu garrantzitsurik—gure sistemak zure erregistroetan hutsuneak identifikatzen ditu eta betetzeko jakinarazpenak bidaltzen ditu.
+                </li>
+            </ul>
+        </div>
+
+        <div data-lang="be">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Проста разумныя выдаткі</h4>
+            <p class="text-center">Разумны | Эфектыўны | Надзейны</p>
+            <p class="text-center">Інсайты на аснове штучнага інтэлекту для кантролю за выдаткамі вашага праекта.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Азначайце неабгрунтаваныя пакупкі:</strong>
+                    Наш штучны інтэлект ацэньвае кожную транзакцыю, каб выявіць элементы, якія не адпавядаюць мэтам вашага праекта, што дазваляе пазбегнуць непатрэбных выдаткаў.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Вызначайце празмерныя колькасці:</strong>
+                    Заставайцеся ў межах бюджэту, аўтаматычна выяўляючы звышзаказы або дубляваныя пакупкі, перш чым яны паўплываюць на вашы фінансы.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Сачыце за адсутнымі чэкамі:</strong>
+                    Ніколі не губляйце важныя дакументы—наша сістэма выяўляе прабелы ў вашых запісах і адпраўляе напаміны для захавання патрабаванняў.
+                </li>
+            </ul>
+        </div>
+
+        <div data-lang="bn">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >সহজেই আরও বুদ্ধিমত্তার সাথে খরচ করুন</h4>
+            <p class="text-center">স্মার্ট | দক্ষ | নির্ভরযোগ্য</p>
+            <p class="text-center">আপনার প্রকল্পের খরচ নিয়ন্ত্রণে রাখতে AI চালিত অন্তর্দৃষ্টি।</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>অপ্রাসঙ্গিক কেনাকাটা চিহ্নিত করুন:</strong>
+                    আমাদের AI প্রতিটি লেনদেন মূল্যায়ন করে আপনার প্রকল্পের লক্ষ্যগুলোর সাথে সামঞ্জস্য না থাকা আইটেমগুলো চিহ্নিত করে, যা আপনাকে অপ্রয়োজনীয় ব্যয় থেকে বাঁচায়।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>অতিরিক্ত পরিমাণ সনাক্ত করুন:</strong>
+                    আপনার বাজেটের মধ্যে থাকুন অতিরিক্ত অর্ডার বা পুনরায় কেনাকাটাগুলো স্বয়ংক্রিয়ভাবে সনাক্ত করে।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>হারানো রসিদ অনুসরণ করুন:</strong>
+                    গুরুত্বপূর্ণ ডকুমেন্ট কখনও হারাবেন না—আমাদের সিস্টেম আপনার রেকর্ডের ফাঁকগুলো সনাক্ত করে এবং সম্মতি নিশ্চিত করতে রিমাইন্ডার পাঠায়।
+                </li>
+            </ul>
+        </div>
+
+        <!-- Bosanski (Bosnian) -->
+        <div data-lang="bs">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Jednostavno pametnije trošenje</h4>
+            <p class="text-center">Pametno | Efikasno | Pouzdano</p>
+            <p class="text-center">AI omogućeni uvidi koji pomažu da vaše projektne troškove držite pod kontrolom.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Označite irelevantne kupovine:</strong>
+                    Naš AI procjenjuje svaku transakciju kako bi identificirao stavke koje nisu u skladu s ciljevima vašeg projekta, štedeći vas nepotrebnih troškova.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Otkrivanje prekomjernih količina:</strong>
+                    Ostanite u okviru budžeta automatskim identificiranjem prekobrojnih narudžbi ili duplih kupovina prije nego što utječu na vašu konačnu liniju.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Pratite nedostajuće račune:</strong>
+                    Nikada ne gubite važne dokumente—naš sistem identificira praznine u vašim zapisima i šalje podsjetnike za osiguranje usklađenosti.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Български (Bulgarian) -->
+        <div data-lang="bg">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >По-умно управление на разходите</h4>
+            <p class="text-center">Умен | Ефективен | Надежден</p>
+            <p class="text-center">Управлявайте проектните си разходи с помощта на решения, базирани на изкуствен интелект.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Означете неуместните покупки:</strong>
+                    Нашият изкуствен интелект оценява всяка транзакция, за да идентифицира елементи, които не отговарят на целите на вашия проект, спестявайки ви излишни разходи.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Открийте излишните количества:</strong>
+                    Останете в рамките на бюджета си, като автоматично идентифицирате прекомерни поръчки или дублиращи се покупки.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Проследете липсващите разписки:</strong>
+                    Никога не губете важни документи—нашата система идентифицира пропуски в записите ви и изпраща напомняния, за да гарантира съответствие.
+                </li>
+            </ul>
+        </div>
+
+        <!-- မြန်မာစာ (Burmese) -->
+        <div data-lang="my">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ထိရောက်ပြီး စဉ်ဆက်မပြတ် အသုံးစရိတ် စီမံခန့်ခွဲမှု</h4>
+            <p class="text-center">ကျွမ်းကျင် | ထိရောက် | ယုံကြည်စိတ်ချ</p>
+            <p class="text-center">AI အခြေခံသိမြင်မှုများဖြင့် သင့်စီမံကိန်း အသုံးစရိတ်များကို ထိန်းချုပ်နိုင်ပါစေ။</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>အသုံးမကျသော ဝယ်ယူမှုများကို ဖော်ထုတ်ပါ:</strong>
+                    AI သည် သင့်စီမံကိန်းရည်မှန်းချက်နှင့် မကိုက်ညီသော အရာများကို တွေ့ရှိရန် ငွေသုံးမှုတစ်ခုချင်းစီကို အကဲဖြတ်ပေးပါသည်။
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>အလွန်အကျွံအရေအတွက်များကို ဖော်ထုတ်ပါ:</strong>
+                    အလွန်အကျွံ မှာယူမှုများ သို့မဟုတ် ထပ်တူဝယ်ယူမှုများကို အလိုအလျောက် တွေ့ရှိပြီး သင့်ဘတ်ဂျက်အတွင်း ရှိနေစေပါသည်။
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ပျောက်ဆုံးနေသော လက်ခံငွေစာရင်းများကို ဖော်ထုတ်ပါ:</strong>
+                    အရေးပါသော စာရွက်စာတမ်းများ မဆုံးရှုံးရန်—သင့်မှတ်တမ်းများအတွင်း ရှိသော အချက်လက်များကို ကျွန်ုပ်တို့၏စနစ်မှ အလိုအလျောက် ဖော်ထုတ်ပေးပါသည်။
+                </li>
+            </ul>
+        </div>
+
+        <!-- Català (Catalan) -->
+        <div data-lang="ca">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Despeses més intel·ligents</h4>
+            <p class="text-center">Intel·ligent | Eficient | Fiable</p>
+            <p class="text-center">Informació impulsada per IA per mantenir les despeses del teu projecte sota control.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marca compres irrellevants:</strong>
+                    La nostra IA avalua cada transacció per identificar elements que no s'ajusten als objectius del teu projecte, estalviant-te despeses innecessàries.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detecta quantitats excessives:</strong>
+                    Mantén-te dins del pressupost identificant automàticament comandes excessives o compres duplicades abans que afectin el teu balanç.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Persegueix rebuts perduts:</strong>
+                    No perdis mai documents importants—el nostre sistema identifica buits en els teus registres i envia recordatoris per assegurar el compliment.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Chichewa -->
+        <div data-lang="ny">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Kulipira Mwanzeru</h4>
+            <p class="text-center">Wanzeru | Wothandiza | Wodalirika</p>
+            <p class="text-center">Njira zoyendetsedwa ndi AI kuti mukhale ndi ulamuliro pa ndalama zanu.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Lemba zogulira zosafunikira:</strong>
+                    AI yathu imawunika ntchito iliyonse kuti izindikire zinthu zomwe sizikugwirizana ndi zolinga zanu, kukupulumutsirani ndalama zopanda pake.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Dziwani kuchuluka kosalekeza:</strong>
+                    Khalani mkati mwa bajeti yanu powunikira mwachangu zopempha kapena zogulira zobwereza musanakhudze ndalama zanu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Pitirizani kupeza malipiro osowa:</strong>
+                    Osataya zikalata zofunika—dongosolo lathu limazindikira mipata mumalembawo ndikukutumizirani zotsutsa kuti mutsimikizire kukwanira.
+                </li>
+            </ul>
+        </div>
+
+        <!-- 中文 (Chinese) -->
+        <div data-lang="zh">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >更聪明的支出管理</h4>
+            <p class="text-center">智能 | 高效 | 可靠</p>
+            <p class="text-center">由AI驱动的洞察力帮助您控制项目支出。</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>标记无关的购买:</strong>
+                    我们的AI评估每笔交易，以识别不符合您的项目目标的项目，帮您节省不必要的开支。
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>检测过量购买:</strong>
+                    通过自动识别过量订单或重复购买，确保您保持在预算之内。
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>追踪丢失的收据:</strong>
+                    不再丢失重要文件—我们的系统会识别记录中的空缺并发送提醒以确保合规性。
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hrvatski (Croatian) -->
+        <div data-lang="hr">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Pametnije trošenje</h4>
+            <p class="text-center">Pametno | Učinkovito | Pouzdano</p>
+            <p class="text-center">AI pogoni uvidi za držanje troškova projekta pod kontrolom.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Označite nebitne kupnje:</strong>
+                    Naš AI procjenjuje svaku transakciju kako bi identificirao stavke koje ne odgovaraju ciljevima vašeg projekta, štedeći vas nepotrebnih troškova.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Otkrivanje prekomjernih količina:</strong>
+                    Ostanite unutar proračuna automatskim identificiranjem prekomjernih narudžbi ili duplih kupnji prije nego što utječu na vaš financijski rezultat.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Pratite nestale račune:</strong>
+                    Nikada ne gubite važne dokumente—naš sustav identificira praznine u vašim zapisima i šalje podsjetnike kako bi osigurao usklađenost.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Čeština (Czech) -->
+        <div data-lang="cs">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Chytřejší výdaje</h4>
+            <p class="text-center">Chytré | Efektivní | Spolehlivé</p>
+            <p class="text-center">Poznatky poháněné umělou inteligencí, které pomohou udržet výdaje vašeho projektu pod kontrolou.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Označte nerelevantní nákupy:</strong>
+                    Náš AI vyhodnocuje každou transakci, aby identifikoval položky, které nejsou v souladu s cíli vašeho projektu, čímž šetří zbytečné náklady.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detekujte nadměrné množství:</strong>
+                    Zůstaňte v rámci rozpočtu tím, že automaticky identifikujete nadměrné objednávky nebo duplicitní nákupy dříve, než ovlivní vaše finance.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Sledujte chybějící účtenky:</strong>
+                    Nikdy neztraťte důležité dokumenty—náš systém identifikuje mezery ve vašich záznamech a zasílá připomenutí pro zajištění souladu.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Dansk (Danish) -->
+        <div data-lang="da">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Mere intelligent forbrug</h4>
+            <p class="text-center">Smart | Effektiv | Pålidelig</p>
+            <p class="text-center">AI-drevne indsigter for at holde dine projektudgifter under kontrol.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Markér irrelevante køb:</strong>
+                    Vores AI evaluerer hver transaktion for at identificere varer, der ikke stemmer overens med dine projektmål, og sparer dig for unødvendige udgifter.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Find overflødige mængder:</strong>
+                    Hold dig inden for budgettet ved automatisk at identificere overbestillinger eller dobbeltkøb, før de påvirker din bundlinje.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Følg op på manglende kvitteringer:</strong>
+                    Mist aldrig vigtige dokumenter—vores system identificerer huller i dine optegnelser og sender påmindelser for at sikre overholdelse.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Nederlands (Dutch) -->
+        <div data-lang="nl">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Slimmer uitgavenbeheer</h4>
+            <p class="text-center">Slim | Efficiënt | Betrouwbaar</p>
+            <p class="text-center">Inzichten aangedreven door AI om uw projectuitgaven onder controle te houden.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Markeer irrelevante aankopen:</strong>
+                    Onze AI beoordeelt elke transactie om items te identificeren die niet overeenkomen met uw projectdoelen, waardoor u onnodige uitgaven bespaart.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detecteer overtollige hoeveelheden:</strong>
+                    Blijf binnen het budget door overbestellingen of dubbele aankopen automatisch te identificeren voordat ze uw resultaten beïnvloeden.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Volg ontbrekende bonnetjes op:</strong>
+                    Verlies nooit belangrijke documenten—ons systeem identificeert hiaten in uw administratie en stuurt herinneringen om naleving te garanderen.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Esperanto -->
+        <div data-lang="eo">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Simple Pli Saĝa Elspezado</h4>
+            <p class="text-center">Saĝa | Efika | Fidinda</p>
+            <p class="text-center">AI-pelitaj komprenoj por teni viajn projektoelspezojn sub kontrolo.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marku nerelevajn aĉetojn:</strong>
+                    Nia AI taksas ĉiun transakcion por identigi erojn kiuj ne kongruas kun la celoj de via projekto, ŝparante vin de nenecesaj elspezoj.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detektu troajn kvantojn:</strong>
+                    Restu ene de buĝeto per aŭtomata identigo de troaj mendoj aŭ duoblaj aĉetoj antaŭ ol ili influas vian profiton.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spuru mankantajn kvitancojn:</strong>
+                    Neniam perdu gravajn dokumentojn—nia sistemo identigas mankojn en viaj registroj kaj sendas memorigilojn por certigi konformecon.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Eesti (Estonian) -->
+        <div data-lang="et">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Lihtsalt targemad kulutused</h4>
+            <p class="text-center">Tark | Tõhus | Usaldusväärne</p>
+            <p class="text-center">Tehisintellekti juhitud teadmised, mis aitavad teie projekti kulutusi kontrolli all hoida.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Märgistage ebaolulised ostud:</strong>
+                    Meie tehisintellekt hindab iga tehingut, et tuvastada esemeid, mis ei vasta teie projekti eesmärkidele, säästes teid tarbetutest kuludest.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tuvastage liigne kogus:</strong>
+                    Püsige eelarves, tuvastades automaatselt liigmüügid või topeltostud enne, kui need teie finantside lõpptulemust mõjutavad.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Jälgige puuduvaid kviitungeid:</strong>
+                    Ärge kaotage kunagi olulisi dokumente—meie süsteem tuvastab teie kirjetes olevad lüngad ja saadab meeldetuletusi, et tagada vastavus.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Suomi (Finnish) -->
+        <div data-lang="fi">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Älykkäämpää kuluttamista</h4>
+            <p class="text-center">Älykäs | Tehokas | Luotettava</p>
+            <p class="text-center">AI-pohjaiset näkemykset, jotka pitävät projektisi kulut hallinnassa.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Merkitse epäolennaiset ostot:</strong>
+                    AI arvioi jokaisen tapahtuman tunnistaakseen tuotteet, jotka eivät vastaa projektisi tavoitteita, säästäen tarpeettomilta kustannuksilta.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Havaitse liialliset määrät:</strong>
+                    Pysy budjetissa tunnistamalla automaattisesti ylimääräiset tilaukset tai kaksoishankinnat ennen niiden vaikutusta talouteesi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Seuraa puuttuvia kuitteja:</strong>
+                    Älä koskaan kadota tärkeitä asiakirjoja—järjestelmämme tunnistaa aukot rekistereissäsi ja lähettää muistutuksia varmistaakseen vaatimustenmukaisuuden.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Français (French) -->
+        <div data-lang="fr">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Dépenses plus intelligentes</h4>
+            <p class="text-center">Intelligent | Efficace | Fiable</p>
+            <p class="text-center">Des insights basés sur l'IA pour garder vos dépenses de projet sous contrôle.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Identifiez les achats non pertinents :</strong>
+                    Notre IA évalue chaque transaction pour identifier les éléments qui ne correspondent pas aux objectifs de votre projet, vous épargnant des dépenses inutiles.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Détectez les quantités excessives :</strong>
+                    Respectez votre budget en identifiant automatiquement les commandes excessives ou les achats doublés avant qu'ils n'impactent vos finances.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Poursuivez les reçus manquants :</strong>
+                    Ne perdez jamais de documents importants—notre système identifie les lacunes dans vos enregistrements et envoie des rappels pour garantir la conformité.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ქართული (Georgian) -->
+        <div data-lang="ka">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >უბრალოდ უფრო ჭკვიანი ხარჯვა</h4>
+            <p class="text-center">ჭკვიანი | ეფექტური | სანდო</p>
+            <p class="text-center">AI-ზე დაფუძნებული ხედვა, რომელიც თქვენს პროექტის ხარჯებს კონტროლის ქვეშ ინარჩუნებს.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>მონიშნეთ არასასურველი შესყიდვები:</strong>
+                    ჩვენი AI აფასებს თითოეულ ტრანზაქციას თქვენი პროექტის მიზნებთან შეუსაბამო ელემენტების აღმოჩენის მიზნით და დაზოგავს ზედმეტი ხარჯებისგან.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>გაიგეთ გადაჭარბებული რაოდენობები:</strong>
+                    დარჩით ბიუჯეტში, ავტომატურად აღმოაჩინეთ ზედმეტი შეკვეთები ან დუბლირებული შესყიდვები, სანამ ისინი თქვენს შედეგებზე გავლენას მოახდენენ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>დაკარგული ქვითრების ძებნა:</strong>
+                    არასდროს დაკარგოთ მნიშვნელოვანი დოკუმენტები—ჩვენი სისტემა ადგენს ხარვეზებს თქვენს ჩანაწერებში და აგზავნის შეხსენებებს შესაბამისობის უზრუნველსაყოფად.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Deutsch (German) -->
+        <div data-lang="de">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Einfach intelligenter ausgeben</h4>
+            <p class="text-center">Intelligent | Effizient | Zuverlässig</p>
+            <p class="text-center">KI-gestützte Erkenntnisse, um Ihre Projektkosten im Griff zu behalten.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kennzeichnen Sie irrelevante Einkäufe:</strong>
+                    Unsere KI bewertet jede Transaktion, um Elemente zu identifizieren, die nicht zu den Zielen Ihres Projekts passen, und spart Ihnen unnötige Ausgaben.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Erkennen Sie übermäßige Mengen:</strong>
+                    Bleiben Sie im Budget, indem Sie automatisch Überbestellungen oder doppelte Käufe erkennen, bevor sie Ihre Finanzen belasten.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Verfolgen Sie fehlende Belege:</strong>
+                    Verlieren Sie niemals wichtige Dokumente—unser System identifiziert Lücken in Ihren Aufzeichnungen und sendet Erinnerungen, um die Einhaltung sicherzustellen.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Ελληνικά (Greek) -->
+        <div data-lang="el">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Πιο έξυπνη διαχείριση δαπανών</h4>
+            <p class="text-center">Έξυπνο | Αποτελεσματικό | Αξιόπιστο</p>
+            <p class="text-center">Πληροφορίες με τη βοήθεια της Τεχνητής Νοημοσύνης για να διατηρήσετε τις δαπάνες του έργου σας υπό έλεγχο.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Σημειώστε άσχετες αγορές:</strong>
+                    Η Τεχνητή Νοημοσύνη μας αξιολογεί κάθε συναλλαγή για να εντοπίσει στοιχεία που δεν ευθυγραμμίζονται με τους στόχους του έργου σας, εξοικονομώντας σας περιττές δαπάνες.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Εντοπίστε υπερβολικές ποσότητες:</strong>
+                    Μείνετε εντός προϋπολογισμού εντοπίζοντας αυτόματα υπερβολικές παραγγελίες ή διπλές αγορές πριν επηρεάσουν τα οικονομικά σας.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Παρακολουθήστε τα χαμένα αποδεικτικά:</strong>
+                    Μην χάνετε ποτέ σημαντικά έγγραφα—το σύστημά μας εντοπίζει κενά στις εγγραφές σας και στέλνει υπενθυμίσεις για τη διασφάλιση της συμμόρφωσης.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ગુજરાતી (Gujarati) -->
+        <div data-lang="gu">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >સરળતાથી વધુ સ્માર્ટ ખર્ચ</h4>
+            <p class="text-center">સ્માર્ટ | અસરકારક | વિશ્વસનીય</p>
+            <p class="text-center">તમારા પ્રોજેક્ટના ખર્ચને નિયંત્રણમાં રાખવા માટે AI પર આધારિત ઝાંખીઓ.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>અપ્રસંગિક ખરીદીઓની ઓળખ કરો:</strong>
+                    અમારી AI દરેક વ્યવહારનું મૂલ્યાંકન કરે છે અને તમારા પ્રોજેક્ટના લક્ષ્યો સાથે મેળ ખાતા નથી તેવા આઇટમ્સને ઓળખે છે, જે તમને અનાવશ્યક ખર્ચોથી બચાવે છે.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>અતિશય પ્રમાણ શોધો:</strong>
+                    તમારી નીચેની રેખા પર અસર કરવાથી પહેલા ઓવર-આરડર અથવા ડુપ્લિકેટ ખરીદીઓને ઓટોમેટિકલ રીતે ઓળખી તમારી બજેટમાં રહો.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ગુમ થયેલ રસીદો ટ્રૅક કરો:</strong>
+                    મહત્વપૂર્ણ દસ્તાવેજો ક્યારેય ન ગુમાવો—અમારું સિસ્ટમ તમારી રેકોર્ડમાં ખાડા ઓળખે છે અને પાલન સુનિશ્ચિત કરવા માટે યાદ અપાવે છે.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Kreyòl Ayisyen (Haitian Creole) -->
+        <div data-lang="ht">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Depans ki pi entelijan</h4>
+            <p class="text-center">Entelijan | Efikas | Fyab</p>
+            <p class="text-center">Konesans ak AI pou kenbe depans pwojè ou anba kontwòl.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Make acha ki pa enpòtan:</strong>
+                    AI nou an evalye chak tranzaksyon pou idantifye atik ki pa ann amoni ak objektif pwojè ou, ekonomize ou kont depans nesesè.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detekte kantite depase:</strong>
+                    Rete nan bidjè ou pa idantifye otomatikman lòd depase oswa acha ki fèt doub anvan yo afekte bidjè ou.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Siveye resi ki manke:</strong>
+                    Pa janm pèdi dokiman enpòtan—sistèm nou an idantifye espas ki gen nan dosye ou epi voye rapèl pou asire konfòmite.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hausa -->
+        <div data-lang="ha">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Kudade da Hankali</h4>
+            <p class="text-center">Mai Kaifin Baka | Ingantacce | Amintacce</p>
+            <p class="text-center">Fahimtar da ke aiki da AI don tabbatar da cewa kudaden aikin ku suna karkashin kulawa.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Yi alama akan sayayyar da ba ta dace ba:</strong>
+                    AI ɗinmu tana tantance kowace ma'amala don gano abubuwan da ba su da alaƙa da manufofin aikin ku, yana ceton ku daga asarar kudi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Gano yawan adadi:</strong>
+                    Kasance cikin kasafin kudin ku ta hanyar gano odar fiye da kima ko siyan kaya guda biyu kafin su yi tasiri kan kudi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Bin takardun da suka bace:</strong>
+                    Kada ku rasa muhimman takardu—tsarinmu yana gano giɓi a cikin bayanan ku kuma yana aika tunatarwa don tabbatar da bin doka.
+                </li>
+            </ul>
+        </div>
+
+        <!-- עברית (Hebrew) -->
+        <div data-lang="he">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >הוצאה חכמה יותר</h4>
+            <p class="text-center">חכם | יעיל | אמין</p>
+            <p class="text-center">תובנות מבוססות בינה מלאכותית שיסייעו לכם לשמור על הוצאות הפרויקט בשליטה.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>סמנו רכישות שאינן רלוונטיות:</strong>
+                    הבינה המלאכותית שלנו מעריכה כל עסקה כדי לזהות פריטים שאינם עולים בקנה אחד עם מטרות הפרויקט שלכם, וחוסכת מכם הוצאות מיותרות.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>זהו כמויות מופרזות:</strong>
+                    הישארו במסגרת התקציב על ידי זיהוי אוטומטי של הזמנות מופרזות או רכישות כפולות לפני שהן משפיעות על השורה התחתונה שלכם.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>עקבו אחרי קבלות חסרות:</strong>
+                    לעולם אל תאבדו מסמכים חשובים—המערכת שלנו מזהה פערים ברישומים שלכם ושולחת תזכורות כדי להבטיח תאימות.
+                </li>
+            </ul>
+        </div>
+
+        <!-- हिन्दी (Hindi) -->
+        <div data-lang="hi">
+            <h1 class="text-center mt-4" >कॉस्टगार्ड</h1>
+            <h4 class="text-center" >बस होशियारी से खर्च करें</h4>
+            <p class="text-center">स्मार्ट | कुशल | भरोसेमंद</p>
+            <p class="text-center">आपकी परियोजना के खर्च को नियंत्रण में रखने के लिए AI संचालित अंतर्दृष्टि।</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>अप्रासंगिक खरीदारी को चिह्नित करें:</strong>
+                    हमारा AI प्रत्येक लेन-देन का मूल्यांकन करता है ताकि उन वस्तुओं को पहचाना जा सके जो आपकी परियोजना के लक्ष्यों से मेल नहीं खातीं, जिससे आपको अनावश्यक खर्च से बचाया जा सके।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>अत्यधिक मात्रा का पता लगाएं:</strong>
+                    ऑटोमेटिक रूप से अतिरिक्त ऑर्डर या डुप्लीकेट खरीद को पहचानकर अपने बजट में बने रहें।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>गुम रसीदों का पीछा करें:</strong>
+                    महत्वपूर्ण दस्तावेज़ कभी न खोएं—हमारी प्रणाली आपकी रिकॉर्ड में खामियों का पता लगाती है और अनुपालन सुनिश्चित करने के लिए रिमाइंडर भेजती है।
+                </li>
+            </ul>
+        </div>
+
+        <!-- Magyar (Hungarian) -->
+        <div data-lang="hu">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Egyszerűen okosabb költések</h4>
+            <p class="text-center">Okos | Hatékony | Megbízható</p>
+            <p class="text-center">AI-alapú betekintések, amelyek segítenek a projektkiadásokat ellenőrzés alatt tartani.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Jelölje meg a nem releváns vásárlásokat:</strong>
+                    Az AI értékeli minden tranzakciót, hogy azonosítsa azokat az elemeket, amelyek nem felelnek meg a projekt céljainak, megóvva a szükségtelen kiadásoktól.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Ismerje fel a túlzott mennyiségeket:</strong>
+                    Maradjon a költségvetésen belül azáltal, hogy automatikusan azonosítja a túlméretezett rendeléseket vagy duplikált vásárlásokat.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kövesse nyomon a hiányzó nyugtákat:</strong>
+                    Soha ne veszítsen el fontos dokumentumokat—a rendszerünk azonosítja a hiányosságokat a nyilvántartásaiban, és emlékeztetőket küld a megfelelőség biztosítására.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Íslenska (Icelandic) -->
+        <div data-lang="is">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Einungis snjallari útgjöld</h4>
+            <p class="text-center">Snjallt | Skilvirkt | Traust</p>
+            <p class="text-center">Gervigreindardrifin innsýn sem hjálpar þér að halda verkútgjöldum þínum í skefjum.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Merktu við óviðeigandi kaup:</strong>
+                    AI okkar metur hverja færslu til að bera kennsl á hluti sem ekki samræmast markmiðum verkefnisins þíns, sem sparar þér óþarfa kostnað.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Greindu of miklar stærðir:</strong>
+                    Haltu þér innan fjárhagsáætlunar með því að bera sjálfkrafa kennsl á of miklar pantanir eða tvítekningar áður en þær hafa áhrif á fjárhag þinn.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Fylgstu með vantar kvittanir:</strong>
+                    Glatastu aldrei mikilvægum skjölum—kerfið okkar greinir eyður í færslum þínum og sendir áminningar til að tryggja samræmi.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Igbo -->
+        <div data-lang="ig">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Mmefu Ego Ka Ọ Dị Nkenke</h4>
+            <p class="text-center">Ọbụ Ọhụrụ | Dị Mfe | Ezi Aha</p>
+            <p class="text-center">Ezi uche sitere na AI iji mee ka mmefu ego ọrụ gị dịkwa ọcha.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kpọmkwem n'azụ ihe ọ bụla ziri ezi:</strong>
+                    AI anyị na-enyocha ọrụ ọ bụla iji chọpụta ihe ndị na-ezighi ezi, na-azọpụta gị site na mgbakwunye mmefu ego efu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Chọpụta nnukwu oke ego:</strong>
+                    Nọrọ na mmefu ego site na ịchọpụta ngwongwo zuru oke ma ọ bụ mgbakwunye tupu o wee metụta ego gị.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Chọpụta akwụkwọ akwụ ụgwọ efu:</strong>
+                    Ekpochapu akwụkwọ dị mkpa—sistemụ anyị na-enyocha oghere dị na ndekọ gị na-ezite ncheta iji hụ na ịdabere.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Bahasa Indonesia (Indonesian) -->
+        <div data-lang="id">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Pengeluaran yang Lebih Cerdas</h4>
+            <p class="text-center">Cerdas | Efisien | Andal</p>
+            <p class="text-center">Wawasan yang didukung AI untuk menjaga pengeluaran proyek Anda tetap terkendali.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tandai pembelian yang tidak relevan:</strong>
+                    AI kami mengevaluasi setiap transaksi untuk mengidentifikasi item yang tidak sesuai dengan tujuan proyek Anda, menghemat pengeluaran yang tidak perlu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Deteksi jumlah berlebihan:</strong>
+                    Tetap dalam anggaran dengan secara otomatis mengidentifikasi pesanan berlebih atau pembelian duplikat sebelum memengaruhi keuangan Anda.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Lacak tanda terima yang hilang:</strong>
+                    Jangan pernah kehilangan dokumen penting—sistem kami mengidentifikasi celah dalam catatan Anda dan mengirim pengingat untuk memastikan kepatuhan.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Gaeilge (Irish) -->
+        <div data-lang="ga">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Caiteachas Níos Cliste</h4>
+            <p class="text-center">Cliste | Éifeachtach | Iontaofa</p>
+            <p class="text-center">Léargais faoi thiomáint AI chun caiteachas do thionscadail a choinneáil faoi smacht.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marcáil ceannacháin nach mbaineann le hábhar:</strong>
+                    Déanann ár n-AI gach idirbheart a mheas chun míreanna a aithint nach bhfuil ailínithe le spriocanna do thionscadail, ag sábháil tú ó chostais nach bhfuil riachtanach.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Braitear méideanna iomarcacha:</strong>
+                    Fan laistigh de do bhuiséad trí orduithe iomarcacha nó ceannacháin dhúblacha a aithint go huathoibríoch sula dtéann siad i bhfeidhm ar do líne bun.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Lean taifid atá in easnamh:</strong>
+                    Ná caill doiciméid thábhachtacha riamh—sainaithníonn ár gcóras bearnaí i do thaifid agus cuireann sé meabhrúcháin chugat chun cloí a chinntiú.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Italiano (Italian) -->
+        <div data-lang="it">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Spese più intelligenti</h4>
+            <p class="text-center">Intelligente | Efficiente | Affidabile</p>
+            <p class="text-center">Intuizioni basate su AI per mantenere le spese del progetto sotto controllo.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Segnala acquisti irrilevanti:</strong>
+                    La nostra IA valuta ogni transazione per identificare gli articoli che non sono in linea con gli obiettivi del progetto, facendoti risparmiare spese inutili.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Rileva quantità eccessive:</strong>
+                    Rimani nel budget identificando automaticamente ordini eccessivi o acquisti duplicati prima che incidano sui tuoi risultati finanziari.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Insegui ricevute mancanti:</strong>
+                    Non perdere mai documenti importanti—il nostro sistema identifica lacune nei tuoi record e invia promemoria per garantire la conformità.
+                </li>
+            </ul>
+        </div>
+
+        <!-- 日本語 (Japanese) -->
+        <div data-lang="ja">
+            <h1 class="text-center mt-4" >コストガード</h1>
+            <h4 class="text-center" >より賢明な支出</h4>
+            <p class="text-center">スマート | 効率的 | 信頼性</p>
+            <p class="text-center">AI によるインサイトで、プロジェクトの支出を管理します。</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>無関係な購入をフラグ:</strong>
+                    AI は、プロジェクトの目標に一致しないアイテムを特定することで、無駄な支出を節約します。
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>過剰な数量を検出:</strong>
+                    オーバーオーダーや重複購入を自動的に検出して、予算内に収めます。
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>紛失した領収書を追跡:</strong>
+                    重要な書類を失うことはありません。システムがギャップを特定し、リマインダーを送信してコンプライアンスを確保します。
+                </li>
+            </ul>
+        </div>
+
+        <!-- Basa Jawa (Javanese) -->
+        <div data-lang="jv">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Pengeluaran sing Luwih Cerdas</h4>
+            <p class="text-center">Cerdas | Efisien | Dipercaya</p>
+            <p class="text-center">Pandangan didhukung AI kanggo njaga pengeluaran proyek tetep ing kontrol.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tandhani tuku sing ora relevan:</strong>
+                    AI kita ngevaluasi saben transaksi kanggo ngenali item sing ora cocog karo tujuan proyek, ngirit biaya sing ora perlu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Deteksi jumlah sing kakehan:</strong>
+                    Tetep ing anggaran kanthi kanthi otomatis ngenali pesenan kakehan utawa tuku duplikat sadurunge mengaruhi anggaran sampeyan.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Lacak kuitansi sing ilang:</strong>
+                    Aja kelangan dokumen penting—sistem kita ngenali gap ing cathetan sampeyan lan ngirim pangeling kanggo njamin kepatuhan.
+                </li>
+            </ul>
+        </div>
+
+
+        <div data-lang="en" class="active">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Simply Smarter Spending</h4>
+            <p class="text-center">Smart | Efficient | Reliable</p>
+            <p class="text-center">AI-powered insights to keep your project spending on track.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Flag irrelevant purchases:</strong>
+                    Our AI evaluates every transaction to identify items that don’t align with your project’s goals, saving you from unnecessary spending.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detect excessive quantities:</strong>
+                    Stay within budget by automatically identifying over-orders or duplicate purchases before they impact your bottom line.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Chase missing receipts:</strong>
+                    Never lose track of important documents—our system identifies gaps in your records and sends reminders to ensure compliance.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ಕನ್ನಡ (Kannada) -->
+        <div data-lang="kn">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ಸರಳವಾಗಿ ಸುಸ್ಥಿರ ವೆಚ್ಚ</h4>
+            <p class="text-center">ಚಾಣ | ಪರಿಣಾಮಕಾರೀ | ನಂಬಬಹುದಾದ</p>
+            <p class="text-center">ನಿಮ್ಮ ಯೋಜನೆಯ ವೆಚ್ಚಗಳನ್ನು ನಿಯಂತ್ರಣದಲ್ಲಿ ಇಡಲು AI ಪ್ರೇರಿತ ಅಂತರದೃಷ್ಟಿಗಳು.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>ಅಸಂಬಂಧಿತ ಖರೀದಿಗಳನ್ನು ಗುರುತಿಸಿ:</strong>
+                    ನಮ್ಮ AI ಪ್ರತಿ ವಹಿವಾಟನ್ನು ವಿಶ್ಲೇಷಿಸುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಯೋಜನೆಯ ಗುರಿಗಳಿಗೆ ಹೊಂದಿಕೆಯಾಗದ ಐಟಂಗಳನ್ನು ಗುರುತಿಸುತ್ತದೆ, ಇದು ನಿಮ್ಮನ್ನು ಅನಾವಶ್ಯಕ ವೆಚ್ಚಗಳಿಂದ ಉಳಿಸುತ್ತದೆ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ಅತಿಯಾಗಿ ಖರೀದಿಸಲ್ಪಟ್ಟ ಪ್ರಮಾಣಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಿ:</strong>
+                    ನಿಮ್ಮ ಬಜೆಟ್‌ನಲ್ಲಿ ಇರುತ್ತಾ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅತಿಯಾಗಿ ಆದೇಶಿತ ಅಥವಾ ನಕಲು ಖರೀದಿಗಳನ್ನು ಗುರುತಿಸುವ ಮೂಲಕ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ಮಿಸ್ ಆದ ರಸೀದಿಗಳನ್ನು ಹಿಂಬಾಲಿಸಿ:</strong>
+                    ಕೀಳಾಗಿ ಮಾರಾಟದ ದಾಖಲೆಗಳು - ನಮ್ಮ ಸಿಸ್ಟಮ್ ನಿಮ್ಮ ದಾಖಲೆಗಳಲ್ಲಿ ಮಿಸ್ ಆದ ಖಾಲಿ ಸ್ಥಳಗಳನ್ನು ಪತ್ತೆಹಚ್ಚುತ್ತದೆ ಮತ್ತು ಪಾಲನೆಯ ದೃಷ್ಟಿಯಿಂದ ರಿಮೈಂಡರ್‌ಗಳನ್ನು ಕಳುಹಿಸುತ್ತದೆ.
+                </li>
+            </ul>
+        </div>
+
+        <!-- کٲشُر (Kashmiri) -->
+        <div data-lang="ks">
+            <h1 class="text-center mt-4" >کاسٹ گارڈ</h1>
+            <h4 class="text-center" >زیادہ سمارٹ خرچ</h4>
+            <p class="text-center">سمارٹ | مؤثر | قابل اعتماد</p>
+            <p class="text-center">AI کی مدد سے بصیرتیں جو آپ کے پروجیکٹ کے اخراجات کو قابو میں رکھتی ہیں۔</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>غیر متعلقہ خریداریوں کو نشان زد کریں:</strong>
+                    ہمارا AI ہر ٹرانزیکشن کا جائزہ لیتا ہے تاکہ ان اشیاء کی نشاندہی کی جا سکے جو آپ کے پروجیکٹ کے مقاصد کے ساتھ مطابقت نہیں رکھتیں، غیر ضروری اخراجات سے بچاتا ہے۔
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>اضافی مقداروں کا پتہ لگائیں:</strong>
+                    بجٹ کے اندر رہیں، زیادہ آرڈرز یا ڈپلیکیٹ خریداریوں کی خودکار نشاندہی کرکے۔
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>گمشدہ رسیدوں کا پیچھا کریں:</strong>
+                    اہم دستاویزات کو کبھی نہ کھویں—ہمارا سسٹم آپ کے ریکارڈز میں موجود خلا کی نشاندہی کرتا ہے اور تعمیل کو یقینی بنانے کے لیے یاد دہانیاں بھیجتا ہے۔
+                </li>
+            </ul>
+        </div>
+
+        <!-- Қазақ (Kazakh) -->
+        <div data-lang="kk">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Жай ғана ақылды шығындар</h4>
+            <p class="text-center">Ақылды | Тиімді | Сенімді</p>
+            <p class="text-center">AI негізінде жобалық шығындарыңызды бақылауда ұстауға арналған түсініктер.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Мәнсіз сатып алуларды белгілеңіз:</strong>
+                    Біздің AI әрбір транзакцияны бағалап, жоба мақсаттарына сәйкес келмейтін заттарды анықтайды, бұл сізді қажетсіз шығындардан құтқарады.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Артық мөлшерді анықтаңыз:</strong>
+                    Бюджет шегінде қалып, автоматты түрде артық тапсырыстарды немесе қайталанатын сатып алуларды анықтаңыз.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Жоғалған түбіртектерді бақылаңыз:</strong>
+                    Маңызды құжаттарды жоғалтпаңыз—біздің жүйе сіздің жазбаларыңыздағы олқылықтарды анықтап, сәйкестікті қамтамасыз ету үшін ескертулер жібереді.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ភាសាខ្មែរ (Khmer) -->
+        <div data-lang="km">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ការចំណាយឆ្លាតវៃជាង</h4>
+            <p class="text-center">ឆ្លាតវៃ | ប្រសិទ្ធភាព | ទុកចិត្តបាន</p>
+            <p class="text-center">ការយល់ដឹងដោយប្រើ AI ដើម្បីរក្សាការចំណាយគម្រោងរបស់អ្នកឱ្យនៅក្រោមការត្រួតពិនិត្យ។</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>សម្គាល់ការទិញដែលមិនពាក់ព័ន្ធ:</strong>
+                    AI របស់យើងវាយតម្លៃប្រតិបត្តិការនីមួយៗដើម្បីសម្គាល់ធាតុដែលមិនសមស្របជាមួយគោលដៅគម្រោងរបស់អ្នក ដោយរក្សាបានការចំណាយដែលមិនចាំបាច់។
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ស្វែងរកបរិមាណលើសដល់:</strong>
+                    ស្នើសុំការបញ្ជាទិញលើសឬការទិញស្ទួនដោយស្វ័យប្រវត្តិក្នុងការរក្សាឱ្យនៅក្នុងថវិកា។
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>តាមដានវិក្កយបត្រដែលបាត់:</strong>
+                    កុំបាត់បង់ឯកសារសំខាន់ៗ—ប្រព័ន្ធរបស់យើងសម្គាល់ការខ្វះខាតនៅក្នុងកំណត់ត្រារបស់អ្នក និងផ្ញើការជូនដំណឹងដើម្បីធានាឱ្យមានការគោរពតាម។
+                </li>
+            </ul>
+        </div>
+
+        <!-- Кыргызча (Kyrgyz) -->
+        <div data-lang="ky">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Жөн эле акылдуу чыгымдар</h4>
+            <p class="text-center">Акылдуу | Натыйжалуу | Ишенимдүү</p>
+            <p class="text-center">Жобо чыгымдарыңызды көзөмөлдө кармап туруу үчүн AI колдонулган түшүнүктөр.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Керексиз сатып алуулардын белгилерин коюңуз:</strong>
+                    Биздин AI ар бир транзакцияны баалап, сиздин жоба максаттарыңызга шайкеш келбеген нерселерди аныктайт, бул сизди керексиз чыгымдардан куткарат.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Көбүрөөк көлөмдү аныктаңыз:</strong>
+                    Автоматтык түрдө ашыкча заказдарды же кайталанган сатып алууларды аныктоо менен бюджеттин ичинде калып.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Жоголгон квитанцияларды издеңиз:</strong>
+                    Маанилүү документтерди эч качан жоготпоңуз—биздин система сиздин жазуулардагы боштуктарды аныктап, талаптарга жооп берүү үчүн эскертүүлөрдү жөнөтөт.
+                </li>
+            </ul>
+        </div>
+
+        <!-- 한국어 (Korean) -->
+        <div data-lang="ko">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >더 스마트한 지출</h4>
+            <p class="text-center">스마트 | 효율적 | 신뢰할 수 있는</p>
+            <p class="text-center">프로젝트 지출을 제어하기 위해 AI 기반 통찰력을 제공합니다.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>관련 없는 구매 표시:</strong>
+                    AI가 각 거래를 평가하여 프로젝트 목표와 맞지 않는 항목을 식별하여 불필요한 지출을 줄여줍니다.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>과잉 수량 감지:</strong>
+                    예산 내에서 초과 주문이나 중복 구매를 자동으로 식별합니다.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>누락된 영수증 추적:</strong>
+                    중요한 문서를 잃어버리지 않도록 시스템이 기록의 빈틈을 식별하고 준수를 보장하기 위해 알림을 보냅니다.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Kurdî (Kurdish) -->
+        <div data-lang="ku">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >خەرجکردنێکی زیاتر زانست</h4>
+            <p class="text-center">زانستیار | کارامە | قابڵ بەئیماند</p>
+            <p class="text-center">زانیارییەکان بە پشتگیری AI بۆ بەهەزگرتنی خەرجکردنەکانت لەسەر پڕۆژەکە.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>دیاریکردنی کڕینە نەكە ئەستەواژەکان:</strong>
+                    AI یەمان هەر هەژمارێك دەناسنێت تا ئەمانەی نەكە بۆ ئامانجەکانت بەئەژمار بگرێت، لە خەرجکردنە بیسودەکانت بەناوەوە دەپارێزیت.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>دۆزینەوەی ژمارەیەکی زیاتر:</strong>
+                    دابنە بەرەو بڕی بودجەکەت بە ئامادەی کەرەها ئاشکراکردنەوەی کڕینە پێچەوانە یان تێکراوەکان.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>پشگیری ڕەچتەی قەبڵەکان:</strong>
+                    هەر هۆچونێکی گرنگ بەرز مەبە، سیستەمەکەمان ناکاڵاکەتە و دەبەستێت گەیشتنە لە ئاشکراکردنی ئەم باشتێکان.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ລາວ (Lao) -->
+        <div data-lang="lo">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ຄ່າໃຊ້ຈ່າຍສະຫມາດຂຶ້ນ</h4>
+            <p class="text-center">ສະຫມາດ | ມີປະສິດທິພາບ | ເຊື່ອໄດ້</p>
+            <p class="text-center">ເຂົ້າເຫັນຂໍ້ມູນສະຫມາດດ້ວຍ AI ສຳລັບຄຸ້ມຄອງຄ່າໃຊ້ຈ່າຍໂຄງການຂອງທ່ານ.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>ມາກຄ໌ການຊື້ທີ່ບໍ່ສຳຄັນ:</strong>
+                    AI ຂອງພວກເຮົາປະເມີນທຸກການທຸລະກຳເພື່ອສະແດງໄອເຕັມທີ່ບໍ່ສອດຄ່ອງກັບຄວາມມຸ່ງຫມັ້ນໂຄງການຂອງທ່ານ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ສະແດງຈຳນວນທີ່ຫລາຍເກີນໄປ:</strong>
+                    ຢູ່ໃນຂອບເຂດງົບປະມານດ້ວຍການສະແດງຂໍ້ມູນອັດຕະໂນມັດໃນການສັ່ງຊື້ເກີນຄວາມຈຳເປັນ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ຕິດຕາມໃບຮັບເງິນທີ່ສູນເສຍ:</strong>
+                    ບໍ່ເຄີຍສູນເສຍເອກະສານທີ່ສຳຄັນເລີຍ - ລະບົບຂອງພວກເຮົາສາມາດສະແດງຂໍ້ມູນເພື່ອຮຽກຄືນຄວາມສູນເສຍ.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Latina (Latin) -->
+        <div data-lang="la">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Proficientius Sumptus</h4>
+            <p class="text-center">Intelligens | Efficiens | Fidelis</p>
+            <p class="text-center">Intellectus a machina tractatus ad expensas consilium tuum continendas.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Notare emptiones non pertinentes:</strong>
+                    Intellectus machinae nostrae singulas res examinant ut inveniant quae proposita consilii tui non conveniunt, te a sumptibus non necessariis liberantes.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Excedentes quantitates invenire:</strong>
+                    Intra praevisionem remanere per ordines superfluos vel duplicatos automatice deprehendens.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Persequi documenta perdita:</strong>
+                    Numquam documenta magni momenti amittas—systema nostrum lacunas in tabulis tuis detegit et admonitiones mittit ad observantiam confirmandam.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Latviešu (Latvian) -->
+        <div data-lang="lv">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Gudrāki izdevumi</h4>
+            <p class="text-center">Gudrs | Efektīvs | Uzticams</p>
+            <p class="text-center">AI virzīti ieskati, lai kontrolētu jūsu projekta izdevumus.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Atzīmēt neatbilstošos pirkumus:</strong>
+                    Mūsu mākslīgais intelekts novērtē katru darījumu, lai identificētu preces, kas neatbilst jūsu projekta mērķiem, ietaupot jums nevajadzīgus izdevumus.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Atklāt pārmērīgus daudzumus:</strong>
+                    Palieciet budžeta ietvaros, automātiski identificējot liekas pasūtījumus vai dubultus pirkumus, pirms tie ietekmē jūsu finanses.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Izsekot trūkstošos čekus:</strong>
+                    Nekad nezaudējiet svarīgus dokumentus—mūsu sistēma identificē nepilnības jūsu ierakstos un nosūta atgādinājumus, lai nodrošinātu atbilstību.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Lietuvių (Lithuanian) -->
+        <div data-lang="lt">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Išmanesnės išlaidos</h4>
+            <p class="text-center">Išmanus | Efektyvus | Patikimas</p>
+            <p class="text-center">AI pagrįstos įžvalgos, padedančios kontroliuoti jūsų projekto išlaidas.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Pažymėkite nereikalingus pirkinius:</strong>
+                    Mūsų dirbtinis intelektas įvertina kiekvieną operaciją, kad nustatytų prekes, kurios neatitinka jūsų projekto tikslų, taip sutaupydamas nereikalingų išlaidų.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Aptikite per didelius kiekius:</strong>
+                    Išlikite biudžeto ribose, automatiškai nustatydami perteklinius užsakymus ar pasikartojančius pirkinius prieš jiems paveikiant jūsų finansus.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Stebėkite prarastus čekius:</strong>
+                    Niekada nepraraskite svarbių dokumentų—mūsų sistema identifikuoja jūsų įrašų spragas ir siunčia priminimus, užtikrinančius atitiktį.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Македонски (Macedonian) -->
+        <div data-lang="mk">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Поинтелигентни трошоци</h4>
+            <p class="text-center">Интелигентно | Ефикасно | Доверливо</p>
+            <p class="text-center">Информации базирани на AI за да ги контролирате вашите проектни трошоци.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Обележете нерелевантни купувања:</strong>
+                    Нашиот AI ја проценува секоја трансакција за да идентификува ставки кои не се во согласност со целите на вашиот проект, заштедувајќи ви непотребни трошоци.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Откријте прекумерни количини:</strong>
+                    Останете во рамките на буџетот со автоматско идентификување на прекумерни нарачки или дупликат купувања пред да влијаат на вашите финансии.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Следете изгубени сметки:</strong>
+                    Никогаш не губете важни документи—нашиот систем идентификува празнини во вашите записи и испраќа потсетници за да се обезбеди усогласеност.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Malagasy -->
+        <div data-lang="mg">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Fandaniam-bola hendry kokoa</h4>
+            <p class="text-center">Hendry | Mahomby | Azo itokisana</p>
+            <p class="text-center">Hevitra avy amin'ny AI hanampiana anao hitazona ny fandaniana amin'ny tetikasa eo ambany fifehezana.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Manamarika ny fividianana tsy ilaina:</strong>
+                    AI-nay dia manombatombana ny fifanakalozana tsirairay mba hamantarana ireo zavatra tsy mifanaraka amin'ny tanjon'ny tetikasanao, mamonjy anao amin'ny fandaniana tsy ilaina.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Mahita be loatra:</strong>
+                    Mijanona ao anatin'ny tetibola amin'ny alàlan'ny famantarana ho azy ny baiko tafahoatra na ny fividianana mitovy alohan'ny hisian'izy ireo.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Manaraka ny tapakila very:</strong>
+                    Aza very ny antontan-taratasy manan-danja—ny rafitray dia mamantatra ny elanelana amin'ny firaketanao ary mandefa fampahatsiahivana mba hiantohana ny fankatoavana.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Bahasa Melayu (Malay) -->
+        <div data-lang="ms">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Perbelanjaan yang Lebih Bijak</h4>
+            <p class="text-center">Bijak | Efisien | Boleh Dipercayai</p>
+            <p class="text-center">Pandangan dipacu AI untuk memastikan perbelanjaan projek anda terkawal.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tandakan pembelian yang tidak relevan:</strong>
+                    AI kami menilai setiap transaksi untuk mengenal pasti item yang tidak sejajar dengan matlamat projek anda, menjimatkan perbelanjaan yang tidak perlu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kenal pasti kuantiti berlebihan:</strong>
+                    Kekal dalam bajet dengan mengenal pasti lebihan pesanan atau pembelian berganda secara automatik sebelum ia memberi kesan kepada kewangan anda.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Jejaki resit yang hilang:</strong>
+                    Jangan sekali-kali kehilangan dokumen penting—sistem kami mengenal pasti jurang dalam rekod anda dan menghantar peringatan untuk memastikan pematuhan.
+                </li>
+            </ul>
+        </div>
+
+        <!-- മലയാളം (Malayalam) -->
+        <div data-lang="ml">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >കൂടുതൽ പരിഗണിച്ച ചിലവുകൾ</h4>
+            <p class="text-center">സ്മാർട്ട് | കാര്യക്ഷമം | വിശ്വസനീയമായ</p>
+            <p class="text-center">AI പിന്തുണയുള്ള അറിവുകൾ, നിങ്ങളുടെ പദ്ധതിയുടെ ചിലവുകൾ നിയന്ത്രണത്തിൽ വെക്കാൻ സഹായിക്കുന്നു.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>പ്രസക്തമല്ലാത്ത വാങ്ങലുകൾ അടയാളപ്പെടുത്തുക:</strong>
+                    ഞങ്ങളുടെ AI ഓരോ ഇടപാടിനെയും വിലയിരുത്തി നിങ്ങളുടെ പദ്ധതിയുടെ ലക്ഷ്യങ്ങളോട് പൊരുത്തപ്പെടാത്ത ഇനങ്ങളെ കണ്ടെത്തുന്നു, നിങ്ങൾക്ക് ആവശ്യമില്ലാത്ത ചിലവുകൾ മുതൽ സംരക്ഷിക്കുന്നു.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>അധികമായ അളവുകൾ കണ്ടെത്തുക:</strong>
+                    ബജറ്റിൽ തുടരുക, ഓട്ടോമാറ്റിക് ആയി അധികമായ ഓർഡറുകൾ അല്ലെങ്കിൽ ആവർത്തിക്കുന്ന വാങ്ങലുകൾ കണ്ടെത്തുക.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>കാണാതായ ക്വിറ്റുകൾ പിന്തുടരുക:</strong>
+                    പ്രധാനപ്പെട്ട ഡോക്യുമെന്റുകൾ ഒരിക്കലും നഷ്ടപ്പെടരുത്—നിങ്ങളുടെ റെക്കോർഡുകളിലെ പാളിച്ചകൾ തിരിച്ചറിയാൻ ഞങ്ങളുടെ സിസ്റ്റം സഹായിക്കുന്നു, അനുസരണ ഉറപ്പാക്കാൻ ഓർമ്മിപ്പിക്കുന്നു.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Malti (Maltese) -->
+        <div data-lang="mt">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Infiq Aktar Intelliġenti</h4>
+            <p class="text-center">Intelliġenti | Effiċjenti | Affidabbli</p>
+            <p class="text-center">Għarfien imħaddem mill-AI biex iżżomm l-infiq tal-proġett tiegħek taħt kontroll.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Immarka xiri irrelevanti:</strong>
+                    L-AI tagħna tivvaluta kull tranżazzjoni biex tidentifika oġġetti li ma jaqblux mal-għanijiet tal-proġett tiegħek, u tiffranka spejjeż bla bżonn.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Skopri kwantitajiet żejda:</strong>
+                    Ibqa’ fil-baġit tiegħek billi awtomatikament tiskopri ordnijiet żejda jew xiri duplikat qabel ma jaffettwaw il-linja tal-qiegħ tiegħek.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Segwi riċevuti neqsin:</strong>
+                    Qatt titlef dokumenti importanti—sistema tagħna tidentifika lakuni fir-rekords tiegħek u tibgħat tfakkiriet biex tiżgura konformità.
+                </li>
+            </ul>
+        </div>
+
+        <!-- मराठी (Marathi) -->
+        <div data-lang="mr">
+            <h1 class="text-center mt-4" >कॉस्टगार्ड</h1>
+            <h4 class="text-center" >सुज्ञ खर्च</h4>
+            <p class="text-center">सुज्ञ | कार्यक्षम | विश्वासार्ह</p>
+            <p class="text-center">AI-आधारित अंतर्दृष्टी जी तुम्हाला तुमच्या प्रकल्पाच्या खर्चावर नियंत्रण ठेवण्यास मदत करते.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>असंबंधित खरेदी ओळखा:</strong>
+                    आमचे AI प्रत्येक व्यवहाराचे मूल्यांकन करते आणि तुमच्या प्रकल्पाच्या उद्दिष्टांशी जुळत नसलेल्या आयटम्सची ओळख पटवते, ज्यामुळे तुम्हाला अनावश्यक खर्च वाचतो.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>अत्यधिक प्रमाण ओळखा:</strong>
+                    तुमच्या बजेटमध्ये राहा अत्यधिक ऑर्डर किंवा डुप्लिकेट खरेदी स्वयंचलितपणे ओळखून.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>गहाळ पावत्या शोधा:</strong>
+                    महत्त्वाचे दस्तऐवज कधीही गमावू नका—आमची प्रणाली तुमच्या रेकॉर्डमधील अंतर ओळखते आणि अनुपालन सुनिश्चित करण्यासाठी स्मरणपत्रे पाठवते.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Монгол (Mongolian) -->
+        <div data-lang="mn">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Илүү ухаалаг зардал</h4>
+            <p class="text-center">Ухаалаг | Үр ашигтай | Найдвартай</p>
+            <p class="text-center">Төслийнхөө зардлыг хяналтандаа байлгахын тулд AI-д суурилсан ойлголтуудыг ашиглаарай.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Хамааралгүй худалдан авалтыг тэмдэглэ:</strong>
+                    Манай AI нь гүйлгээ бүрийг үнэлж, төслийнхөө зорилгод нийцэхгүй зүйлсийг илрүүлдэг.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Хэт их хэмжээг илрүүлэх:</strong>
+                    Хэт их захиалга эсвэл давхардсан худалдан авалтыг автоматаар илрүүлж, төсвийн дотор байгаарай.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Алга болсон баримтыг хөөх:</strong>
+                    Чухал баримтуудыг алдахгүй байгаарай—манай систем таны бичлэгийн цоорхойг илрүүлж, нийцлийг хангахын тулд сануулга илгээдэг.
+                </li>
+            </ul>
+        </div>
+
+        <!-- नेपाली (Nepali) -->
+        <div data-lang="ne">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >स्मार्ट खर्च व्यवस्थापन</h4>
+            <p class="text-center">स्मार्ट | प्रभावकारी | भरपर्दो</p>
+            <p class="text-center">तपाईंको परियोजनाको खर्चलाई नियन्त्रणमा राख्न AI-आधारित अंतर्दृष्टिहरू।</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>अप्रासंगिक खरीदारीहरू चिन्नुहोस्:</strong>
+                    हाम्रो AI ले प्रत्येक लेनदेनको मूल्याङ्कन गरेर तपाईंको परियोजनाको लक्ष्यसँग मेल नखाने वस्तुहरू पहिचान गर्दछ, जसले तपाईंलाई अनावश्यक खर्चबाट बचाउँछ।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>अत्यधिक मात्राहरू पत्ता लगाउनुहोस्:</strong>
+                    स्वचालित रूपमा अत्यधिक अर्डरहरू वा डुप्लिकेट खरीद पहिचान गरेर बजेटभित्र बस्नुहोस्।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>बेपत्ता रसिदहरू पछ्याउनुहोस्:</strong>
+                    कहिल्यै महत्त्वपूर्ण कागजातहरू हराउनुहुने छैन—हाम्रो प्रणालीले तपाईंको अभिलेखहरूमा भएको खाली ठाउँ पत्ता लगाउँछ र अनुपालन सुनिश्चित गर्नको लागि सम्झना पठाउँछ।
+                </li>
+            </ul>
+        </div>
+
+        <!-- Norsk Bokmål (Norwegian Bokmål) -->
+        <div data-lang="nb">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Enklere smart forbruk</h4>
+            <p class="text-center">Smart | Effektiv | Pålitelig</p>
+            <p class="text-center">AI-drevne innsikter for å holde prosjektutgiftene under kontroll.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marker irrelevante kjøp:</strong>
+                    Vår AI vurderer hver transaksjon for å identifisere elementer som ikke stemmer overens med prosjektets mål, og sparer deg for unødvendige utgifter.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Oppdag overdrevne mengder:</strong>
+                    Hold deg innenfor budsjettet ved automatisk å identifisere overbestillinger eller dupliserte kjøp før de påvirker bunnlinjen din.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spor manglende kvitteringer:</strong>
+                    Mist aldri viktige dokumenter—systemet vårt identifiserer hull i registreringene dine og sender påminnelser for å sikre overholdelse.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Norsk Nynorsk (Norwegian Nynorsk) -->
+        <div data-lang="nn">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Smartere utgifter</h4>
+            <p class="text-center">Smart | Effektiv | Påliteleg</p>
+            <p class="text-center">AI-drevne innsikter for å halde prosjektutgiftene dine under kontroll.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marker irrelevante kjøp:</strong>
+                    Vår AI vurderer kvar transaksjon for å identifisere element som ikkje stemmer overeins med prosjektmåla dine, og sparer deg for unødvendige utgifter.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Oppdag overdrevne mengder:</strong>
+                    Halde deg innanfor budsjettet ved å automatisk identifisere overbestillingar eller dupliserte kjøp før dei påverkar botnlinja di.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spor manglande kvitteringar:</strong>
+                    Mist aldri viktige dokument—systemet vårt identifiserer hol i registreringane dine og sender påminningar for å sikre etterleving.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Norsk (Norwegian) -->
+        <div data-lang="no">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Smartere utgifter</h4>
+            <p class="text-center">Smart | Effektiv | Pålitelig</p>
+            <p class="text-center">AI-drevne innsikter for å holde prosjektutgiftene dine under kontroll.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marker irrelevante kjøp:</strong>
+                    Vår AI vurderer hver transaksjon for å identifisere elementer som ikke stemmer overens med prosjektmålet ditt, og sparer deg for unødvendige utgifter.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Oppdag overdrevne mengder:</strong>
+                    Hold deg innenfor budsjettet ved å identifisere overbestillinger eller dupliserte kjøp før de påvirker finansene dine.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spor manglende kvitteringer:</strong>
+                    Mist aldri viktige dokumenter—systemet vårt finner mangler i registrene dine og sender påminnelser for å sikre samsvar.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ଓଡ଼ିଆ (Odia) -->
+        <div data-lang="or">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ସହଜ ସ୍ମାର୍ଟ ଖର୍ଚ୍ଚ</h4>
+            <p class="text-center">ସ୍ମାର୍ଟ | ପ୍ରଭାବଶାଳୀ | ଭରସାଯୋଗ୍ୟ</p>
+            <p class="text-center">AI ଆଧାରିତ ଜ୍ଞାନ, ଯାହା ଆପଣଙ୍କର ପ୍ରକଳ୍ପ ଖର୍ଚ୍ଚକୁ ନିୟନ୍ତ୍ରଣରେ ରଖିବାରେ ସାହାଯ୍ୟ କରେ।</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>ଅପ୍ରାସଙ୍ଗିକ କିଣାକାଟାକୁ ଚିହ୍ନଟ କରନ୍ତୁ:</strong>
+                    ଆମର AI ପ୍ରତିଟି ଟ୍ରାଞ୍ଜାକ୍ସନକୁ ମୂଲ୍ୟାୟନ କରେ ଏବଂ ଏଭଳି ଆଇଟମ୍ ଚିହ୍ନଟ କରେ ଯାହା ଆପଣଙ୍କ ପ୍ରକଳ୍ପ ଲକ୍ଷ୍ୟ ସହିତ ମେଳ ହୁଏ ନାହିଁ, ଏହା ଆପଣଙ୍କୁ ଅନାବଶ୍ୟକ ଖର୍ଚ୍ଚରୁ ବଞ୍ଚାଏ।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ଅତିରିକ୍ତ ପରିମାଣ ପହଞ୍ଚନ୍ତୁ:</strong>
+                    ଅତିରିକ୍ତ ଅର୍ଡର୍ ବା ଡୁପ୍ଲିକେଟ୍ କିଣାକାଟାକୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଚିହ୍ନଟ କରି ବଜେଟ୍ ମଧ୍ୟରେ ରୁହନ୍ତୁ।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ଅନୁପସ୍ଥିତ ରସିଦକୁ ଅନୁସରଣ କରନ୍ତୁ:</strong>
+                    କେବେ ମଧ୍ୟ ମହତ୍ତ୍ୱପୂର୍ଣ୍ଣ ଡକ୍ୟୁମେଣ୍ଟ ହାରାଇବେ ନାହିଁ—ଆମର ସିଷ୍ଟେମ୍ ଆପଣଙ୍କ ରେକର୍ଡରେ ଥିବା ଖାଲି ଦ୍ୱାରକୁ ପହଞ୍ଚେବାକୁ ସହାଯ୍ୟ କରେ ଏବଂ ଅନୁପାଳନ ନିଶ୍ଚିତ କରିବାକୁ ରିମାଇଣ୍ଡର୍ ପଠାଏ।
+                </li>
+            </ul>
+        </div>
+
+        <!-- Afaan Oromoo (Oromo) -->
+        <div data-lang="om">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Baayʼee Ogeessa Baasii</h4>
+            <p class="text-center">Ogeessa | Milkaaʼaa | Amansiisaa</p>
+            <p class="text-center">Xinxala saffisaa fi sirrii kan baasii manii kee toʼachuu dandaʼu.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Gatii hin barbaachisne adda baafadhu:</strong>
+                    AI keenya tokkicha hojiiwwan tokko tokkoon xiinxala fi hojiiwwan manii kee sirrii gochuu dandaʼuu.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Baayʼee baʼee baafadhu:</strong>
+                    Gatiin liqii kee al-hinaffaa yeroo kutaawwan keessa.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kutaawwan keessatti komicha adda baafadhu:</strong>
+                    Sirrii fi amma kutaawwan manii kee tokkicha keessan irratti, hojiiwwan keessan keessaa fi buusuu hin dandeenye keessan xiinxala saffisaa fi sirrii.
+                </li>
+            </ul>
+        </div>
+
+        <!-- پښتو (Pashto) -->
+        <div data-lang="ps">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >په غوره توګه لګښتونه</h4>
+            <p class="text-center">هوښیار | مؤثر | د باور وړ</p>
+            <p class="text-center">ستاسو د پروژې لګښتونه تر کنټرول لاندې ساتلو لپاره د AI پر بنسټ لرلید.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>بې اړتيا پېرودونه نښه کړئ:</strong>
+                    زموږ AI هره معامله ارزوي ترڅو هغه توکي وپیژني چې ستاسو د پروژې موخو سره سمون نلري، تاسو ته له غیر ضروري لګښتونو څخه ژغوري.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>د زیات مقدارونو کشف:</strong>
+                    په اتوماتيک ډول د زیات امرونو یا نقل پېرودونو په پیژندلو سره خپل بودیجه کې پاتې شئ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ورک شوي رسیدونه تعقیب کړئ:</strong>
+                    هیڅکله مهم اسناد له لاسه مه ورکوئ—زموږ سیسټم ستاسو په ریکارډونو کې تشې پیژني او د اطاعت ډاډ لپاره یادونې لیږي.
+                </li>
+            </ul>
+        </div>
+
+        <!-- فارسی (Persian) -->
+        <div data-lang="fa">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >مدیریت هزینه هوشمند</h4>
+            <p class="text-center">هوشمند | کارآمد | قابل اعتماد</p>
+            <p class="text-center">بینش‌های مبتنی بر هوش مصنوعی برای کنترل هزینه‌های پروژه شما.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>خریدهای غیرضروری را علامت‌گذاری کنید:</strong>
+                    هوش مصنوعی ما هر تراکنش را ارزیابی کرده و آیتم‌هایی که با اهداف پروژه شما هماهنگ نیستند را شناسایی می‌کند و شما را از هزینه‌های اضافی نجات می‌دهد.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>مقادیر بیش از حد را شناسایی کنید:</strong>
+                    در بودجه خود بمانید و به صورت خودکار سفارشات اضافی یا خریدهای تکراری را شناسایی کنید.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>پیگیری رسیدهای گم‌شده:</strong>
+                    هرگز اسناد مهم را از دست ندهید—سیستم ما شکاف‌های موجود در سوابق شما را شناسایی کرده و یادآوری‌هایی را برای اطمینان از انطباق ارسال می‌کند.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Polski (Polish) -->
+        <div data-lang="pl">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Mądrzejsze wydatki</h4>
+            <p class="text-center">Inteligentne | Efektywne | Wiarygodne</p>
+            <p class="text-center">Wgląd oparty na sztucznej inteligencji, aby utrzymać wydatki projektu pod kontrolą.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Oznacz nieistotne zakupy:</strong>
+                    Nasza AI ocenia każdą transakcję, aby zidentyfikować elementy, które nie są zgodne z celami projektu, oszczędzając na niepotrzebnych wydatkach.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Wykrywaj nadmierne ilości:</strong>
+                    Pozostań w ramach budżetu, automatycznie identyfikując nadmierne zamówienia lub duplikaty zakupów, zanim wpłyną na twoje finanse.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Śledź brakujące paragony:</strong>
+                    Nigdy nie zgub ważnych dokumentów—nasz system identyfikuje luki w twoich zapisach i wysyła przypomnienia w celu zapewnienia zgodności.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Português (Portuguese) -->
+        <div data-lang="pt">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Despesas mais inteligentes</h4>
+            <p class="text-center">Inteligente | Eficiente | Confiável</p>
+            <p class="text-center">Insights impulsionados por IA para manter os gastos do seu projeto sob controle.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marque compras irrelevantes:</strong>
+                    Nossa IA avalia cada transação para identificar itens que não estejam alinhados com os objetivos do seu projeto, economizando despesas desnecessárias.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detecte quantidades excessivas:</strong>
+                    Mantenha-se dentro do orçamento identificando automaticamente pedidos excessivos ou compras duplicadas antes que afetem suas finanças.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Rastreie recibos ausentes:</strong>
+                    Nunca perca documentos importantes—nosso sistema identifica lacunas nos seus registros e envia lembretes para garantir a conformidade.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Română (Romanian) -->
+        <div data-lang="ro">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Cheltuieli mai inteligente</h4>
+            <p class="text-center">Inteligent | Eficient | De încredere</p>
+            <p class="text-center">Perspective bazate pe AI pentru a menține cheltuielile proiectului sub control.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Marchează achizițiile irelevante:</strong>
+                    AI-ul nostru evaluează fiecare tranzacție pentru a identifica elementele care nu sunt aliniate cu obiectivele proiectului, economisindu-vă cheltuieli inutile.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detectează cantități excesive:</strong>
+                    Rămâneți în buget identificând automat comenzi excesive sau achiziții duplicate înainte de a afecta finanțele.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Urmărește chitanțele lipsă:</strong>
+                    Nu pierdeți niciodată documente importante—sistemul nostru identifică goluri în evidențele dumneavoastră și trimite mementouri pentru a asigura conformitatea.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Русский (Russian) -->
+        <div data-lang="ru">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Более разумные расходы</h4>
+            <p class="text-center">Умный | Эффективный | Надежный</p>
+            <p class="text-center">Инсайты на базе ИИ, чтобы держать расходы проекта под контролем.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Отмечайте нецелесообразные покупки:</strong>
+                    Наш ИИ оценивает каждую транзакцию, чтобы выявить несоответствующие цели проекта товары, экономя ваши средства.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Обнаруживайте избыточные количества:</strong>
+                    Оставайтесь в рамках бюджета, автоматически выявляя избыточные заказы или повторные покупки до того, как они повлияют на ваши финансы.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Отслеживайте недостающие квитанции:</strong>
+                    Никогда не теряйте важные документы — наша система обнаруживает пробелы в ваших записях и отправляет напоминания для обеспечения соответствия.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Српски (Serbian) -->
+        <div data-lang="sr">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Паметније трошење</h4>
+            <p class="text-center">Паметно | Ефикасно | Поуздано</p>
+            <p class="text-center">АИ погледи који помажу да трошкови пројекта остану под контролом.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Означите небитне куповине:</strong>
+                    Наш АИ процењује сваку трансакцију како би идентификовао ставке које се не подударају са циљевима вашег пројекта, штедећи вас од непотребних трошкова.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Откријте прекомерне количине:</strong>
+                    Останите у оквиру буџета аутоматски откривајући прекомерне поруџбине или дупликате куповина пре него што утичу на ваше финансије.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Пратите изгубљене рачуне:</strong>
+                    Никада не губите важне документе—наш систем идентификује празнине у вашим записима и шаље подсетнике како би се осигурала усаглашеност.
+                </li>
+            </ul>
+        </div>
+
+        <!-- සිංහල (Sinhala) -->
+        <div data-lang="si">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >සාධාරණ වියදම්</h4>
+            <p class="text-center">බුද්ධිමත් | කාර්යක්ෂම | විශ්වාසනීය</p>
+            <p class="text-center">ඔබගේ ව්‍යාපෘති වියදම් පාලනයට තබා ගැනීමට AI ආධාරක දැක්ම.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>අප්‍රායෝජනීය මිලදී ගැනීම් හැඳින්වීම:</strong>
+                    අපගේ AI සෑම ගනුදෙනුවක්ම ඇගයීම් කර ඔබේ ව්‍යාපෘති අරමුණු වලට අනුකූල නොවන අයිතම හඳුනා ගනී, එමඟින් අවශ්‍ය නොවන වියදම් වලින් ඔබව ගලවා ගනී.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>අධික ප්‍රමාණ හඳුනා ගැනීම:</strong>
+                    ඔබේ මූල්‍ය තොරතුරු හට බලපෑම් ඇති කිරීමට පෙර, ස්වයංක්‍රීයව අධික ඇණවුම් හෝ නිපුණ භාණ්ඩ හඳුනා ගනී.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>අහිමි රිසිට්පත් ලුහුබැඳීම:</strong>
+                    වැදගත් ලියවිලි කවදාවත් අහිමි නොවන්න—අපගේ පද්ධතිය ඔබේ ලේඛන වල ඇති හිස් තැන් හඳුනාගෙන අවබෝධතා සඳහා සටහන් යවයි.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slovenčina (Slovak) -->
+        <div data-lang="sk">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Inteligentnejšie výdavky</h4>
+            <p class="text-center">Inteligentné | Efektívne | Spoľahlivé</p>
+            <p class="text-center">Poznatky založené na AI na udržanie výdavkov projektu pod kontrolou.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Označte irelevantné nákupy:</strong>
+                    Náš AI hodnotí každú transakciu, aby identifikoval položky, ktoré nezodpovedajú cieľom vášho projektu, čím šetrí zbytočné výdavky.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Identifikujte nadmerné množstvá:</strong>
+                    Zostaňte v rámci rozpočtu automatickou identifikáciou nadmerných objednávok alebo duplicitných nákupov pred tým, ako ovplyvnia vaše financie.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Sledujte chýbajúce potvrdenky:</strong>
+                    Nikdy nestratíte dôležité dokumenty—náš systém identifikuje medzery vo vašich záznamoch a posiela pripomienky na zabezpečenie súladu.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slovenščina (Slovenian) -->
+        <div data-lang="sl">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Pametnejši izdatki</h4>
+            <p class="text-center">Pametno | Učinkovito | Zanesljivo</p>
+            <p class="text-center">Vpogledi, podprti z umetno inteligenco, za nadzor nad stroški vašega projekta.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Označite nepomembne nakupe:</strong>
+                    Naša umetna inteligenca oceni vsako transakcijo, da prepozna predmete, ki niso skladni z vašimi cilji projekta, prihranite pri nepotrebnih stroških.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Prepoznajte prekomerne količine:</strong>
+                    Ostanite v okviru proračuna z avtomatskim prepoznavanjem prevelikih naročil ali podvojenih nakupov, preden vplivajo na vaša finančna sredstva.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spremljajte manjkajoče potrdila:</strong>
+                    Nikoli ne izgubite pomembnih dokumentov—naš sistem prepozna vrzeli v vaših zapisih in pošlje opomnike, da zagotovi skladnost.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Soomaali (Somali) -->
+        <div data-lang="so">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Kharashaad Garaadka Leh</h4>
+            <p class="text-center">Caqli Badan | Wax-ku-ool ah | Lagu Kalsoonaan Karo</p>
+            <p class="text-center">Aragtiyo ku shaqeynaya AI si loo xakameeyo kharashaadka mashruucaaga.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Calaamadee iibsiyada aan khuseynin:</strong>
+                    AI-gayagu waxay qiimeysaa heshiis kasta si loo aqoonsado alaab aan ku habboonayn ujeeddooyinka mashruucaaga, taasoo ku badbaadineysa kharashaad aan loo baahnayn.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Ka hel tiro xad-dhaaf ah:</strong>
+                    Ku sii jira miisaaniyadda adoo si otomaatig ah u aqoonsanaya amarro xad-dhaaf ah ama iibsiyo soo noqnoqda ka hor inta aysan saameyn ku yeelan maaliyaddaada.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Raadi rasiidhada maqan:</strong>
+                    Waligaa ha lumin dukumeenti muhiim ah—nidaamkayagu wuxuu aqoonsadaa farqiga ku jira diiwaanadaada wuxuuna soo diraa xusuusin si loo hubiyo u hoggaansamidda.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Kiswahili (Swahili) -->
+        <div data-lang="sw">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Matumizi ya Akili Zaidi</h4>
+            <p class="text-center">Akili | Ufanisi | Wa Kuaminika</p>
+            <p class="text-center">Uwezo wa AI kusaidia kudhibiti matumizi ya mradi wako.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tambua manunuzi yasiyo muhimu:</strong>
+                    AI yetu inatathmini kila muamala ili kubaini vitu ambavyo havilingani na malengo ya mradi wako, hivyo kukuokoa na gharama zisizo za lazima.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tambua idadi ya kupita kiasi:</strong>
+                    Kaa ndani ya bajeti yako kwa kutambua moja kwa moja maagizo mengi au manunuzi ya mara kwa mara kabla ya kuathiri fedha zako.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Fuata risiti zilizokosekana:</strong>
+                    Usipoteze hati muhimu kamwe—mfumo wetu hutambua mapungufu kwenye rekodi zako na kutuma vikumbusho ili kuhakikisha ufuatiliaji.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Svenska (Swedish) -->
+        <div data-lang="sv">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Smarta utgifter</h4>
+            <p class="text-center">Smart | Effektiv | Tillförlitlig</p>
+            <p class="text-center">AI-drivna insikter för att hålla dina projektkostnader under kontroll.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Markera irrelevanta inköp:</strong>
+                    Vår AI utvärderar varje transaktion för att identifiera objekt som inte överensstämmer med ditt projekts mål, vilket sparar dig onödiga utgifter.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Upptäck överflödiga mängder:</strong>
+                    Håll dig inom budgeten genom att automatiskt identifiera överbeställningar eller dubblettköp innan de påverkar din ekonomi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Spåra saknade kvitton:</strong>
+                    Förlora aldrig viktiga dokument—vårt system identifierar luckor i dina register och skickar påminnelser för att säkerställa överensstämmelse.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Tagalog (Tagalog) -->
+        <div data-lang="tl">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Mas Matalinong Paggasta</h4>
+            <p class="text-center">Matalino | Epektibo | Maaasahan</p>
+            <p class="text-center">Mga pananaw na pinapagana ng AI upang mapanatili ang paggasta ng iyong proyekto sa kontrol.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tandaan ang mga hindi mahalagang pagbili:</strong>
+                    Sinusuri ng aming AI ang bawat transaksyon upang makilala ang mga item na hindi naaayon sa mga layunin ng iyong proyekto, na makakatipid sa iyo mula sa hindi kinakailangang gastos.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Matukoy ang labis na dami:</strong>
+                    Manatili sa loob ng badyet sa pamamagitan ng awtomatikong pagtukoy ng mga labis na order o duplicate na pagbili bago ito makaapekto sa iyong mga pananalapi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Subaybayan ang mga nawawalang resibo:</strong>
+                    Huwag kailanman mawala ang mahahalagang dokumento—ang aming sistema ay tumutukoy sa mga puwang sa iyong mga tala at nagpapadala ng mga paalala upang matiyak ang pagsunod.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Тоҷикӣ (Tajik) -->
+        <div data-lang="tg">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Хароҷоти оқилона</h4>
+            <p class="text-center">Ақлнок | Самаранок | Боваринок</p>
+            <p class="text-center">Таҳлилҳои ба AI асосёфта барои нигоҳ доштани хароҷоти лоиҳаи шумо таҳти назорат.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Мушаххас кардани харидҳои номуносиб:</strong>
+                    AI-и мо ҳар як муомиларо арзёбӣ мекунад ва ашёҳоро муайян мекунад, ки бо ҳадафҳои лоиҳаи шумо мувофиқат намекунанд ва шуморо аз хароҷоти нолозим наҷот медиҳад.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Муайян кардани миқдори изофӣ:</strong>
+                    Дар доираи буҷет монед бо таври автоматӣ муайян кардани фармоишҳои изофӣ ё харидҳои такрорӣ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Иҷрои расидҳои гумшуда:</strong>
+                    Ҳеҷ гоҳ ҳуҷҷатҳои муҳимро гум накунед—системаи мо холигиҳо дар сабтҳои шуморо муайян мекунад ва хотиррасонкуниҳо мефиристад, то риояи қонун таъмин карда шавад.
+                </li>
+            </ul>
+        </div>
+
+        <!-- தமிழ் (Tamil) -->
+        <div data-lang="ta">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >சாதாரணமாகச் செலவழி</h4>
+            <p class="text-center">விவேகம் | செயல்திறன் | நம்பகத்தன்மை</p>
+            <p class="text-center">உங்கள் திட்ட செலவுகளை கட்டுக்குள் வைத்திருக்க AI ஆதரித்த பார்வைகள்.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>தகுந்ததல்லாத கொள்முதல்:</strong>
+                    எங்கள் AI ஒவ்வொரு பரிவர்த்தனையும் மதிப்பீடு செய்கிறது மற்றும் உங்கள் திட்ட இலக்குகளுடன் பொருந்தாத பொருட்களை அடையாளம் காண்கிறது, தேவையற்ற செலவுகளை தடுக்கும்.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>அளவிற்கும் மீறிய பொருட்கள் கண்டறி:</strong>
+                    மீதமுள்ள கட்டுப்பாட்டுடன் இருந்து, அளவிற்கும் மீறிய ஆர்டர்கள் அல்லது மீள்முறைகள் ஒன்றையொன்று கண்டறியவும்.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>மறக்கப்பட்ட ரசீத்களைத் தேடு:</strong>
+                    முக்கியமான ஆவணங்களை ஒருபோதும் இழக்காதீர்கள்—எங்கள் அமைப்பு உங்கள் பதிவுகளில் உள்ள இடைவெளிகளை அடையாளம் காண்கிறது மற்றும் பின்தொடர்வதற்காக நினைவூட்டல்களை அனுப்புகிறது.
+                </li>
+            </ul>
+        </div>
+
+        <!-- తెలుగు (Telugu) -->
+        <div data-lang="te">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >మెరుగైన ఖర్చులు</h4>
+            <p class="text-center">తెలివైనది | సమర్థవంతమైనది | నమ్మకమైనది</p>
+            <p class="text-center">మీ ప్రాజెక్ట్ ఖర్చులను నియంత్రణలో ఉంచడానికి AI ఆధారిత అంతర్దృష్టులు.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>అసంబంధిత కొనుగోళ్లను గుర్తించండి:</strong>
+                    మా AI ప్రతి లావాదేవీని అంచనా వేస్తుంది మరియు మీ ప్రాజెక్ట్ లక్ష్యాలతో సరిపోని అంశాలను గుర్తిస్తుంది, అనవసర ఖర్చుల నుంచి మిమ్మల్ని ఆదుకుంటుంది.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>అధిక పరిమాణాలను కనుగొనండి:</strong>
+                    మీ బడ్జెట్‌లో ఉండండి, అధిక ఆర్డర్‌లను లేదా డూప్లికేట్ కొనుగోళ్లను ఆటోమేటిక్‌గా గుర్తించడం ద్వారా.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>తప్పిపోయిన రశీదులను అనుసరించండి:</strong>
+                    ముఖ్యమైన పత్రాలను ఎప్పుడూ కోల్పోకండి—మా వ్యవస్థ మీ రికార్డుల్లో గ్యాప్‌లను గుర్తించి, అనుగుణత నిర్ధారించడానికి రిమైండర్లను పంపుతుంది.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ไทย (Thai) -->
+        <div data-lang="th">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >การใช้จ่ายที่ชาญฉลาด</h4>
+            <p class="text-center">ฉลาด | มีประสิทธิภาพ | เชื่อถือได้</p>
+            <p class="text-center">ข้อมูลเชิงลึกที่ขับเคลื่อนด้วย AI เพื่อควบคุมค่าใช้จ่ายในโครงการของคุณ</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>ทำเครื่องหมายการซื้อที่ไม่เกี่ยวข้อง:</strong>
+                    AI ของเราประเมินธุรกรรมแต่ละรายการเพื่อระบุรายการที่ไม่สอดคล้องกับเป้าหมายของโครงการ ช่วยคุณประหยัดค่าใช้จ่ายที่ไม่จำเป็น
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ตรวจจับปริมาณที่มากเกินไป:</strong>
+                    อยู่ในงบประมาณของคุณโดยระบุคำสั่งซื้อมากเกินไปหรือการซื้อที่ซ้ำกันโดยอัตโนมัติ
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ติดตามใบเสร็จที่ขาดหาย:</strong>
+                    อย่าทำเอกสารสำคัญหาย ระบบของเราจะระบุช่องว่างในบันทึกของคุณและส่งการแจ้งเตือนเพื่อให้แน่ใจว่าสอดคล้องกัน
+                </li>
+            </ul>
+        </div>
+
+        <!-- Türkçe (Turkish) -->
+        <div data-lang="tr">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Daha Akıllı Harcamalar</h4>
+            <p class="text-center">Akıllı | Etkili | Güvenilir</p>
+            <p class="text-center">Projelerinizin harcamalarını kontrol altında tutmak için yapay zeka destekli içgörüler.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>İlgisiz alımları işaretle:</strong>
+                    Yapay zeka her işlemi değerlendirir ve proje hedeflerinizle uyumlu olmayan öğeleri tanımlar, gereksiz harcamalardan tasarruf etmenizi sağlar.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Aşırı miktarları tespit edin:</strong>
+                    Otomatik olarak aşırı siparişleri veya tekrar eden alımları belirleyerek bütçenizin içinde kalın.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Kayıp fişleri takip edin:</strong>
+                    Önemli belgeleri asla kaybetmeyin—sistemimiz kayıtlarınızdaki boşlukları tespit eder ve uyumluluğu sağlamak için hatırlatmalar gönderir.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Українська (Ukrainian) -->
+        <div data-lang="uk">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Розумніші витрати</h4>
+            <p class="text-center">Розумно | Ефективно | Надійно</p>
+            <p class="text-center">Інсайти на основі AI, які допоможуть вам контролювати витрати вашого проекту.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Відзначте неактуальні покупки:</strong>
+                    Наша AI оцінює кожну транзакцію, щоб ідентифікувати товари, які не відповідають цілям вашого проекту, зберігаючи ваші кошти.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Виявляйте надлишкові кількості:</strong>
+                    Залишайтесь у межах бюджету, автоматично виявляючи надлишкові замовлення або повторювані покупки.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Відстежуйте відсутні чеки:</strong>
+                    Ніколи не втрачай важливі документи — наша система ідентифікує прогалини у ваших записах і надсилає нагадування для забезпечення відповідності.
+                </li>
+            </ul>
+        </div>
+
+        <!-- اردو (Urdu) -->
+        <div data-lang="ur">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >زیادہ سمجھدار خرچ</h4>
+            <p class="text-center">سمارٹ | مؤثر | قابل اعتماد</p>
+            <p class="text-center">AI پر مبنی بصیرت جو آپ کے پروجیکٹ کے اخراجات کو قابو میں رکھنے میں مدد دیتی ہے۔</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>غیر متعلقہ خریداریوں کو نشان زد کریں:</strong>
+                    ہمارا AI ہر لین دین کا جائزہ لیتا ہے اور ان اشیاء کی نشاندہی کرتا ہے جو آپ کے پروجیکٹ کے مقاصد سے مطابقت نہیں رکھتیں، غیر ضروری اخراجات سے بچاتا ہے۔
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>اضافی مقدار کا پتہ لگائیں:</strong>
+                    اپنے بجٹ میں رہیں، اضافی آرڈرز یا نقل خریداریوں کی خودکار شناخت کے ذریعے۔
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>گمشدہ رسیدوں کو ٹریک کریں:</strong>
+                    اہم دستاویزات کبھی نہ کھوئیں—ہمارا سسٹم آپ کے ریکارڈ میں موجود خلا کو پہچانتا ہے اور تعمیل کو یقینی بنانے کے لیے یاد دہانیاں بھیجتا ہے۔
+                </li>
+            </ul>
+        </div>
+
+        <!-- Oʻzbek (Uzbek) -->
+        <div data-lang="uz">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Aqlli xarajatlar</h4>
+            <p class="text-center">Aqlli | Samarali | Ishonchli</p>
+            <p class="text-center">AI asoslangan tushunchalar sizning loyiha xarajatlaringizni nazorat qilishga yordam beradi.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Ahamsiz xaridlarni belgilash:</strong>
+                    Bizning AI har bir tranzaksiyani baholaydi va loyihangizning maqsadlariga mos kelmaydigan narsalarni aniqlaydi, sizni keraksiz xarajatlardan qutqaradi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Haddan tashqari miqdorlarni aniqlash:</strong>
+                    Byudjetda qoling, ortiqcha buyurtmalarni yoki takroriy xaridlarni avtomatik aniqlash orqali.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Yo‘qolgan kvitansiyalarni kuzatib boring:</strong>
+                    Muhim hujjatlarni hech qachon yo‘qotmang — bizning tizim yozuvlaringizdagi bo‘shliqlarni aniqlaydi va muvofiqlikni ta’minlash uchun eslatmalar yuboradi.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tiếng Việt (Vietnamese) -->
+        <div data-lang="vi">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Chi tiêu thông minh hơn</h4>
+            <p class="text-center">Thông minh | Hiệu quả | Đáng tin cậy</p>
+            <p class="text-center">Thông tin chi tiết được hỗ trợ bởi AI để giữ chi tiêu dự án của bạn trong tầm kiểm soát.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Đánh dấu các giao dịch không liên quan:</strong>
+                    AI của chúng tôi đánh giá từng giao dịch để xác định các mục không phù hợp với mục tiêu dự án của bạn, giúp bạn tiết kiệm chi phí không cần thiết.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Phát hiện số lượng dư thừa:</strong>
+                    Duy trì trong ngân sách của bạn bằng cách tự động xác định các đơn đặt hàng dư thừa hoặc mua hàng trùng lặp trước khi chúng ảnh hưởng đến tài chính của bạn.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Theo dõi các biên lai bị thiếu:</strong>
+                    Đừng bao giờ làm mất các tài liệu quan trọng—hệ thống của chúng tôi xác định các khoảng trống trong hồ sơ của bạn và gửi lời nhắc để đảm bảo tuân thủ.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Cymraeg (Welsh) -->
+        <div data-lang="cy">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Gwariant Mwy Deallus</h4>
+            <p class="text-center">Deallus | Effeithlon | Dibynadwy</p>
+            <p class="text-center">Mewnwelediadau wedi'u pweru gan AI i gadw gwariant eich prosiect dan reolaeth.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Nodwch bryniannau amherthnasol:</strong>
+                    Mae ein AI yn gwerthuso pob trafodiad i nodi eitemau nad ydynt yn unol ag amcanion eich prosiect, gan arbed costau diangen i chi.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Canfod meintiau gormodol:</strong>
+                    Arhoswch o fewn eich cyllideb trwy nodi archebion gormodol neu bryniannau dyblyg yn awtomatig cyn iddynt effeithio ar eich cyllid.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Dilyn derbynebau coll:</strong>
+                    Peidiwch byth â cholli dogfennau pwysig—mae ein system yn nodi bylchau yn eich cofnodion ac yn anfon atgoffa i sicrhau cydymffurfiaeth.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Yorùbá (Yoruba) -->
+        <div data-lang="yo">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Iṣowo ọlọgbọn</h4>
+            <p class="text-center">Ọlọgbọn | To munadoko | Gbẹkẹle</p>
+            <p class="text-center">Awọn oye ti a ṣe atilẹyin nipasẹ AI lati ṣetọju inawo iṣẹ akanṣe rẹ labẹ iṣakoso.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Samisi awọn rira ti ko baamu:</strong>
+                    AI wa ṣe ayẹwo gbogbo iṣowo lati ṣe idanimọ awọn nkan ti ko ni ibamu pẹlu awọn ibi-afẹde iṣẹ akanṣe rẹ, fifipamọ rẹ lati awọn inawo ti ko wulo.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Ṣawari awọn iwọn diẹ sii:</strong>
+                    Duro laarin isuna rẹ nipa idanimọ laifọwọyi awọn aṣẹ ti o pọ ju tabi awọn rira atẹle ṣaaju ki wọn ni ipa lori owo rẹ.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Tọpinpin awọn iwe ti o padanu:</strong>
+                    Maṣe padanu awọn iwe pataki rara—eto wa ṣe idanimọ awọn aiṣedeede ninu awọn igbasilẹ rẹ ati firanṣẹ awọn iranti lati rii daju ibamu.
+                </li>
+            </ul>
+        </div>
+
+        <!-- IsiZulu (Zulu) -->
+        <div data-lang="zu">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Izindleko Ezihlakaniphile</h4>
+            <p class="text-center">Hlakaniphile | Okusebenza kahle | Kuthenjwa</p>
+            <p class="text-center">Ukuqonda okuqhutshwa yi-AI ukuze ugcine izindleko zakho zephrojekthi zingaphansi kokulawula.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Phawula ukuthengwa okungahambisani:</strong>
+                    I-AI yethu ihlola yonke inkokhelo ukuze ithole izinto ezingahambisani nezinhloso zephrojekthi yakho, ikongela izindleko ezingadingekile.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Thola amanani aphakeme ngokweqile:</strong>
+                    Hlala ngaphakathi kwesabelomali sakho ngokuhlonza ngokuzenzakalela ama-oda engeziwe noma ukuthengwa okuphindaphindayo ngaphambi kokuba kube nomthelela ezimali zakho.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Landelela amarisidi alahlekile:</strong>
+                    Ungalokothi ulahlekelwe yimibhalo ebalulekile—uhlelo lwethu lukhomba izikhala kumarekhodi akho futhi luthumele izikhumbuzo zokuqinisekisa ukuhambisana.
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- ਪੰਜਾਬੀ (Punjabi) -->
+        <div data-lang="pa">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >ਹੋਸ਼ੀਅਾਰ ਖਰਚਾ</h4>
+            <p class="text-center">ਸਮਝਦਾਰ | ਪ੍ਰਭਾਵਸ਼ਾਲੀ | ਭਰੋਸੇਯੋਗ</p>
+            <p class="text-center">ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਦੇ ਖਰਚਿਆਂ ਨੂੰ ਕਾਬੂ ਵਿੱਚ ਰੱਖਣ ਲਈ AI-ਚਲਾਏ ਗਏ ਅੰਦਰੂਨੀ ਦਰਸ਼ਨ।</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>ਗੈਰ-ਲੋੜੀਂਦੇ ਖਰੀਦਾਂ ਦੀ ਪਛਾਣ ਕਰੋ:</strong>
+                    ਸਾਡਾ AI ਹਰ ਲੈਣ-ਦੇਣ ਦਾ ਮੁਲਾਂਕਣ ਕਰਦਾ ਹੈ ਅਤੇ ਉਹ ਆਈਟਮ ਪਛਾਣਦਾ ਹੈ ਜੋ ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਦੇ ਲਕਸ਼ਾਂ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦੇ, ਜਿਸ ਨਾਲ ਤੁਹਾਨੂੰ ਬੇਲੋੜੇ ਖਰਚੇ ਤੋਂ ਬਚਾਉਣ ਵਿੱਚ ਮਦਦ ਮਿਲਦੀ ਹੈ।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ਵੱਧ ਖਰੀਦ ਦੀ ਪਛਾਣ ਕਰੋ:</strong>
+                    ਆਟੋਮੈਟਿਕ ਤੌਰ 'ਤੇ ਵਧੇਰੇ ਆਰਡਰ ਜਾਂ ਨਕਲ ਖਰੀਦਾਂ ਦੀ ਪਛਾਣ ਕਰਕੇ ਆਪਣੇ ਬਜਟ ਦੇ ਅੰਦਰ ਰਹੋ।
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>ਗੁੰਮ ਹੋਈਆਂ ਰਸੀਦਾਂ ਦੀ ਪੀੜਾ ਕਰੋ:</strong>
+                    ਕਦੇ ਵੀ ਮਹੱਤਵਪੂਰਨ ਦਸਤਾਵੇਜ਼ ਨਾ ਗੁੰਮਾਓ—ਸਾਡਾ ਸਿਸਟਮ ਤੁਹਾਡੇ ਰਿਕਾਰਡ ਵਿੱਚ ਪਾਈਆਂ ਗੱਲਤੀਆਂ ਨੂੰ ਪਛਾਣਦਾ ਹੈ ਅਤੇ ਅਨੁਸਾਰਤਾ ਸੁਨਿਸ਼ਚਿਤ ਕਰਨ ਲਈ ਯਾਦ ਦਿਵਾਉਂਦਾ ਹੈ।
+                </li>
+            </ul>
+        </div>
+
+
+        <div data-lang="es">
+            <h1 class="text-center mt-4" >CostGuard</h1>
+            <h4 class="text-center" >Gastos más inteligentes</h4>
+            <p class="text-center">Inteligente | Eficiente | Confiable</p>
+            <p class="text-center">Información impulsada por IA para mantener sus gastos de proyecto bajo control.</p>
+            <ul>
+                <li><i class="fas fa-check"></i>
+                    <strong>Identifique compras irrelevantes:</strong>
+                    Nuestra IA evalúa cada transacción para identificar elementos que no se alinean con los objetivos de su proyecto, ahorrándole gastos innecesarios.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Detecte cantidades excesivas:</strong>
+                    Manténgase dentro del presupuesto identificando automáticamente pedidos excesivos o compras duplicadas antes de que impacten su línea de fondo.
+                </li>
+                <li><i class="fas fa-check"></i>
+                    <strong>Persiga recibos faltantes:</strong>
+                    Nunca pierda documentos importantes: nuestro sistema identifica brechas en sus registros y envía recordatorios para garantizar el cumplimiento.
+                </li>
+            </ul>
+        </div>
     </div>
 
-
     <div class="signup-form">
-        <h3 class="fs-4">Sign Up</h3>
+        <h3 class="fs-4"
+            data-label-af="Registreer"
+            data-label-sq="Regjistrohu"
+            data-label-am="ይመዝገቡ"
+            data-label-ar="سجل"
+            data-label-hy="Գրանցվել"
+            data-label-az="Qeydiyyatdan Keçin"
+            data-label-eu="Erregistratu"
+            data-label-be="Зарэгістравацца"
+            data-label-bn="নিবন্ধন করুন"
+            data-label-bs="Registriraj se"
+            data-label-bg="Регистрирайте се"
+            data-label-my="မှတ်ပုံတင်ပါ"
+            data-label-ca="Registra't"
+            data-label-ny="Lembetsani"
+            data-label-zh="注册"
+            data-label-hr="Registriraj se"
+            data-label-cs="Zaregistrovat se"
+            data-label-da="Registrer"
+            data-label-nl="Registreren"
+            data-label-en="Register"
+            data-label-eo="Registriĝi"
+            data-label-et="Registreeru"
+            data-label-fi="Rekisteröidy"
+            data-label-fr="S'inscrire"
+            data-label-ka="რეგისტრაცია"
+            data-label-de="Registrieren"
+            data-label-el="Εγγραφείτε"
+            data-label-gu="નોંધણી કરો"
+            data-label-ht="Enskri"
+            data-label-ha="Yi Rijista"
+            data-label-he="הרשם"
+            data-label-hi="पंजीकरण करें"
+            data-label-hu="Regisztráció"
+            data-label-is="Skrá"
+            data-label-ig="Debanye aha"
+            data-label-id="Daftar"
+            data-label-ga="Cláraigh"
+            data-label-it="Registrati"
+            data-label-ja="登録"
+            data-label-jv="Daftar"
+            data-label-kn="ನೊಂದಾಯಿಸಿ"
+            data-label-ks="رجسٹر کریں"
+            data-label-kk="Тіркелу"
+            data-label-km="ចុះឈ្មោះ"
+            data-label-ky="Каттоо"
+            data-label-ko="등록"
+            data-label-ku="Tomar"
+            data-label-lo="ລົງທະບຽນ"
+            data-label-la="Subcriptio"
+            data-label-lv="Reģistrēties"
+            data-label-lt="Registruotis"
+            data-label-mk="Регистрирај се"
+            data-label-mg="Misoratra"
+            data-label-ms="Daftar"
+            data-label-ml="രജിസ്റ്റർ ചെയ്യുക"
+            data-label-mt="Irreġistra"
+            data-label-mr="नोंदणी करा"
+            data-label-mn="Бүртгүүлэх"
+            data-label-ne="दर्ता गर्नुहोस्"
+            data-label-nb="Registrer deg"
+            data-label-nn="Registrer deg"
+            data-label-no="Registrer deg"
+            data-label-or="ନୋଦନ କରନ୍ତୁ"
+            data-label-om="Galmeessi"
+            data-label-pa="ਰਜਿਸਟਰ ਕਰੋ"
+            data-label-ps="راجستر کړئ"
+            data-label-fa="ثبت نام کنید"
+            data-label-pl="Zarejestruj się"
+            data-label-pt="Registre-se"
+            data-label-ro="Înregistrează-te"
+            data-label-ru="Зарегистрироваться"
+            data-label-sr="Региструј се"
+            data-label-si="ලියාපදිංචි වන්න"
+            data-label-sk="Registrovať sa"
+            data-label-sl="Registriraj se"
+            data-label-so="Isdiiwaangeli"
+            data-label-es="Registrarse"
+            data-label-sw="Jisajili"
+            data-label-sv="Registrera dig"
+            data-label-tl="Magparehistro"
+            data-label-tg="Бақайд гирифтан"
+            data-label-ta="பதிவு செய்க"
+            data-label-te="నమోదు చేయండి"
+            data-label-th="ลงทะเบียน"
+            data-label-tr="Kayıt Ol"
+            data-label-uk="Зареєструватися"
+            data-label-ur="رجسٹر کریں"
+            data-label-uz="Ro'yxatdan o'tish"
+            data-label-vi="Đăng ký"
+            data-label-cy="Cofrestru"
+            data-label-yo="Forukọsilẹ"
+            data-label-zu="Bhalisela">
+            Register
+        </h3>
+
         <form>
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Full Name" required>
+                <select id="language-dropdown" class="form-select"></select>
             </div>
+
             <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email" required>
+                <input type="email" class="form-control" placeholder="Email"
+                       data-placeholder-af="E-pos"
+                       data-placeholder-sq="Emaili"
+                       data-placeholder-am="ኢሜል"
+                       data-placeholder-ar="البريد الإلكتروني"
+                       data-placeholder-hy="Էլ. փոստ"
+                       data-placeholder-az="E-poçt"
+                       data-placeholder-eu="Posta elektronikoa"
+                       data-placeholder-be="Электронная пошта"
+                       data-placeholder-bn="ইমেল"
+                       data-placeholder-bs="E-pošta"
+                       data-placeholder-bg="Имейл"
+                       data-placeholder-my="အီးမေးလ်"
+                       data-placeholder-ca="Correu electrònic"
+                       data-placeholder-ny="Imelo"
+                       data-placeholder-zh="电子邮件"
+                       data-placeholder-hr="E-pošta"
+                       data-placeholder-cs="E-mail"
+                       data-placeholder-da="E-mail"
+                       data-placeholder-nl="E-mail"
+                       data-placeholder-en="Email"
+                       data-placeholder-eo="Retpoŝto"
+                       data-placeholder-et="E-post"
+                       data-placeholder-fi="Sähköposti"
+                       data-placeholder-fr="Adresse électronique"
+                       data-placeholder-ka="ელფოსტა"
+                       data-placeholder-de="E-Mail"
+                       data-placeholder-el="Ηλεκτρονικό ταχυδρομείο"
+                       data-placeholder-gu="ઇમેઇલ"
+                       data-placeholder-ht="Imèl"
+                       data-placeholder-ha="Imel"
+                       data-placeholder-he="אימייל"
+                       data-placeholder-hi="ईमेल"
+                       data-placeholder-hu="E-mail"
+                       data-placeholder-is="Netfang"
+                       data-placeholder-ig="Email"
+                       data-placeholder-id="Email"
+                       data-placeholder-ga="Ríomhphost"
+                       data-placeholder-it="Email"
+                       data-placeholder-ja="メールアドレス"
+                       data-placeholder-jv="Email"
+                       data-placeholder-kn="ಇಮೇಲ್"
+                       data-placeholder-ks="ای میل"
+                       data-placeholder-kk="Электрондық пошта"
+                       data-placeholder-km="អ៊ីមែល"
+                       data-placeholder-ky="Электрондук почта"
+                       data-placeholder-ko="이메일"
+                       data-placeholder-ku="E-name"
+                       data-placeholder-lo="ອີເມວ"
+                       data-placeholder-la="Epistula electronica"
+                       data-placeholder-lv="E-pasts"
+                       data-placeholder-lt="El. paštas"
+                       data-placeholder-mk="Е-пошта"
+                       data-placeholder-mg="Mailaka"
+                       data-placeholder-ms="E-mel"
+                       data-placeholder-ml="ഇമെയിൽ"
+                       data-placeholder-mt="Email"
+                       data-placeholder-mr="ईमेल"
+                       data-placeholder-mn="Имэйл"
+                       data-placeholder-ne="इमेल"
+                       data-placeholder-nb="E-post"
+                       data-placeholder-nn="E-post"
+                       data-placeholder-no="E-post"
+                       data-placeholder-or="ଇମେଲ୍"
+                       data-placeholder-om="Imeeyli"
+                       data-placeholder-pa="ਈਮੇਲ"
+                       data-placeholder-ps="بریښنالیک"
+                       data-placeholder-fa="ایمیل"
+                       data-placeholder-pl="E-mail"
+                       data-placeholder-pt="E-mail"
+                       data-placeholder-ro="Email"
+                       data-placeholder-ru="Электронная почта"
+                       data-placeholder-sr="Е-пошта"
+                       data-placeholder-si="විද්යුත් තැපෑල"
+                       data-placeholder-sk="E-mail"
+                       data-placeholder-sl="E-pošta"
+                       data-placeholder-so="Iimayl"
+                       data-placeholder-es="Correo Electrónico"
+                       data-placeholder-sw="Barua Pepe"
+                       data-placeholder-sv="E-post"
+                       data-placeholder-tl="Email"
+                       data-placeholder-tg="Почтаи электронӣ"
+                       data-placeholder-ta="மின்னஞ்சல்"
+                       data-placeholder-te="ఇమెయిల్"
+                       data-placeholder-th="อีเมล"
+                       data-placeholder-tr="E-posta"
+                       data-placeholder-uk="Електронна пошта"
+                       data-placeholder-ur="ای میل"
+                       data-placeholder-uz="Elektron pochta"
+                       data-placeholder-vi="Email"
+                       data-placeholder-cy="E-bost"
+                       data-placeholder-yo="Imeeli"
+                       data-placeholder-zu="I-imeyili" required>
+
             </div>
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Full Name"
+                       data-placeholder-af="Volle Naam"
+                       data-placeholder-sq="Emri i plotë"
+                       data-placeholder-am="ሙሉ ስም"
+                       data-placeholder-ar="الاسم الكامل"
+                       data-placeholder-hy="Անուն Ազգանուն"
+                       data-placeholder-az="Tam Ad"
+                       data-placeholder-eu="Izena eta abizena"
+                       data-placeholder-be="Поўнае імя"
+                       data-placeholder-bn="সম্পূর্ণ নাম"
+                       data-placeholder-bs="Puno ime"
+                       data-placeholder-bg="Пълно име"
+                       data-placeholder-my="အမည်အပြည့်အစုံ"
+                       data-placeholder-ca="Nom complet"
+                       data-placeholder-ny="Dzina Lonse"
+                       data-placeholder-zh="全名"
+                       data-placeholder-hr="Puno ime"
+                       data-placeholder-cs="Celé jméno"
+                       data-placeholder-da="Fulde navn"
+                       data-placeholder-nl="Volledige naam"
+                       data-placeholder-en="Full Name"
+                       data-placeholder-eo="Plena Nomo"
+                       data-placeholder-et="Täisnimi"
+                       data-placeholder-fi="Koko nimi"
+                       data-placeholder-fr="Nom complet"
+                       data-placeholder-ka="სრული სახელი"
+                       data-placeholder-de="Vollständiger Name"
+                       data-placeholder-el="Πλήρες όνομα"
+                       data-placeholder-gu="પૂર્ણ નામ"
+                       data-placeholder-ht="Non konplè"
+                       data-placeholder-ha="Cikakken suna"
+                       data-placeholder-he="שם מלא"
+                       data-placeholder-hi="पूरा नाम"
+                       data-placeholder-hu="Teljes név"
+                       data-placeholder-is="Fullt nafn"
+                       data-placeholder-ig="Aha zuru oke"
+                       data-placeholder-id="Nama Lengkap"
+                       data-placeholder-ga="Ainm iomlán"
+                       data-placeholder-it="Nome completo"
+                       data-placeholder-ja="氏名"
+                       data-placeholder-jv="Jeneng Lengkap"
+                       data-placeholder-kn="ಪೂರ್ಣ ಹೆಸರು"
+                       data-placeholder-ks="پون نام"
+                       data-placeholder-kk="Толық аты-жөні"
+                       data-placeholder-km="ឈ្មោះ​ពេញ"
+                       data-placeholder-ky="Толук аты"
+                       data-placeholder-ko="전체 이름"
+                       data-placeholder-ku="Navê Têwînî"
+                       data-placeholder-lo="ຊື່ເຕັມ"
+                       data-placeholder-la="Nomen completum"
+                       data-placeholder-lv="Pilns vārds"
+                       data-placeholder-lt="Pilnas vardas"
+                       data-placeholder-mk="Целосно име"
+                       data-placeholder-mg="Anarana feno"
+                       data-placeholder-ms="Nama penuh"
+                       data-placeholder-ml="പൂർണ്ണ നാമം"
+                       data-placeholder-mt="Isem sħiħ"
+                       data-placeholder-mr="पूर्ण नाव"
+                       data-placeholder-mn="Бүтэн нэр"
+                       data-placeholder-ne="पुरा नाम"
+                       data-placeholder-nb="Fullt navn"
+                       data-placeholder-nn="Fullt namn"
+                       data-placeholder-no="Fullt navn"
+                       data-placeholder-or="ପୁରା ନାମ"
+                       data-placeholder-om="Maqaa Guutuu"
+                       data-placeholder-pa="ਪੂਰਾ ਨਾਮ"
+                       data-placeholder-ps="پوره نوم"
+                       data-placeholder-fa="نام کامل"
+                       data-placeholder-pl="Pełne imię"
+                       data-placeholder-pt="Nome completo"
+                       data-placeholder-ro="Nume complet"
+                       data-placeholder-ru="Полное имя"
+                       data-placeholder-sr="Пуно име"
+                       data-placeholder-si="සම්පූර්ණ නම"
+                       data-placeholder-sk="Celé meno"
+                       data-placeholder-sl="Polno ime"
+                       data-placeholder-so="Magaca Buuxa"
+                       data-placeholder-es="Nombre completo"
+                       data-placeholder-sw="Jina Kamili"
+                       data-placeholder-sv="Fullständigt namn"
+                       data-placeholder-tl="Buong Pangalan"
+                       data-placeholder-tg="Номи пурра"
+                       data-placeholder-ta="முழு பெயர்"
+                       data-placeholder-te="పూర్తి పేరు"
+                       data-placeholder-th="ชื่อเต็ม"
+                       data-placeholder-tr="Tam Ad"
+                       data-placeholder-uk="Повне ім'я"
+                       data-placeholder-ur="پورا نام"
+                       data-placeholder-uz="To'liq ism"
+                       data-placeholder-vi="Họ và tên"
+                       data-placeholder-cy="Enw llawn"
+                       data-placeholder-yo="Orukọ kikun"
+                       data-placeholder-zu="Igama eliphelele" required>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary w-100"
+                    data-label-af="Skep 'n Rekening"
+                    data-label-sq="Krijo një Llogari"
+                    data-label-am="መለያ ይፍጠሩ"
+                    data-label-ar="إنشاء حساب"
+                    data-label-hy="Ստեղծել հաշիվ"
+                    data-label-az="Hesab Yarat"
+                    data-label-eu="Sortu Kontu Bat"
+                    data-label-be="Стварыць акаўнт"
+                    data-label-bn="একটি অ্যাকাউন্ট তৈরি করুন"
+                    data-label-bs="Kreiraj Račun"
+                    data-label-bg="Създайте Акаунт"
+                    data-label-my="အကောင့်တစ်ခုဖန်တီးပါ"
+                    data-label-ca="Crea un Compte"
+                    data-label-ny="Pangani Akaunti"
+                    data-label-zh="创建账户"
+                    data-label-hr="Izradite Račun"
+                    data-label-cs="Vytvořit Účet"
+                    data-label-da="Opret en Konto"
+                    data-label-nl="Maak een Account"
+                    data-label-en="Create an Account"
+                    data-label-eo="Krei Konton"
+                    data-label-et="Loo Konto"
+                    data-label-fi="Luo Tili"
+                    data-label-fr="Créer un Compte"
+                    data-label-ka="შექმენით ანგარიში"
+                    data-label-de="Konto Erstellen"
+                    data-label-el="Δημιουργήστε Λογαριασμό"
+                    data-label-gu="ખાતું બનાવો"
+                    data-label-ht="Kreye yon Kont"
+                    data-label-ha="Ƙirƙiri Asusu"
+                    data-label-he="צור חשבון"
+                    data-label-hi="खाता बनाएँ"
+                    data-label-hu="Fiók Létrehozása"
+                    data-label-is="Búa til Reikning"
+                    data-label-ig="Mepụta Akaụntụ"
+                    data-label-id="Buat Akun"
+                    data-label-ga="Cruthaigh Cuntas"
+                    data-label-it="Crea un Account"
+                    data-label-ja="アカウントを作成する"
+                    data-label-jv="Gawe Akun"
+                    data-label-kn="ಖಾತೆಯನ್ನು ರಚಿಸಿ"
+                    data-label-ks="کھاتہ بنائیں"
+                    data-label-kk="Тіркелгі Жасау"
+                    data-label-km="បង្កើតគណនី"
+                    data-label-ky="Каттоо Түзүү"
+                    data-label-ko="계정 만들기"
+                    data-label-ku="Hesabek Çêbike"
+                    data-label-lo="ສ້າງບັນຊີ"
+                    data-label-la="Crea Rationem"
+                    data-label-lv="Izveidot Kontu"
+                    data-label-lt="Sukurti Paskyrą"
+                    data-label-mk="Креирај Сметка"
+                    data-label-mg="Mametraha Kaonty"
+                    data-label-ms="Buat Akaun"
+                    data-label-ml="ഒരു അക്കൗണ്ട് സൃഷ്ടിക്കുക"
+                    data-label-mt="Oħloq Kont"
+                    data-label-mr="खाते तयार करा"
+                    data-label-mn="Данс Бий Болгох"
+                    data-label-ne="खाता सिर्जना गर्नुहोस्"
+                    data-label-nb="Opprett en Konto"
+                    data-label-nn="Opprett Konto"
+                    data-label-no="Opprett Konto"
+                    data-label-or="ଖାତା ତିଆରି କରନ୍ତୁ"
+                    data-label-om="Cufi Akaunti"
+                    data-label-pa="ਖਾਤਾ ਬਣਾਓ"
+                    data-label-ps="یو حساب جوړ کړئ"
+                    data-label-fa="ایجاد حساب کاربری"
+                    data-label-pl="Utwórz Konto"
+                    data-label-pt="Criar uma Conta"
+                    data-label-ro="Creează un Cont"
+                    data-label-ru="Создать Аккаунт"
+                    data-label-sr="Направи Налог"
+                    data-label-si="ගිණුමක් තනන්න"
+                    data-label-sk="Vytvoriť Účet"
+                    data-label-sl="Ustvari Račun"
+                    data-label-so="Abuur Akoon"
+                    data-label-es="Crear una Cuenta"
+                    data-label-sw="Unda Akaunti"
+                    data-label-sv="Skapa ett Konto"
+                    data-label-tl="Lumikha ng Account"
+                    data-label-tg="Эҷод кардани Ҳисоб"
+                    data-label-ta="கணக்கை உருவாக்குங்கள்"
+                    data-label-te="ఖాతాను సృష్టించండి"
+                    data-label-th="สร้างบัญชี"
+                    data-label-tr="Hesap Oluştur"
+                    data-label-uk="Створити Обліковий Запис"
+                    data-label-ur="اکاؤنٹ بنائیں"
+                    data-label-uz="Hisob Yarating"
+                    data-label-vi="Tạo Tài Khoản"
+                    data-label-cy="Creu Cyfrif"
+                    data-label-yo="Ṣẹda Àkọọlẹ"
+                    data-label-zu="Dala I-akhawunti">
+                Create an Account
+            </button>
+
         </form>
-        <p>Already have an account? <a href="#">Login here</a></p>
     </div>
 </div>
 
-<!-- Bootstrap JS and dependencies -->
+<script>
+    $(document).ready(function () {
+        const defaultLanguage = "en";
+        const apiUrl = "http://api.costguard.test/api/languages";
+
+        function updateLanguageContent(selectedLanguage) {
+            $("[data-lang]").removeClass("active");
+            $(`[data-lang="${selectedLanguage}"]`).addClass("active");
+
+            // Update placeholders
+            $("[data-placeholder-en]").each(function () {
+                const placeholderText = $(this).data(`placeholder-${selectedLanguage}`);
+                $(this).attr("placeholder", placeholderText || $(this).data("placeholder-en"));
+            });
+
+            // Update button labels
+            $("[data-label-en]").each(function () {
+                const buttonText = $(this).data(`label-${selectedLanguage}`);
+                $(this).text(buttonText || $(this).data("label-en"));
+            });
+
+            // Update header labels
+            $("[data-label-en]").each(function () {
+                const headerText = $(this).data(`label-${selectedLanguage}`);
+                $(this).text(headerText || $(this).data("label-en"));
+            });
+        }
+
+
+        function loadLanguage() {
+            const storedLanguage = localStorage.getItem("selectedLanguage") || defaultLanguage;
+            $("#language-dropdown").val(storedLanguage);
+            updateLanguageContent(storedLanguage);
+        }
+
+        function populateLanguages() {
+            $.getJSON(apiUrl, function (data) {
+                const dropdown = $("#language-dropdown");
+                dropdown.empty();
+                const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
+                languages.forEach(([code, name]) => {
+                    dropdown.append(new Option(name, code));
+                });
+                loadLanguage();
+            });
+        }
+
+        $("#language-dropdown").on("change", function () {
+            const selectedLanguage = $(this).val();
+            localStorage.setItem("selectedLanguage", selectedLanguage);
+            updateLanguageContent(selectedLanguage);
+        });
+
+        populateLanguages();
+    });
+</script>
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
