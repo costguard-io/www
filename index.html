@@ -128,6 +128,123 @@
             font-weight: 100;
         }
 
+
+        /* Overall card styling */
+        .card {
+            border: none !important;
+            border-radius: 12px;
+            /*overflow: hidden;*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #ffffff;
+            margin: 1rem 0 1rem 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Hover effect for the whole card */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card headers with gradients for a premium feel */
+        .card-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card-header.bg-primary,
+        .btn-primary {
+            /* Fire: A vibrant magenta blending into a bright, fiery yellow */
+            background: linear-gradient(135deg, #fc466b 0%, #fee140 100%);
+            border: none;
+        }
+
+        .card-header.bg-success,
+        .btn-success {
+            /* Ice: A soothing aqua drifting into a soft lavender */
+            background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+            border: none;
+        }
+
+        .card-header.bg-danger,
+        .btn-danger {
+            /* Fire & Ice combined: Intense magenta transitioning into a cool, silvery finish */
+            background: linear-gradient(135deg, #f953c6 0%, #c0c0c0 100%);
+            border: none;
+        }
+
+
+        /* Card body text and spacing */
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+            color: #333;
+        }
+
+        .text-muted {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 2rem;
+        }
+
+        /* Card text */
+        .card-text {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Buttons with strong calls-to-action */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .selected::after {
+            content: '✓';
+            font-size: 18px;
+            color: #cdcdcd;
+            font-weight: bold;
+            background: #fff;
+            border-radius: 50%;
+            padding: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            display:block;
+            width: 35px;
+            height: 35px;
+        }
     </style>
 </head>
 <body>
@@ -2158,6 +2275,65 @@
                 </li>
             </ul>
         </div>
+
+
+        <div class="container my-5">
+            <div class="row justify-content-center d-flex">
+
+                <div class="plan col-md-12 d-flex">
+                    <div class="card text-center shadow-sm flex-fill">
+                        <div class="card-header bg-primary text-white">
+                            SOLO
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">$25</h4>
+                            <h5 class="text-muted">monthly</h5>
+                            <p class="card-text">Up to 250 receipts</p>
+                            <p class="card-text">Solo access</p>
+                            <div class="mt-auto">
+                                <button onclick="selectPlan('solo', this)" class="btn btn-primary">Choose Solo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan col-md-12 d-flex">
+                    <div class="card text-center shadow-sm flex-fill">
+                        <div class="card-header bg-success text-white">
+                            GROUP
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">$75</h4>
+                            <h5 class="text-muted">monthly</h5>
+                            <p class="card-text">Up to 2,500 receipts</p>
+                            <p class="card-text">Up to 10 users</p>
+                            <div class="mt-auto">
+                                <button onclick="selectPlan('group', this)" class="btn btn-success">Choose Group</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plan col-md-12 d-flex">
+                    <div class="card text-center shadow-sm flex-fill">
+                        <div class="card-header bg-danger text-white">
+                            PRO
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">$150</h4>
+                            <h5 class="text-muted">monthly</h5>
+                            <p class="card-text">Up to 20,000 receipts</p>
+                            <p class="card-text">Up to 50 users</p>
+                            <div class="mt-auto">
+                                <button onclick="selectPlan('pro', this)" class="btn btn-danger">Choose pro</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <div class="signup-form">
@@ -2260,6 +2436,14 @@
         <form id="registration-form">
             <div class="mb-3">
                 <select id="language-dropdown" class="form-select"></select>
+            </div>
+
+            <div class="mb-3" style="display: none;">
+                <select id="plan" name="plan" class="form-select">
+                    <option value="solo">Solo</option>
+                    <option value="group">Group</option>
+                    <option value="pro">Pro</option>
+                </select>
             </div>
 
             <div class="mb-3">
@@ -2465,741 +2649,740 @@
                        data-placeholder-zu="Iphasiwedi"
 
 
-                data-error-required-af="Wagwoord is nodig."
-                data-error-minlength-af="Wagwoord moet minstens 8 karakters lank wees."
-                data-error-mixedcase-af="Wagwoord moet beide hoofletters en kleinletters bevat."
-                data-error-letters-af="Wagwoord moet ten minste een letter bevat."
-                data-error-numbers-af="Wagwoord moet ten minste een nommer bevat."
-                data-error-symbols-af="Wagwoord moet ten minste een simbool bevat."
-
-
-                data-error-required-sq="Fjalëkalimi është i nevojshëm."
-                data-error-minlength-sq="Fjalëkalimi duhet të jetë të paktën 8 karaktere."
-                data-error-mixedcase-sq="Fjalëkalimi duhet të përfshijë shkronja të mëdha dhe të vogla."
-                data-error-letters-sq="Fjalëkalimi duhet të përmbajë të paktën një shkronjë."
-                data-error-numbers-sq="Fjalëkalimi duhet të përmbajë të paktën një numër."
-                data-error-symbols-sq="Fjalëkalimi duhet të përfshijë të paktën një simbol."
-
-
-                data-error-required-am="የይለፍ ቃል ያስፈልጋል።"
-                data-error-minlength-am="የይለፍ ቃል ቢያንስ 8 ቁምፊ መሆን አለበት።"
-                data-error-mixedcase-am="የይለፍ ቃል የታችኛውንና የላይኛውን ፊደል ማካተት አለበት።"
-                data-error-letters-am="የይለፍ ቃል ቢያንስ አንድ ፊደል መካተት አለበት።"
-                data-error-numbers-am="የይለፍ ቃል ቢያንስ አንድ ቁጥር መካተት አለበት።"
-                data-error-symbols-am="የይለፍ ቃል ቢያንስ አንድ ምልክት መካተት አለበት።"
-
-
-                data-error-required-ar="كلمة المرور مطلوبة."
-                data-error-minlength-ar="يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
-                data-error-mixedcase-ar="يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة."
-                data-error-letters-ar="يجب أن تحتوي كلمة المرور على حرف واحد على الأقل."
-                data-error-numbers-ar="يجب أن تحتوي كلمة المرور على رقم واحد على الأقل."
-                data-error-symbols-ar="يجب أن تحتوي كلمة المرور على رمز واحد على الأقل."
-
-
-                data-error-required-hy="Գաղտնաբառը պարտադիր է:"
-                data-error-minlength-hy="Գաղտնաբառը պետք է լինի առնվազն 8 նիշ:"
-                data-error-mixedcase-hy="Գաղտնաբառը պետք է պարունակի մեծատառեր և փոքրատառեր:"
-                data-error-letters-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ տառ:"
-                data-error-numbers-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ թիվ:"
-                data-error-symbols-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ խորհրդանիշ:"
-
-
-                data-error-required-az="Şifrə tələb olunur."
-                data-error-minlength-az="Şifrə ən azı 8 simvol olmalıdır."
-                data-error-mixedcase-az="Şifrə həm böyük, həm də kiçik hərfləri ehtiva etməlidir."
-                data-error-letters-az="Şifrə ən azı bir hərf ehtiva etməlidir."
-                data-error-numbers-az="Şifrə ən azı bir rəqəm ehtiva etməlidir."
-                data-error-symbols-az="Şifrə ən azı bir simvol ehtiva etməlidir."
-
-
-                data-error-required-eu="Pasahitza beharrezkoa da."
-                data-error-minlength-eu="Pasahitzak gutxienez 8 karaktere izan behar ditu."
-                data-error-mixedcase-eu="Pasahitzak letra larriz eta xehez osatuta egon behar du."
-                data-error-letters-eu="Pasahitzak gutxienez letra bat izan behar du."
-                data-error-numbers-eu="Pasahitzak gutxienez zenbaki bat izan behar du."
-                data-error-symbols-eu="Pasahitzak gutxienez ikur bat izan behar du."
-
-
-                data-error-required-be="Патрабуецца пароль."
-                data-error-minlength-be="Пароль павінен быць не менш за 8 сімвалаў."
-                data-error-mixedcase-be="Пароль павінен ўключаць вялікія і малыя літары."
-                data-error-letters-be="Пароль павінен мець хаця б адну літару."
-                data-error-numbers-be="Пароль павінен ўключаць хаця б адну лічбу."
-                data-error-symbols-be="Пароль павінен ўключаць хаця б адзін сімвал."
-
-
-                data-error-required-bn="পাসওয়ার্ড আবশ্যক।"
-                data-error-minlength-bn="পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।"
-                data-error-mixedcase-bn="পাসওয়ার্ডে বড় হাতের এবং ছোট হাতের অক্ষর থাকতে হবে।"
-                data-error-letters-bn="পাসওয়ার্ডে অন্তত একটি অক্ষর থাকতে হবে।"
-                data-error-numbers-bn="পাসওয়ার্ডে অন্তত একটি সংখ্যা থাকতে হবে।"
-                data-error-symbols-bn="পাসওয়ার্ডে অন্তত একটি চিহ্ন থাকতে হবে।"
-
-
-                data-error-required-bs="Lozinka je obavezna."
-                data-error-minlength-bs="Lozinka mora imati najmanje 8 karaktera."
-                data-error-mixedcase-bs="Lozinka mora sadržavati velika i mala slova."
-                data-error-letters-bs="Lozinka mora sadržavati najmanje jedno slovo."
-                data-error-numbers-bs="Lozinka mora sadržavati najmanje jedan broj."
-                data-error-symbols-bs="Lozinka mora sadržavati najmanje jedan simbol."
-
-
-                data-error-required-bg="Паролата е задължителна."
-                data-error-minlength-bg="Паролата трябва да е поне 8 символа."
-                data-error-mixedcase-bg="Паролата трябва да съдържа главни и малки букви."
-                data-error-letters-bg="Паролата трябва да съдържа поне една буква."
-                data-error-numbers-bg="Паролата трябва да съдържа поне една цифра."
-                data-error-symbols-bg="Паролата трябва да съдържа поне един символ."
-
-
-                data-error-required-my="စကားဝှက် လိုအပ်ပါသည်။"
-                data-error-minlength-my="စကားဝှက်တွင် အနည်းဆုံး အက္ခရာ ၈ လုံး ပါရှိရမည်။"
-                data-error-mixedcase-my="စကားဝှက်တွင် လက်တင်စာလုံးအကြီးနှင့် အငယ်များ ပါရှိရမည်။"
-                data-error-letters-my="စကားဝှက်တွင် အက္ခရာ အနည်းဆုံး တစ်လုံး ပါရှိရမည်။"
-                data-error-numbers-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော ကိန်းဂဏန်း ပါရှိရမည်။"
-                data-error-symbols-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော သင်္ကေတ ပါရှိရမည်။"
-
-
-                data-error-required-ca="La contrasenya és obligatòria."
-                data-error-minlength-ca="La contrasenya ha de tenir almenys 8 caràcters."
-                data-error-mixedcase-ca="La contrasenya ha d'incloure majúscules i minúscules."
-                data-error-letters-ca="La contrasenya ha de contenir almenys una lletra."
-                data-error-numbers-ca="La contrasenya ha de contenir almenys un número."
-                data-error-symbols-ca="La contrasenya ha d'incloure almenys un símbol."
+                       data-error-required-af="Wagwoord is nodig."
+                       data-error-minlength-af="Wagwoord moet minstens 8 karakters lank wees."
+                       data-error-mixedcase-af="Wagwoord moet beide hoofletters en kleinletters bevat."
+                       data-error-letters-af="Wagwoord moet ten minste een letter bevat."
+                       data-error-numbers-af="Wagwoord moet ten minste een nommer bevat."
+                       data-error-symbols-af="Wagwoord moet ten minste een simbool bevat."
+
+
+                       data-error-required-sq="Fjalëkalimi është i nevojshëm."
+                       data-error-minlength-sq="Fjalëkalimi duhet të jetë të paktën 8 karaktere."
+                       data-error-mixedcase-sq="Fjalëkalimi duhet të përfshijë shkronja të mëdha dhe të vogla."
+                       data-error-letters-sq="Fjalëkalimi duhet të përmbajë të paktën një shkronjë."
+                       data-error-numbers-sq="Fjalëkalimi duhet të përmbajë të paktën një numër."
+                       data-error-symbols-sq="Fjalëkalimi duhet të përfshijë të paktën një simbol."
+
+
+                       data-error-required-am="የይለፍ ቃል ያስፈልጋል።"
+                       data-error-minlength-am="የይለፍ ቃል ቢያንስ 8 ቁምፊ መሆን አለበት።"
+                       data-error-mixedcase-am="የይለፍ ቃል የታችኛውንና የላይኛውን ፊደል ማካተት አለበት።"
+                       data-error-letters-am="የይለፍ ቃል ቢያንስ አንድ ፊደል መካተት አለበት።"
+                       data-error-numbers-am="የይለፍ ቃል ቢያንስ አንድ ቁጥር መካተት አለበት።"
+                       data-error-symbols-am="የይለፍ ቃል ቢያንስ አንድ ምልክት መካተት አለበት።"
+
+
+                       data-error-required-ar="كلمة المرور مطلوبة."
+                       data-error-minlength-ar="يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
+                       data-error-mixedcase-ar="يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة."
+                       data-error-letters-ar="يجب أن تحتوي كلمة المرور على حرف واحد على الأقل."
+                       data-error-numbers-ar="يجب أن تحتوي كلمة المرور على رقم واحد على الأقل."
+                       data-error-symbols-ar="يجب أن تحتوي كلمة المرور على رمز واحد على الأقل."
+
+
+                       data-error-required-hy="Գաղտնաբառը պարտադիր է:"
+                       data-error-minlength-hy="Գաղտնաբառը պետք է լինի առնվազն 8 նիշ:"
+                       data-error-mixedcase-hy="Գաղտնաբառը պետք է պարունակի մեծատառեր և փոքրատառեր:"
+                       data-error-letters-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ տառ:"
+                       data-error-numbers-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ թիվ:"
+                       data-error-symbols-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ խորհրդանիշ:"
+
+
+                       data-error-required-az="Şifrə tələb olunur."
+                       data-error-minlength-az="Şifrə ən azı 8 simvol olmalıdır."
+                       data-error-mixedcase-az="Şifrə həm böyük, həm də kiçik hərfləri ehtiva etməlidir."
+                       data-error-letters-az="Şifrə ən azı bir hərf ehtiva etməlidir."
+                       data-error-numbers-az="Şifrə ən azı bir rəqəm ehtiva etməlidir."
+                       data-error-symbols-az="Şifrə ən azı bir simvol ehtiva etməlidir."
+
+
+                       data-error-required-eu="Pasahitza beharrezkoa da."
+                       data-error-minlength-eu="Pasahitzak gutxienez 8 karaktere izan behar ditu."
+                       data-error-mixedcase-eu="Pasahitzak letra larriz eta xehez osatuta egon behar du."
+                       data-error-letters-eu="Pasahitzak gutxienez letra bat izan behar du."
+                       data-error-numbers-eu="Pasahitzak gutxienez zenbaki bat izan behar du."
+                       data-error-symbols-eu="Pasahitzak gutxienez ikur bat izan behar du."
+
+
+                       data-error-required-be="Патрабуецца пароль."
+                       data-error-minlength-be="Пароль павінен быць не менш за 8 сімвалаў."
+                       data-error-mixedcase-be="Пароль павінен ўключаць вялікія і малыя літары."
+                       data-error-letters-be="Пароль павінен мець хаця б адну літару."
+                       data-error-numbers-be="Пароль павінен ўключаць хаця б адну лічбу."
+                       data-error-symbols-be="Пароль павінен ўключаць хаця б адзін сімвал."
+
+
+                       data-error-required-bn="পাসওয়ার্ড আবশ্যক।"
+                       data-error-minlength-bn="পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।"
+                       data-error-mixedcase-bn="পাসওয়ার্ডে বড় হাতের এবং ছোট হাতের অক্ষর থাকতে হবে।"
+                       data-error-letters-bn="পাসওয়ার্ডে অন্তত একটি অক্ষর থাকতে হবে।"
+                       data-error-numbers-bn="পাসওয়ার্ডে অন্তত একটি সংখ্যা থাকতে হবে।"
+                       data-error-symbols-bn="পাসওয়ার্ডে অন্তত একটি চিহ্ন থাকতে হবে।"
+
+
+                       data-error-required-bs="Lozinka je obavezna."
+                       data-error-minlength-bs="Lozinka mora imati najmanje 8 karaktera."
+                       data-error-mixedcase-bs="Lozinka mora sadržavati velika i mala slova."
+                       data-error-letters-bs="Lozinka mora sadržavati najmanje jedno slovo."
+                       data-error-numbers-bs="Lozinka mora sadržavati najmanje jedan broj."
+                       data-error-symbols-bs="Lozinka mora sadržavati najmanje jedan simbol."
+
+
+                       data-error-required-bg="Паролата е задължителна."
+                       data-error-minlength-bg="Паролата трябва да е поне 8 символа."
+                       data-error-mixedcase-bg="Паролата трябва да съдържа главни и малки букви."
+                       data-error-letters-bg="Паролата трябва да съдържа поне една буква."
+                       data-error-numbers-bg="Паролата трябва да съдържа поне една цифра."
+                       data-error-symbols-bg="Паролата трябва да съдържа поне един символ."
+
+
+                       data-error-required-my="စကားဝှက် လိုအပ်ပါသည်။"
+                       data-error-minlength-my="စကားဝှက်တွင် အနည်းဆုံး အက္ခရာ ၈ လုံး ပါရှိရမည်။"
+                       data-error-mixedcase-my="စကားဝှက်တွင် လက်တင်စာလုံးအကြီးနှင့် အငယ်များ ပါရှိရမည်။"
+                       data-error-letters-my="စကားဝှက်တွင် အက္ခရာ အနည်းဆုံး တစ်လုံး ပါရှိရမည်။"
+                       data-error-numbers-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော ကိန်းဂဏန်း ပါရှိရမည်။"
+                       data-error-symbols-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော သင်္ကေတ ပါရှိရမည်။"
+
+
+                       data-error-required-ca="La contrasenya és obligatòria."
+                       data-error-minlength-ca="La contrasenya ha de tenir almenys 8 caràcters."
+                       data-error-mixedcase-ca="La contrasenya ha d'incloure majúscules i minúscules."
+                       data-error-letters-ca="La contrasenya ha de contenir almenys una lletra."
+                       data-error-numbers-ca="La contrasenya ha de contenir almenys un número."
+                       data-error-symbols-ca="La contrasenya ha d'incloure almenys un símbol."
 
 
-                data-error-required-ny="Achinsinsi akufunika."
-                data-error-minlength-ny="Achinsinsi ayenera kukhala osachepera zilembo 8."
-                data-error-mixedcase-ny="Achinsinsi ayenera kukhala ndi zilembo zazikulu ndi zazing'ono."
-                data-error-letters-ny="Achinsinsi ayenera kukhala ndi kalata imodzi osachepera."
-                data-error-numbers-ny="Achinsinsi ayenera kukhala ndi nambala imodzi osachepera."
-                data-error-symbols-ny="Achinsinsi ayenera kukhala ndi chizindikiro chimodzi osachepera."
+                       data-error-required-ny="Achinsinsi akufunika."
+                       data-error-minlength-ny="Achinsinsi ayenera kukhala osachepera zilembo 8."
+                       data-error-mixedcase-ny="Achinsinsi ayenera kukhala ndi zilembo zazikulu ndi zazing'ono."
+                       data-error-letters-ny="Achinsinsi ayenera kukhala ndi kalata imodzi osachepera."
+                       data-error-numbers-ny="Achinsinsi ayenera kukhala ndi nambala imodzi osachepera."
+                       data-error-symbols-ny="Achinsinsi ayenera kukhala ndi chizindikiro chimodzi osachepera."
 
 
-                data-error-required-zh="需要密码。"
-                data-error-minlength-zh="密码必须至少包含8个字符。"
-                data-error-mixedcase-zh="密码必须包含大小写字母。"
-                data-error-letters-zh="密码必须至少包含一个字母。"
-                data-error-numbers-zh="密码必须至少包含一个数字。"
-                data-error-symbols-zh="密码必须至少包含一个符号。"
+                       data-error-required-zh="需要密码。"
+                       data-error-minlength-zh="密码必须至少包含8个字符。"
+                       data-error-mixedcase-zh="密码必须包含大小写字母。"
+                       data-error-letters-zh="密码必须至少包含一个字母。"
+                       data-error-numbers-zh="密码必须至少包含一个数字。"
+                       data-error-symbols-zh="密码必须至少包含一个符号。"
 
 
-                data-error-required-hr="Lozinka je obavezna."
-                data-error-minlength-hr="Lozinka mora imati najmanje 8 znakova."
-                data-error-mixedcase-hr="Lozinka mora sadržavati velika i mala slova."
-                data-error-letters-hr="Lozinka mora sadržavati barem jedno slovo."
-                data-error-numbers-hr="Lozinka mora sadržavati barem jedan broj."
-                data-error-symbols-hr="Lozinka mora sadržavati barem jedan simbol."
+                       data-error-required-hr="Lozinka je obavezna."
+                       data-error-minlength-hr="Lozinka mora imati najmanje 8 znakova."
+                       data-error-mixedcase-hr="Lozinka mora sadržavati velika i mala slova."
+                       data-error-letters-hr="Lozinka mora sadržavati barem jedno slovo."
+                       data-error-numbers-hr="Lozinka mora sadržavati barem jedan broj."
+                       data-error-symbols-hr="Lozinka mora sadržavati barem jedan simbol."
 
 
-                data-error-required-cs="Heslo je povinné."
-                data-error-minlength-cs="Heslo musí mít alespoň 8 znaků."
-                data-error-mixedcase-cs="Heslo musí obsahovat velká i malá písmena."
-                data-error-letters-cs="Heslo musí obsahovat alespoň jedno písmeno."
-                data-error-numbers-cs="Heslo musí obsahovat alespoň jedno číslo."
-                data-error-symbols-cs="Heslo musí obsahovat alespoň jeden symbol."
+                       data-error-required-cs="Heslo je povinné."
+                       data-error-minlength-cs="Heslo musí mít alespoň 8 znaků."
+                       data-error-mixedcase-cs="Heslo musí obsahovat velká i malá písmena."
+                       data-error-letters-cs="Heslo musí obsahovat alespoň jedno písmeno."
+                       data-error-numbers-cs="Heslo musí obsahovat alespoň jedno číslo."
+                       data-error-symbols-cs="Heslo musí obsahovat alespoň jeden symbol."
 
 
-                data-error-required-da="Adgangskode er påkrævet."
-                data-error-minlength-da="Adgangskoden skal være mindst 8 tegn."
-                data-error-mixedcase-da="Adgangskoden skal indeholde både store og små bogstaver."
-                data-error-letters-da="Adgangskoden skal indeholde mindst ét bogstav."
-                data-error-numbers-da="Adgangskoden skal indeholde mindst ét tal."
-                data-error-symbols-da="Adgangskoden skal indeholde mindst ét symbol."
+                       data-error-required-da="Adgangskode er påkrævet."
+                       data-error-minlength-da="Adgangskoden skal være mindst 8 tegn."
+                       data-error-mixedcase-da="Adgangskoden skal indeholde både store og små bogstaver."
+                       data-error-letters-da="Adgangskoden skal indeholde mindst ét bogstav."
+                       data-error-numbers-da="Adgangskoden skal indeholde mindst ét tal."
+                       data-error-symbols-da="Adgangskoden skal indeholde mindst ét symbol."
 
 
-                data-error-required-nl="Wachtwoord is verplicht."
-                data-error-minlength-nl="Wachtwoord moet minimaal 8 tekens bevatten."
-                data-error-mixedcase-nl="Wachtwoord moet zowel hoofdletters als kleine letters bevatten."
-                data-error-letters-nl="Wachtwoord moet ten minste één letter bevatten."
-                data-error-numbers-nl="Wachtwoord moet ten minste één cijfer bevatten."
-                data-error-symbols-nl="Wachtwoord moet ten minste één symbool bevatten."
+                       data-error-required-nl="Wachtwoord is verplicht."
+                       data-error-minlength-nl="Wachtwoord moet minimaal 8 tekens bevatten."
+                       data-error-mixedcase-nl="Wachtwoord moet zowel hoofdletters als kleine letters bevatten."
+                       data-error-letters-nl="Wachtwoord moet ten minste één letter bevatten."
+                       data-error-numbers-nl="Wachtwoord moet ten minste één cijfer bevatten."
+                       data-error-symbols-nl="Wachtwoord moet ten minste één symbool bevatten."
 
 
-                data-error-required-en="Password is required."
-                data-error-minlength-en="Password must be at least 8 characters."
-                data-error-mixedcase-en="Password must include both uppercase and lowercase letters."
-                data-error-letters-en="Password must contain at least one letter."
-                data-error-numbers-en="Password must contain at least one number."
-                data-error-symbols-en="Password must include at least one symbol."
+                       data-error-required-en="Password is required."
+                       data-error-minlength-en="Password must be at least 8 characters."
+                       data-error-mixedcase-en="Password must include both uppercase and lowercase letters."
+                       data-error-letters-en="Password must contain at least one letter."
+                       data-error-numbers-en="Password must contain at least one number."
+                       data-error-symbols-en="Password must include at least one symbol."
 
 
-                data-error-required-eo="Pasvorto estas bezonata."
-                data-error-minlength-eo="Pasvorto devas havi almenaŭ 8 signojn."
-                data-error-mixedcase-eo="Pasvorto devas inkluzivi majusklojn kaj minusklojn."
-                data-error-letters-eo="Pasvorto devas enhavi almenaŭ unu literon."
-                data-error-numbers-eo="Pasvorto devas enhavi almenaŭ unu numeron."
-                data-error-symbols-eo="Pasvorto devas inkluzivi almenaŭ unu simbolon."
+                       data-error-required-eo="Pasvorto estas bezonata."
+                       data-error-minlength-eo="Pasvorto devas havi almenaŭ 8 signojn."
+                       data-error-mixedcase-eo="Pasvorto devas inkluzivi majusklojn kaj minusklojn."
+                       data-error-letters-eo="Pasvorto devas enhavi almenaŭ unu literon."
+                       data-error-numbers-eo="Pasvorto devas enhavi almenaŭ unu numeron."
+                       data-error-symbols-eo="Pasvorto devas inkluzivi almenaŭ unu simbolon."
 
 
-                data-error-required-et="Parool on nõutav."
-                data-error-minlength-et="Parool peab olema vähemalt 8 tähemärki pikk."
-                data-error-mixedcase-et="Parool peab sisaldama nii suuri kui ka väikeseid tähti."
-                data-error-letters-et="Parool peab sisaldama vähemalt ühte tähte."
-                data-error-numbers-et="Parool peab sisaldama vähemalt ühte numbrit."
-                data-error-symbols-et="Parool peab sisaldama vähemalt ühte sümbolit."
+                       data-error-required-et="Parool on nõutav."
+                       data-error-minlength-et="Parool peab olema vähemalt 8 tähemärki pikk."
+                       data-error-mixedcase-et="Parool peab sisaldama nii suuri kui ka väikeseid tähti."
+                       data-error-letters-et="Parool peab sisaldama vähemalt ühte tähte."
+                       data-error-numbers-et="Parool peab sisaldama vähemalt ühte numbrit."
+                       data-error-symbols-et="Parool peab sisaldama vähemalt ühte sümbolit."
 
 
-                data-error-required-fi="Salasana on pakollinen."
-                data-error-minlength-fi="Salasanan tulee olla vähintään 8 merkkiä pitkä."
-                data-error-mixedcase-fi="Salasanan tulee sisältää sekä isoja että pieniä kirjaimia."
-                data-error-letters-fi="Salasanan tulee sisältää vähintään yksi kirjain."
-                data-error-numbers-fi="Salasanan tulee sisältää vähintään yhden numeron."
-                data-error-symbols-fi="Salasanan tulee sisältää vähintään yhden symbolin."
+                       data-error-required-fi="Salasana on pakollinen."
+                       data-error-minlength-fi="Salasanan tulee olla vähintään 8 merkkiä pitkä."
+                       data-error-mixedcase-fi="Salasanan tulee sisältää sekä isoja että pieniä kirjaimia."
+                       data-error-letters-fi="Salasanan tulee sisältää vähintään yksi kirjain."
+                       data-error-numbers-fi="Salasanan tulee sisältää vähintään yhden numeron."
+                       data-error-symbols-fi="Salasanan tulee sisältää vähintään yhden symbolin."
 
 
-                data-error-required-fr="Le mot de passe est requis."
-                data-error-minlength-fr="Le mot de passe doit contenir au moins 8 caractères."
-                data-error-mixedcase-fr="Le mot de passe doit inclure des lettres majuscules et minuscules."
-                data-error-letters-fr="Le mot de passe doit contenir au moins une lettre."
-                data-error-numbers-fr="Le mot de passe doit contenir au moins un chiffre."
-                data-error-symbols-fr="Le mot de passe doit inclure au moins un symbole."
+                       data-error-required-fr="Le mot de passe est requis."
+                       data-error-minlength-fr="Le mot de passe doit contenir au moins 8 caractères."
+                       data-error-mixedcase-fr="Le mot de passe doit inclure des lettres majuscules et minuscules."
+                       data-error-letters-fr="Le mot de passe doit contenir au moins une lettre."
+                       data-error-numbers-fr="Le mot de passe doit contenir au moins un chiffre."
+                       data-error-symbols-fr="Le mot de passe doit inclure au moins un symbole."
 
 
-                data-error-required-ka="პაროლი სავალდებულოა."
-                data-error-minlength-ka="პაროლი უნდა იყოს მინიმუმ 8 სიმბოლო."
-                data-error-mixedcase-ka="პაროლში უნდა იყოს როგორც დიდი, ასევე მცირე ასოები."
-                data-error-letters-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ასოს."
-                data-error-numbers-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ციფრს."
-                data-error-symbols-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ სიმბოლოს."
+                       data-error-required-ka="პაროლი სავალდებულოა."
+                       data-error-minlength-ka="პაროლი უნდა იყოს მინიმუმ 8 სიმბოლო."
+                       data-error-mixedcase-ka="პაროლში უნდა იყოს როგორც დიდი, ასევე მცირე ასოები."
+                       data-error-letters-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ასოს."
+                       data-error-numbers-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ციფრს."
+                       data-error-symbols-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ სიმბოლოს."
 
 
-                data-error-required-de="Passwort ist erforderlich."
-                data-error-minlength-de="Das Passwort muss mindestens 8 Zeichen lang sein."
-                data-error-mixedcase-de="Das Passwort muss Groß- und Kleinbuchstaben enthalten."
-                data-error-letters-de="Das Passwort muss mindestens einen Buchstaben enthalten."
-                data-error-numbers-de="Das Passwort muss mindestens eine Zahl enthalten."
-                data-error-symbols-de="Das Passwort muss mindestens ein Symbol enthalten."
+                       data-error-required-de="Passwort ist erforderlich."
+                       data-error-minlength-de="Das Passwort muss mindestens 8 Zeichen lang sein."
+                       data-error-mixedcase-de="Das Passwort muss Groß- und Kleinbuchstaben enthalten."
+                       data-error-letters-de="Das Passwort muss mindestens einen Buchstaben enthalten."
+                       data-error-numbers-de="Das Passwort muss mindestens eine Zahl enthalten."
+                       data-error-symbols-de="Das Passwort muss mindestens ein Symbol enthalten."
 
 
-                data-error-required-el="Απαιτείται κωδικός πρόσβασης."
-                data-error-minlength-el="Ο κωδικός πρέπει να είναι τουλάχιστον 8 χαρακτήρες."
-                data-error-mixedcase-el="Ο κωδικός πρέπει να περιέχει κεφαλαία και πεζά γράμματα."
-                data-error-letters-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα γράμμα."
-                data-error-numbers-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον έναν αριθμό."
-                data-error-symbols-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα σύμβολο."
+                       data-error-required-el="Απαιτείται κωδικός πρόσβασης."
+                       data-error-minlength-el="Ο κωδικός πρέπει να είναι τουλάχιστον 8 χαρακτήρες."
+                       data-error-mixedcase-el="Ο κωδικός πρέπει να περιέχει κεφαλαία και πεζά γράμματα."
+                       data-error-letters-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα γράμμα."
+                       data-error-numbers-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον έναν αριθμό."
+                       data-error-symbols-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα σύμβολο."
 
 
-                data-error-required-gu="પાસવર્ડ જરૂરી છે."
-                data-error-minlength-gu="પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરોનો હોવો જોઈએ."
-                data-error-mixedcase-gu="પાસવર્ડમાં અપર અને લોવરકેસ અક્ષરો હોવા જોઈએ."
-                data-error-letters-gu="પાસવર્ડમાં ઓછામાં ઓછો એક અક્ષર હોવો જોઈએ."
-                data-error-numbers-gu="પાસવર્ડમાં ઓછામાં ઓછો એક નંબર હોવો જોઈએ."
-                data-error-symbols-gu="પાસવર્ડમાં ઓછામાં ઓછું એક પ્રતીક હોવું જોઈએ."
+                       data-error-required-gu="પાસવર્ડ જરૂરી છે."
+                       data-error-minlength-gu="પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરોનો હોવો જોઈએ."
+                       data-error-mixedcase-gu="પાસવર્ડમાં અપર અને લોવરકેસ અક્ષરો હોવા જોઈએ."
+                       data-error-letters-gu="પાસવર્ડમાં ઓછામાં ઓછો એક અક્ષર હોવો જોઈએ."
+                       data-error-numbers-gu="પાસવર્ડમાં ઓછામાં ઓછો એક નંબર હોવો જોઈએ."
+                       data-error-symbols-gu="પાસવર્ડમાં ઓછામાં ઓછું એક પ્રતીક હોવું જોઈએ."
 
 
-                data-error-required-ht="Modpas obligatwa."
-                data-error-minlength-ht="Modpas dwe gen omwen 8 karaktè."
-                data-error-mixedcase-ht="Modpas dwe gen lèt majiskil ak miniskil."
-                data-error-letters-ht="Modpas dwe gen omwen yon lèt."
-                data-error-numbers-ht="Modpas dwe gen omwen yon chif."
-                data-error-symbols-ht="Modpas dwe gen omwen yon senbòl."
+                       data-error-required-ht="Modpas obligatwa."
+                       data-error-minlength-ht="Modpas dwe gen omwen 8 karaktè."
+                       data-error-mixedcase-ht="Modpas dwe gen lèt majiskil ak miniskil."
+                       data-error-letters-ht="Modpas dwe gen omwen yon lèt."
+                       data-error-numbers-ht="Modpas dwe gen omwen yon chif."
+                       data-error-symbols-ht="Modpas dwe gen omwen yon senbòl."
 
 
-                data-error-required-ha="Kalmar sirri tana da bukata."
-                data-error-minlength-ha="Kalmar sirri dole ta kasance aƙalla haruffa 8."
-                data-error-mixedcase-ha="Kalmar sirri dole ta haɗa manyan da ƙananan haruffa."
-                data-error-letters-ha="Kalmar sirri dole ta ƙunshi aƙalla harafi ɗaya."
-                data-error-numbers-ha="Kalmar sirri dole ta ƙunshi aƙalla lamba ɗaya."
-                data-error-symbols-ha="Kalmar sirri dole ta ƙunshi aƙalla alama ɗaya."
+                       data-error-required-ha="Kalmar sirri tana da bukata."
+                       data-error-minlength-ha="Kalmar sirri dole ta kasance aƙalla haruffa 8."
+                       data-error-mixedcase-ha="Kalmar sirri dole ta haɗa manyan da ƙananan haruffa."
+                       data-error-letters-ha="Kalmar sirri dole ta ƙunshi aƙalla harafi ɗaya."
+                       data-error-numbers-ha="Kalmar sirri dole ta ƙunshi aƙalla lamba ɗaya."
+                       data-error-symbols-ha="Kalmar sirri dole ta ƙunshi aƙalla alama ɗaya."
 
 
-                data-error-required-he="נדרש סיסמה."
-                data-error-minlength-he="הסיסמה חייבת להיות לפחות 8 תווים."
-                data-error-mixedcase-he="הסיסמה חייבת להכיל אותיות גדולות וקטנות."
-                data-error-letters-he="הסיסמה חייבת להכיל לפחות אות אחת."
-                data-error-numbers-he="הסיסמה חייבת להכיל לפחות מספר אחד."
-                data-error-symbols-he="הסיסמה חייבת להכיל לפחות סימן אחד."
+                       data-error-required-he="נדרש סיסמה."
+                       data-error-minlength-he="הסיסמה חייבת להיות לפחות 8 תווים."
+                       data-error-mixedcase-he="הסיסמה חייבת להכיל אותיות גדולות וקטנות."
+                       data-error-letters-he="הסיסמה חייבת להכיל לפחות אות אחת."
+                       data-error-numbers-he="הסיסמה חייבת להכיל לפחות מספר אחד."
+                       data-error-symbols-he="הסיסמה חייבת להכיל לפחות סימן אחד."
 
 
-                data-error-required-hi="पासवर्ड आवश्यक है।"
-                data-error-minlength-hi="पासवर्ड कम से कम 8 वर्णों का होना चाहिए।"
-                data-error-mixedcase-hi="पासवर्ड में बड़े और छोटे अक्षर शामिल होने चाहिए।"
-                data-error-letters-hi="पासवर्ड में कम से कम एक अक्षर होना चाहिए।"
-                data-error-numbers-hi="पासवर्ड में कम से कम एक संख्या होनी चाहिए।"
-                data-error-symbols-hi="पासवर्ड में कम से कम एक प्रतीक होना चाहिए।"
+                       data-error-required-hi="पासवर्ड आवश्यक है।"
+                       data-error-minlength-hi="पासवर्ड कम से कम 8 वर्णों का होना चाहिए।"
+                       data-error-mixedcase-hi="पासवर्ड में बड़े और छोटे अक्षर शामिल होने चाहिए।"
+                       data-error-letters-hi="पासवर्ड में कम से कम एक अक्षर होना चाहिए।"
+                       data-error-numbers-hi="पासवर्ड में कम से कम एक संख्या होनी चाहिए।"
+                       data-error-symbols-hi="पासवर्ड में कम से कम एक प्रतीक होना चाहिए।"
 
 
-                data-error-required-hu="A jelszó megadása kötelező."
-                data-error-minlength-hu="A jelszónak legalább 8 karakter hosszúnak kell lennie."
-                data-error-mixedcase-hu="A jelszónak tartalmaznia kell kis- és nagybetűket is."
-                data-error-letters-hu="A jelszónak tartalmaznia kell legalább egy betűt."
-                data-error-numbers-hu="A jelszónak tartalmaznia kell legalább egy számot."
-                data-error-symbols-hu="A jelszónak tartalmaznia kell legalább egy szimbólumot."
+                       data-error-required-hu="A jelszó megadása kötelező."
+                       data-error-minlength-hu="A jelszónak legalább 8 karakter hosszúnak kell lennie."
+                       data-error-mixedcase-hu="A jelszónak tartalmaznia kell kis- és nagybetűket is."
+                       data-error-letters-hu="A jelszónak tartalmaznia kell legalább egy betűt."
+                       data-error-numbers-hu="A jelszónak tartalmaznia kell legalább egy számot."
+                       data-error-symbols-hu="A jelszónak tartalmaznia kell legalább egy szimbólumot."
 
 
-                data-error-required-is="Lykilorð er nauðsynlegt."
-                data-error-minlength-is="Lykilorð verður að vera að minnsta kosti 8 stafir."
-                data-error-mixedcase-is="Lykilorð verður að innihalda bæði há- og lágstafi."
-                data-error-letters-is="Lykilorð verður að innihalda að minnsta kosti einn staf."
-                data-error-numbers-is="Lykilorð verður að innihalda að minnsta kosti eina tölu."
-                data-error-symbols-is="Lykilorð verður að innihalda að minnsta kosti eitt tákn."
+                       data-error-required-is="Lykilorð er nauðsynlegt."
+                       data-error-minlength-is="Lykilorð verður að vera að minnsta kosti 8 stafir."
+                       data-error-mixedcase-is="Lykilorð verður að innihalda bæði há- og lágstafi."
+                       data-error-letters-is="Lykilorð verður að innihalda að minnsta kosti einn staf."
+                       data-error-numbers-is="Lykilorð verður að innihalda að minnsta kosti eina tölu."
+                       data-error-symbols-is="Lykilorð verður að innihalda að minnsta kosti eitt tákn."
 
 
-                data-error-required-ig="Achọrọ paswọọdụ."
-                data-error-minlength-ig="Paswọọdụ ga-adịkarịsịa mkpụrụokwu 8."
-                data-error-mixedcase-ig="Paswọọdụ ga-agụnye obere na nnukwu akwụkwọ ozi."
-                data-error-letters-ig="Paswọọdụ ga-enwe opekata mpe otu akwụkwọ ozi."
-                data-error-numbers-ig="Paswọọdụ ga-enwe opekata mpe otu nọmba."
-                data-error-symbols-ig="Paswọọdụ ga-agụnye opekata mpe otu akara."
+                       data-error-required-ig="Achọrọ paswọọdụ."
+                       data-error-minlength-ig="Paswọọdụ ga-adịkarịsịa mkpụrụokwu 8."
+                       data-error-mixedcase-ig="Paswọọdụ ga-agụnye obere na nnukwu akwụkwọ ozi."
+                       data-error-letters-ig="Paswọọdụ ga-enwe opekata mpe otu akwụkwọ ozi."
+                       data-error-numbers-ig="Paswọọdụ ga-enwe opekata mpe otu nọmba."
+                       data-error-symbols-ig="Paswọọdụ ga-agụnye opekata mpe otu akara."
 
 
-                data-error-required-id="Kata sandi diperlukan."
-                data-error-minlength-id="Kata sandi harus minimal 8 karakter."
-                data-error-mixedcase-id="Kata sandi harus mencakup huruf besar dan kecil."
-                data-error-letters-id="Kata sandi harus mengandung setidaknya satu huruf."
-                data-error-numbers-id="Kata sandi harus mengandung setidaknya satu angka."
-                data-error-symbols-id="Kata sandi harus mencakup setidaknya satu simbol."
+                       data-error-required-id="Kata sandi diperlukan."
+                       data-error-minlength-id="Kata sandi harus minimal 8 karakter."
+                       data-error-mixedcase-id="Kata sandi harus mencakup huruf besar dan kecil."
+                       data-error-letters-id="Kata sandi harus mengandung setidaknya satu huruf."
+                       data-error-numbers-id="Kata sandi harus mengandung setidaknya satu angka."
+                       data-error-symbols-id="Kata sandi harus mencakup setidaknya satu simbol."
 
 
-                data-error-required-ga="Teastaíonn pasfhocal."
-                data-error-minlength-ga="Caithfidh an pasfhocal a bheith ar a laghad 8 gcarachtar."
-                data-error-mixedcase-ga="Caithfidh an pasfhocal litreacha móra agus beaga a áireamh."
-                data-error-letters-ga="Caithfidh an pasfhocal litir amháin ar a laghad a bheith ann."
-                data-error-numbers-ga="Caithfidh an pasfhocal uimhir amháin ar a laghad a bheith ann."
-                data-error-symbols-ga="Caithfidh an pasfhocal siombail amháin ar a laghad a áireamh."
+                       data-error-required-ga="Teastaíonn pasfhocal."
+                       data-error-minlength-ga="Caithfidh an pasfhocal a bheith ar a laghad 8 gcarachtar."
+                       data-error-mixedcase-ga="Caithfidh an pasfhocal litreacha móra agus beaga a áireamh."
+                       data-error-letters-ga="Caithfidh an pasfhocal litir amháin ar a laghad a bheith ann."
+                       data-error-numbers-ga="Caithfidh an pasfhocal uimhir amháin ar a laghad a bheith ann."
+                       data-error-symbols-ga="Caithfidh an pasfhocal siombail amháin ar a laghad a áireamh."
 
 
-                data-error-required-it="La password è obbligatoria."
-                data-error-minlength-it="La password deve contenere almeno 8 caratteri."
-                data-error-mixedcase-it="La password deve includere lettere maiuscole e minuscole."
-                data-error-letters-it="La password deve contenere almeno una lettera."
-                data-error-numbers-it="La password deve contenere almeno un numero."
-                data-error-symbols-it="La password deve includere almeno un simbolo."
+                       data-error-required-it="La password è obbligatoria."
+                       data-error-minlength-it="La password deve contenere almeno 8 caratteri."
+                       data-error-mixedcase-it="La password deve includere lettere maiuscole e minuscole."
+                       data-error-letters-it="La password deve contenere almeno una lettera."
+                       data-error-numbers-it="La password deve contenere almeno un numero."
+                       data-error-symbols-it="La password deve includere almeno un simbolo."
 
 
-                data-error-required-ja="パスワードは必須です。"
-                data-error-minlength-ja="パスワードは少なくとも8文字である必要があります。"
-                data-error-mixedcase-ja="パスワードには大文字と小文字を含める必要があります。"
-                data-error-letters-ja="パスワードには少なくとも1つの文字が含まれている必要があります。"
-                data-error-numbers-ja="パスワードには少なくとも1つの数字が含まれている必要があります。"
-                data-error-symbols-ja="パスワードには少なくとも1つの記号を含める必要があります。"
+                       data-error-required-ja="パスワードは必須です。"
+                       data-error-minlength-ja="パスワードは少なくとも8文字である必要があります。"
+                       data-error-mixedcase-ja="パスワードには大文字と小文字を含める必要があります。"
+                       data-error-letters-ja="パスワードには少なくとも1つの文字が含まれている必要があります。"
+                       data-error-numbers-ja="パスワードには少なくとも1つの数字が含まれている必要があります。"
+                       data-error-symbols-ja="パスワードには少なくとも1つの記号を含める必要があります。"
 
 
-                data-error-required-jv="Tembung sandhi dibutuhake."
-                data-error-minlength-jv="Tembung sandhi kudu paling ora 8 karakter."
-                data-error-mixedcase-jv="Tembung sandhi kudu ngemot huruf gedhe lan cilik."
-                data-error-letters-jv="Tembung sandhi kudu ngemot paling ora siji huruf."
-                data-error-numbers-jv="Tembung sandhi kudu ngemot paling ora siji angka."
-                data-error-symbols-jv="Tembung sandhi kudu ngemot paling ora siji simbol."
+                       data-error-required-jv="Tembung sandhi dibutuhake."
+                       data-error-minlength-jv="Tembung sandhi kudu paling ora 8 karakter."
+                       data-error-mixedcase-jv="Tembung sandhi kudu ngemot huruf gedhe lan cilik."
+                       data-error-letters-jv="Tembung sandhi kudu ngemot paling ora siji huruf."
+                       data-error-numbers-jv="Tembung sandhi kudu ngemot paling ora siji angka."
+                       data-error-symbols-jv="Tembung sandhi kudu ngemot paling ora siji simbol."
 
 
-                data-error-required-kn="ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
-                data-error-minlength-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
-                data-error-mixedcase-kn="ಪಾಸ್ವರ್ಡ್ ದೊಡ್ಡ ಅಕ್ಷರ ಮತ್ತು ಸಣ್ಣ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರಬೇಕು."
-                data-error-letters-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಅಕ್ಷರವನ್ನು ಹೊಂದಿರಬೇಕು."
-                data-error-numbers-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಖ್ಯೆ ಹೊಂದಿರಬೇಕು."
-                data-error-symbols-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಕೇತವನ್ನು ಹೊಂದಿರಬೇಕು."
+                       data-error-required-kn="ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
+                       data-error-minlength-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
+                       data-error-mixedcase-kn="ಪಾಸ್ವರ್ಡ್ ದೊಡ್ಡ ಅಕ್ಷರ ಮತ್ತು ಸಣ್ಣ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರಬೇಕು."
+                       data-error-letters-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಅಕ್ಷರವನ್ನು ಹೊಂದಿರಬೇಕು."
+                       data-error-numbers-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಖ್ಯೆ ಹೊಂದಿರಬೇಕು."
+                       data-error-symbols-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಕೇತವನ್ನು ಹೊಂದಿರಬೇಕು."
 
 
-                data-error-required-ks="پاس ورڈ لازمی ہے۔"
-                data-error-minlength-ks="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
-                data-error-mixedcase-ks="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
-                data-error-letters-ks="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
-                data-error-numbers-ks="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
-                data-error-symbols-ks="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
+                       data-error-required-ks="پاس ورڈ لازمی ہے۔"
+                       data-error-minlength-ks="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
+                       data-error-mixedcase-ks="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
+                       data-error-letters-ks="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
+                       data-error-numbers-ks="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
+                       data-error-symbols-ks="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
 
 
-                data-error-required-kk="Құпия сөз қажет."
-                data-error-minlength-kk="Құпия сөз кемінде 8 таңбадан тұруы керек."
-                data-error-mixedcase-kk="Құпия сөзде бас және кіші әріптер болуы керек."
-                data-error-letters-kk="Құпия сөзде кемінде бір әріп болуы керек."
-                data-error-numbers-kk="Құпия сөзде кемінде бір сан болуы керек."
-                data-error-symbols-kk="Құпия сөзде кемінде бір символ болуы керек."
+                       data-error-required-kk="Құпия сөз қажет."
+                       data-error-minlength-kk="Құпия сөз кемінде 8 таңбадан тұруы керек."
+                       data-error-mixedcase-kk="Құпия сөзде бас және кіші әріптер болуы керек."
+                       data-error-letters-kk="Құпия сөзде кемінде бір әріп болуы керек."
+                       data-error-numbers-kk="Құпия сөзде кемінде бір сан болуы керек."
+                       data-error-symbols-kk="Құпия сөзде кемінде бір символ болуы керек."
 
 
-                data-error-required-km="ទាមទារ​ពាក្យ​សម្ងាត់។"
-                data-error-minlength-km="ពាក្យសម្ងាត់​ត្រូវមានយ៉ាងហោចណាស់ 8 តួអក្សរ។"
-                data-error-mixedcase-km="ពាក្យសម្ងាត់ត្រូវមានអក្សរធំនិងអក្សរតូច។"
-                data-error-letters-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់អក្សរមួយ។"
-                data-error-numbers-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់លេខមួយ។"
-                data-error-symbols-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់និមិត្តសញ្ញាមួយ។"
+                       data-error-required-km="ទាមទារ​ពាក្យ​សម្ងាត់។"
+                       data-error-minlength-km="ពាក្យសម្ងាត់​ត្រូវមានយ៉ាងហោចណាស់ 8 តួអក្សរ។"
+                       data-error-mixedcase-km="ពាក្យសម្ងាត់ត្រូវមានអក្សរធំនិងអក្សរតូច។"
+                       data-error-letters-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់អក្សរមួយ។"
+                       data-error-numbers-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់លេខមួយ។"
+                       data-error-symbols-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់និមិត្តសញ្ញាមួយ។"
 
 
-                data-error-required-ky="Сыр сөз талап кылынат."
-                data-error-minlength-ky="Сыр сөз кеминде 8 символ болушу керек."
-                data-error-mixedcase-ky="Сыр сөздө чоң жана кичине тамгалар болушу керек."
-                data-error-letters-ky="Сыр сөздө кеминде бир тамга болушу керек."
-                data-error-numbers-ky="Сыр сөздө кеминде бир сан болушу керек."
-                data-error-symbols-ky="Сыр сөздө кеминде бир символ болушу керек."
+                       data-error-required-ky="Сыр сөз талап кылынат."
+                       data-error-minlength-ky="Сыр сөз кеминде 8 символ болушу керек."
+                       data-error-mixedcase-ky="Сыр сөздө чоң жана кичине тамгалар болушу керек."
+                       data-error-letters-ky="Сыр сөздө кеминде бир тамга болушу керек."
+                       data-error-numbers-ky="Сыр сөздө кеминде бир сан болушу керек."
+                       data-error-symbols-ky="Сыр сөздө кеминде бир символ болушу керек."
 
 
-                data-error-required-ko="비밀번호가 필요합니다."
-                data-error-minlength-ko="비밀번호는 최소 8자 이상이어야 합니다."
-                data-error-mixedcase-ko="비밀번호에는 대문자와 소문자가 모두 포함되어야 합니다."
-                data-error-letters-ko="비밀번호에는 최소한 하나의 글자가 포함되어야 합니다."
-                data-error-numbers-ko="비밀번호에는 최소한 하나의 숫자가 포함되어야 합니다."
-                data-error-symbols-ko="비밀번호에는 최소한 하나의 기호가 포함되어야 합니다."
+                       data-error-required-ko="비밀번호가 필요합니다."
+                       data-error-minlength-ko="비밀번호는 최소 8자 이상이어야 합니다."
+                       data-error-mixedcase-ko="비밀번호에는 대문자와 소문자가 모두 포함되어야 합니다."
+                       data-error-letters-ko="비밀번호에는 최소한 하나의 글자가 포함되어야 합니다."
+                       data-error-numbers-ko="비밀번호에는 최소한 하나의 숫자가 포함되어야 합니다."
+                       data-error-symbols-ko="비밀번호에는 최소한 하나의 기호가 포함되어야 합니다."
 
 
-                data-error-required-ku="تێپەڕەوشە پێویستە."
-                data-error-minlength-ku="تێپەڕەوشە دەبێت کەمەوە ٨ پیت بێت."
-                data-error-mixedcase-ku="تێپەڕەوشە دەبێت هەردوو پیت گەورە و بچووک تێدایە."
-                data-error-letters-ku="تێپەڕەوشە دەبێت کەمەوە یەک پیت تێدایە."
-                data-error-numbers-ku="تێپەڕەوشە دەبێت کەمەوە یەک ژمارە تێدایە."
-                data-error-symbols-ku="تێپەڕەوشە دەبێت کەمەوە یەک هێما تێدایە."
+                       data-error-required-ku="تێپەڕەوشە پێویستە."
+                       data-error-minlength-ku="تێپەڕەوشە دەبێت کەمەوە ٨ پیت بێت."
+                       data-error-mixedcase-ku="تێپەڕەوشە دەبێت هەردوو پیت گەورە و بچووک تێدایە."
+                       data-error-letters-ku="تێپەڕەوشە دەبێت کەمەوە یەک پیت تێدایە."
+                       data-error-numbers-ku="تێپەڕەوشە دەبێت کەمەوە یەک ژمارە تێدایە."
+                       data-error-symbols-ku="تێپەڕەوشە دەبێت کەمەوە یەک هێما تێدایە."
 
 
-                data-error-required-lo="ຈໍາເປັນຕ້ອງໃສ່ລະຫັດຜ່ານ."
-                data-error-minlength-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍ 8 ຕົວອັກສອນ."
-                data-error-mixedcase-lo="ລະຫັດຜ່ານຕ້ອງມີຕົວອັກສອນໃຫຍ່ແລະນ້ອຍ."
-                data-error-letters-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງຕົວອັກສອນ."
-                data-error-numbers-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງໂຕເລກ."
-                data-error-symbols-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງສັນຍາລັກ."
+                       data-error-required-lo="ຈໍາເປັນຕ້ອງໃສ່ລະຫັດຜ່ານ."
+                       data-error-minlength-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍ 8 ຕົວອັກສອນ."
+                       data-error-mixedcase-lo="ລະຫັດຜ່ານຕ້ອງມີຕົວອັກສອນໃຫຍ່ແລະນ້ອຍ."
+                       data-error-letters-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງຕົວອັກສອນ."
+                       data-error-numbers-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງໂຕເລກ."
+                       data-error-symbols-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງສັນຍາລັກ."
 
 
-                data-error-required-la="Tessera necessaria est."
-                data-error-minlength-la="Tessera saltem 8 characteres habere debet."
-                data-error-mixedcase-la="Tessera litteras maiusculas et minusculas includere debet."
-                data-error-letters-la="Tessera saltem unam litteram continere debet."
-                data-error-numbers-la="Tessera saltem unum numerum continere debet."
-                data-error-symbols-la="Tessera saltem unum symbolum includere debet."
+                       data-error-required-la="Tessera necessaria est."
+                       data-error-minlength-la="Tessera saltem 8 characteres habere debet."
+                       data-error-mixedcase-la="Tessera litteras maiusculas et minusculas includere debet."
+                       data-error-letters-la="Tessera saltem unam litteram continere debet."
+                       data-error-numbers-la="Tessera saltem unum numerum continere debet."
+                       data-error-symbols-la="Tessera saltem unum symbolum includere debet."
 
 
-                data-error-required-lv="Parole ir obligāta."
-                data-error-minlength-lv="Parolei jābūt vismaz 8 rakstzīmes garai."
-                data-error-mixedcase-lv="Parolei jāsatur gan lielie, gan mazie burti."
-                data-error-letters-lv="Parolei jāsatur vismaz viens burts."
-                data-error-numbers-lv="Parolei jāsatur vismaz viens cipars."
-                data-error-symbols-lv="Parolei jāsatur vismaz viens simbols."
+                       data-error-required-lv="Parole ir obligāta."
+                       data-error-minlength-lv="Parolei jābūt vismaz 8 rakstzīmes garai."
+                       data-error-mixedcase-lv="Parolei jāsatur gan lielie, gan mazie burti."
+                       data-error-letters-lv="Parolei jāsatur vismaz viens burts."
+                       data-error-numbers-lv="Parolei jāsatur vismaz viens cipars."
+                       data-error-symbols-lv="Parolei jāsatur vismaz viens simbols."
 
 
-                data-error-required-lt="Slaptažodis yra privalomas."
-                data-error-minlength-lt="Slaptažodis turi būti bent 8 simbolių."
-                data-error-mixedcase-lt="Slaptažodyje turi būti didžiosios ir mažosios raidės."
-                data-error-letters-lt="Slaptažodyje turi būti bent viena raidė."
-                data-error-numbers-lt="Slaptažodyje turi būti bent vienas skaičius."
-                data-error-symbols-lt="Slaptažodyje turi būti bent vienas simbolis."
+                       data-error-required-lt="Slaptažodis yra privalomas."
+                       data-error-minlength-lt="Slaptažodis turi būti bent 8 simbolių."
+                       data-error-mixedcase-lt="Slaptažodyje turi būti didžiosios ir mažosios raidės."
+                       data-error-letters-lt="Slaptažodyje turi būti bent viena raidė."
+                       data-error-numbers-lt="Slaptažodyje turi būti bent vienas skaičius."
+                       data-error-symbols-lt="Slaptažodyje turi būti bent vienas simbolis."
 
 
-                data-error-required-mk="Лозинката е задолжителна."
-                data-error-minlength-mk="Лозинката мора да има најмалку 8 знаци."
-                data-error-mixedcase-mk="Лозинката мора да содржи големи и мали букви."
-                data-error-letters-mk="Лозинката мора да содржи барем една буква."
-                data-error-numbers-mk="Лозинката мора да содржи барем една бројка."
-                data-error-symbols-mk="Лозинката мора да содржи барем еден симбол."
+                       data-error-required-mk="Лозинката е задолжителна."
+                       data-error-minlength-mk="Лозинката мора да има најмалку 8 знаци."
+                       data-error-mixedcase-mk="Лозинката мора да содржи големи и мали букви."
+                       data-error-letters-mk="Лозинката мора да содржи барем една буква."
+                       data-error-numbers-mk="Лозинката мора да содржи барем една бројка."
+                       data-error-symbols-mk="Лозинката мора да содржи барем еден симбол."
 
 
-                data-error-required-mg="Teny miafina ilaina."
-                data-error-minlength-mg="Teny miafina dia tsy maintsy misy tarehintsoratra 8 farafahakeliny."
-                data-error-mixedcase-mg="Teny miafina dia tsy maintsy misy tarehintsoratra lehibe sy madinika."
-                data-error-letters-mg="Teny miafina dia tsy maintsy misy tarehintsoratra iray farafahakeliny."
-                data-error-numbers-mg="Teny miafina dia tsy maintsy misy isa iray farafahakeliny."
-                data-error-symbols-mg="Teny miafina dia tsy maintsy misy marika iray farafahakeliny."
+                       data-error-required-mg="Teny miafina ilaina."
+                       data-error-minlength-mg="Teny miafina dia tsy maintsy misy tarehintsoratra 8 farafahakeliny."
+                       data-error-mixedcase-mg="Teny miafina dia tsy maintsy misy tarehintsoratra lehibe sy madinika."
+                       data-error-letters-mg="Teny miafina dia tsy maintsy misy tarehintsoratra iray farafahakeliny."
+                       data-error-numbers-mg="Teny miafina dia tsy maintsy misy isa iray farafahakeliny."
+                       data-error-symbols-mg="Teny miafina dia tsy maintsy misy marika iray farafahakeliny."
 
 
-                data-error-required-ms="Kata laluan diperlukan."
-                data-error-minlength-ms="Kata laluan mesti sekurang-kurangnya 8 aksara."
-                data-error-mixedcase-ms="Kata laluan mesti mengandungi huruf besar dan kecil."
-                data-error-letters-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu huruf."
-                data-error-numbers-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu nombor."
-                data-error-symbols-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu simbol."
+                       data-error-required-ms="Kata laluan diperlukan."
+                       data-error-minlength-ms="Kata laluan mesti sekurang-kurangnya 8 aksara."
+                       data-error-mixedcase-ms="Kata laluan mesti mengandungi huruf besar dan kecil."
+                       data-error-letters-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu huruf."
+                       data-error-numbers-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu nombor."
+                       data-error-symbols-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu simbol."
 
 
-                data-error-required-ml="പാസ്‌വേഡ് ആവശ്യമുണ്ട്."
-                data-error-minlength-ml="പാസ്‌വേഡ് കുറഞ്ഞത് 8 അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
-                data-error-mixedcase-ml="പാസ്‌വേഡിൽ ചെറിയയും വലിയയും അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
-                data-error-letters-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു അക്ഷരം ഉണ്ടായിരിക്കണം."
-                data-error-numbers-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു സംഖ്യ ഉണ്ടായിരിക്കണം."
-                data-error-symbols-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു ചിഹ്നം ഉണ്ടായിരിക്കണം."
+                       data-error-required-ml="പാസ്‌വേഡ് ആവശ്യമുണ്ട്."
+                       data-error-minlength-ml="പാസ്‌വേഡ് കുറഞ്ഞത് 8 അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
+                       data-error-mixedcase-ml="പാസ്‌വേഡിൽ ചെറിയയും വലിയയും അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
+                       data-error-letters-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു അക്ഷരം ഉണ്ടായിരിക്കണം."
+                       data-error-numbers-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു സംഖ്യ ഉണ്ടായിരിക്കണം."
+                       data-error-symbols-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു ചിഹ്നം ഉണ്ടായിരിക്കണം."
 
 
-                data-error-required-mt="Il-password hija meħtieġa."
-                data-error-minlength-mt="Il-password għandha tkun ta' mill-inqas 8 karattri."
-                data-error-mixedcase-mt="Il-password għandha tinkludi ittri kbar u żgħar."
-                data-error-letters-mt="Il-password għandha tinkludi mill-inqas ittra waħda."
-                data-error-numbers-mt="Il-password għandha tinkludi mill-inqas numru wieħed."
-                data-error-symbols-mt="Il-password għandha tinkludi mill-inqas simbolu wieħed."
+                       data-error-required-mt="Il-password hija meħtieġa."
+                       data-error-minlength-mt="Il-password għandha tkun ta' mill-inqas 8 karattri."
+                       data-error-mixedcase-mt="Il-password għandha tinkludi ittri kbar u żgħar."
+                       data-error-letters-mt="Il-password għandha tinkludi mill-inqas ittra waħda."
+                       data-error-numbers-mt="Il-password għandha tinkludi mill-inqas numru wieħed."
+                       data-error-symbols-mt="Il-password għandha tinkludi mill-inqas simbolu wieħed."
 
 
-                data-error-required-mr="पासवर्ड आवश्यक आहे."
-                data-error-minlength-mr="पासवर्ड कमीत कमी 8 अक्षरांचा असावा."
-                data-error-mixedcase-mr="पासवर्डमध्ये मोठे आणि छोटे अक्षरे असावीत."
-                data-error-letters-mr="पासवर्डमध्ये कमीत कमी एक अक्षर असावे."
-                data-error-numbers-mr="पासवर्डमध्ये कमीत कमी एक संख्या असावी."
-                data-error-symbols-mr="पासवर्डमध्ये कमीत कमी एक चिन्ह असावे."
+                       data-error-required-mr="पासवर्ड आवश्यक आहे."
+                       data-error-minlength-mr="पासवर्ड कमीत कमी 8 अक्षरांचा असावा."
+                       data-error-mixedcase-mr="पासवर्डमध्ये मोठे आणि छोटे अक्षरे असावीत."
+                       data-error-letters-mr="पासवर्डमध्ये कमीत कमी एक अक्षर असावे."
+                       data-error-numbers-mr="पासवर्डमध्ये कमीत कमी एक संख्या असावी."
+                       data-error-symbols-mr="पासवर्डमध्ये कमीत कमी एक चिन्ह असावे."
 
 
-                data-error-required-mn="Нууц үг шаардлагатай."
-                data-error-minlength-mn="Нууц үг хамгийн багадаа 8 тэмдэгттэй байх ёстой."
-                data-error-mixedcase-mn="Нууц үг нь том болон жижиг үсэг агуулсан байх ёстой."
-                data-error-letters-mn="Нууц үг дор хаяж нэг үсэг агуулсан байх ёстой."
-                data-error-numbers-mn="Нууц үг дор хаяж нэг тоо агуулсан байх ёстой."
-                data-error-symbols-mn="Нууц үг дор хаяж нэг тэмдэгт агуулсан байх ёстой."
+                       data-error-required-mn="Нууц үг шаардлагатай."
+                       data-error-minlength-mn="Нууц үг хамгийн багадаа 8 тэмдэгттэй байх ёстой."
+                       data-error-mixedcase-mn="Нууц үг нь том болон жижиг үсэг агуулсан байх ёстой."
+                       data-error-letters-mn="Нууц үг дор хаяж нэг үсэг агуулсан байх ёстой."
+                       data-error-numbers-mn="Нууц үг дор хаяж нэг тоо агуулсан байх ёстой."
+                       data-error-symbols-mn="Нууц үг дор хаяж нэг тэмдэгт агуулсан байх ёстой."
 
 
-                data-error-required-ne="पासवर्ड आवश्यक छ।"
-                data-error-minlength-ne="पासवर्ड कम्तीमा ८ अक्षरको हुनुपर्छ।"
-                data-error-mixedcase-ne="पासवर्डमा ठूलो र सानो अक्षरहरू समावेश हुनुपर्छ।"
-                data-error-letters-ne="पासवर्डमा कम्तीमा एक अक्षर हुनुपर्छ।"
-                data-error-numbers-ne="पासवर्डमा कम्तीमा एक संख्या हुनुपर्छ।"
-                data-error-symbols-ne="पासवर्डमा कम्तीमा एक प्रतीक समावेश हुनुपर्छ।"
+                       data-error-required-ne="पासवर्ड आवश्यक छ।"
+                       data-error-minlength-ne="पासवर्ड कम्तीमा ८ अक्षरको हुनुपर्छ।"
+                       data-error-mixedcase-ne="पासवर्डमा ठूलो र सानो अक्षरहरू समावेश हुनुपर्छ।"
+                       data-error-letters-ne="पासवर्डमा कम्तीमा एक अक्षर हुनुपर्छ।"
+                       data-error-numbers-ne="पासवर्डमा कम्तीमा एक संख्या हुनुपर्छ।"
+                       data-error-symbols-ne="पासवर्डमा कम्तीमा एक प्रतीक समावेश हुनुपर्छ।"
 
 
-                data-error-required-nb="Passord er påkrevd."
-                data-error-minlength-nb="Passordet må være minst 8 tegn."
-                data-error-mixedcase-nb="Passordet må inneholde både store og små bokstaver."
-                data-error-letters-nb="Passordet må inneholde minst én bokstav."
-                data-error-numbers-nb="Passordet må inneholde minst ett tall."
-                data-error-symbols-nb="Passordet må inneholde minst ett symbol."
+                       data-error-required-nb="Passord er påkrevd."
+                       data-error-minlength-nb="Passordet må være minst 8 tegn."
+                       data-error-mixedcase-nb="Passordet må inneholde både store og små bokstaver."
+                       data-error-letters-nb="Passordet må inneholde minst én bokstav."
+                       data-error-numbers-nb="Passordet må inneholde minst ett tall."
+                       data-error-symbols-nb="Passordet må inneholde minst ett symbol."
 
 
-                data-error-required-nn="Passord er påkravd."
-                data-error-minlength-nn="Passordet må vere minst 8 teikn."
-                data-error-mixedcase-nn="Passordet må innehalde både store og små bokstavar."
-                data-error-letters-nn="Passordet må innehalde minst éin bokstav."
-                data-error-numbers-nn="Passordet må innehalde minst eitt tal."
-                data-error-symbols-nn="Passordet må innehalde minst eitt symbol."
+                       data-error-required-nn="Passord er påkravd."
+                       data-error-minlength-nn="Passordet må vere minst 8 teikn."
+                       data-error-mixedcase-nn="Passordet må innehalde både store og små bokstavar."
+                       data-error-letters-nn="Passordet må innehalde minst éin bokstav."
+                       data-error-numbers-nn="Passordet må innehalde minst eitt tal."
+                       data-error-symbols-nn="Passordet må innehalde minst eitt symbol."
 
 
-                data-error-required-no="Passord er påkrevd."
-                data-error-minlength-no="Passordet må være minst 8 tegn."
-                data-error-mixedcase-no="Passordet må inneholde både store og små bokstaver."
-                data-error-letters-no="Passordet må inneholde minst én bokstav."
-                data-error-numbers-no="Passordet må inneholde minst ett tall."
-                data-error-symbols-no="Passordet må inneholde minst ett symbol."
+                       data-error-required-no="Passord er påkrevd."
+                       data-error-minlength-no="Passordet må være minst 8 tegn."
+                       data-error-mixedcase-no="Passordet må inneholde både store og små bokstaver."
+                       data-error-letters-no="Passordet må inneholde minst én bokstav."
+                       data-error-numbers-no="Passordet må inneholde minst ett tall."
+                       data-error-symbols-no="Passordet må inneholde minst ett symbol."
 
 
-                data-error-required-or="ପାସୱାର୍ଡ ଆବଶ୍ୟକ।"
-                data-error-minlength-or="ପାସୱାର୍ଡ କମ୍ଵେ କମ୍ 8ଟି ଅକ୍ଷରର ହେଉଥିବା ଉଚିତ।"
-                data-error-mixedcase-or="ପାସୱାର୍ଡରେ ବଡ଼ ଓ ଛୋଟ ଅକ୍ଷର ଦୁହେଁ ଥିବା ଉଚିତ।"
-                data-error-letters-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ଅକ୍ଷର ଥିବା ଉଚିତ।"
-                data-error-numbers-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ସଂଖ୍ୟା ଥିବା ଉଚିତ।"
-                data-error-symbols-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ପ୍ରତୀକ ଥିବା ଉଚିତ।"
+                       data-error-required-or="ପାସୱାର୍ଡ ଆବଶ୍ୟକ।"
+                       data-error-minlength-or="ପାସୱାର୍ଡ କମ୍ଵେ କମ୍ 8ଟି ଅକ୍ଷରର ହେଉଥିବା ଉଚିତ।"
+                       data-error-mixedcase-or="ପାସୱାର୍ଡରେ ବଡ଼ ଓ ଛୋଟ ଅକ୍ଷର ଦୁହେଁ ଥିବା ଉଚିତ।"
+                       data-error-letters-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ଅକ୍ଷର ଥିବା ଉଚିତ।"
+                       data-error-numbers-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ସଂଖ୍ୟା ଥିବା ଉଚିତ।"
+                       data-error-symbols-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ପ୍ରତୀକ ଥିବା ଉଚିତ।"
 
 
-                data-error-required-om="Jecha iccitii barbaachisa."
-                data-error-minlength-om="Jecha iccitii xiqqaa dhaabbataa taʼuuf qubee 8 qabaachuu qaba."
-                data-error-mixedcase-om="Jecha iccitii qubee guddaa fi xinnaa qabachuu qaba."
-                data-error-letters-om="Jecha iccitii qubee tokko yookaan isaa ol qabaachuu qaba."
-                data-error-numbers-om="Jecha iccitii lakkoofsa tokko yookaan isaa ol qabaachuu qaba."
-                data-error-symbols-om="Jecha iccitii mallattoo tokko yookaan isaa ol qabaachuu qaba."
+                       data-error-required-om="Jecha iccitii barbaachisa."
+                       data-error-minlength-om="Jecha iccitii xiqqaa dhaabbataa taʼuuf qubee 8 qabaachuu qaba."
+                       data-error-mixedcase-om="Jecha iccitii qubee guddaa fi xinnaa qabachuu qaba."
+                       data-error-letters-om="Jecha iccitii qubee tokko yookaan isaa ol qabaachuu qaba."
+                       data-error-numbers-om="Jecha iccitii lakkoofsa tokko yookaan isaa ol qabaachuu qaba."
+                       data-error-symbols-om="Jecha iccitii mallattoo tokko yookaan isaa ol qabaachuu qaba."
 
 
-                data-error-required-pa="ਪਾਸਵਰਡ ਦੀ ਲੋੜ ਹੈ।"
-                data-error-minlength-pa="ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 8 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
-                data-error-mixedcase-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਵੱਡੇ ਅਤੇ ਛੋਟੇ ਅੱਖਰ ਦੋਵੇਂ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।"
-                data-error-letters-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਅੱਖਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
-                data-error-numbers-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਗਿਣਤੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।"
-                data-error-symbols-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਚਿੰਨ੍ਹ ਸ਼ਾਮਲ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+                       data-error-required-pa="ਪਾਸਵਰਡ ਦੀ ਲੋੜ ਹੈ।"
+                       data-error-minlength-pa="ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 8 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+                       data-error-mixedcase-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਵੱਡੇ ਅਤੇ ਛੋਟੇ ਅੱਖਰ ਦੋਵੇਂ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।"
+                       data-error-letters-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਅੱਖਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+                       data-error-numbers-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਗਿਣਤੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।"
+                       data-error-symbols-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਚਿੰਨ੍ਹ ਸ਼ਾਮਲ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
 
 
-                data-error-required-ps="پاسورډ ته اړتیا ده."
-                data-error-minlength-ps="پاسورډ باید لږ تر لږه 8 حروف وي."
-                data-error-mixedcase-ps="پاسورډ باید لوی او کوچني حروف ولري."
-                data-error-letters-ps="پاسورډ باید لږ تر لږه یوه حرف ولري."
-                data-error-numbers-ps="پاسورډ باید لږ تر لږه یو شمېر ولري."
-                data-error-symbols-ps="پاسورډ باید لږ تر لږه یو سمبول ولري."
+                       data-error-required-ps="پاسورډ ته اړتیا ده."
+                       data-error-minlength-ps="پاسورډ باید لږ تر لږه 8 حروف وي."
+                       data-error-mixedcase-ps="پاسورډ باید لوی او کوچني حروف ولري."
+                       data-error-letters-ps="پاسورډ باید لږ تر لږه یوه حرف ولري."
+                       data-error-numbers-ps="پاسورډ باید لږ تر لږه یو شمېر ولري."
+                       data-error-symbols-ps="پاسورډ باید لږ تر لږه یو سمبول ولري."
 
 
-                data-error-required-fa="رمز عبور الزامی است."
-                data-error-minlength-fa="رمز عبور باید حداقل 8 کاراکتر باشد."
-                data-error-mixedcase-fa="رمز عبور باید شامل حروف بزرگ و کوچک باشد."
-                data-error-letters-fa="رمز عبور باید حداقل یک حرف داشته باشد."
-                data-error-numbers-fa="رمز عبور باید حداقل یک عدد داشته باشد."
-                data-error-symbols-fa="رمز عبور باید حداقل یک نماد داشته باشد."
+                       data-error-required-fa="رمز عبور الزامی است."
+                       data-error-minlength-fa="رمز عبور باید حداقل 8 کاراکتر باشد."
+                       data-error-mixedcase-fa="رمز عبور باید شامل حروف بزرگ و کوچک باشد."
+                       data-error-letters-fa="رمز عبور باید حداقل یک حرف داشته باشد."
+                       data-error-numbers-fa="رمز عبور باید حداقل یک عدد داشته باشد."
+                       data-error-symbols-fa="رمز عبور باید حداقل یک نماد داشته باشد."
 
 
-                data-error-required-pl="Hasło jest wymagane."
-                data-error-minlength-pl="Hasło musi mieć co najmniej 8 znaków."
-                data-error-mixedcase-pl="Hasło musi zawierać wielkie i małe litery."
-                data-error-letters-pl="Hasło musi zawierać co najmniej jedną literę."
-                data-error-numbers-pl="Hasło musi zawierać co najmniej jedną cyfrę."
-                data-error-symbols-pl="Hasło musi zawierać co najmniej jeden symbol."
+                       data-error-required-pl="Hasło jest wymagane."
+                       data-error-minlength-pl="Hasło musi mieć co najmniej 8 znaków."
+                       data-error-mixedcase-pl="Hasło musi zawierać wielkie i małe litery."
+                       data-error-letters-pl="Hasło musi zawierać co najmniej jedną literę."
+                       data-error-numbers-pl="Hasło musi zawierać co najmniej jedną cyfrę."
+                       data-error-symbols-pl="Hasło musi zawierać co najmniej jeden symbol."
 
 
-                data-error-required-pt="Senha é obrigatória."
-                data-error-minlength-pt="A senha deve ter pelo menos 8 caracteres."
-                data-error-mixedcase-pt="A senha deve incluir letras maiúsculas e minúsculas."
-                data-error-letters-pt="A senha deve conter pelo menos uma letra."
-                data-error-numbers-pt="A senha deve conter pelo menos um número."
-                data-error-symbols-pt="A senha deve incluir pelo menos um símbolo."
+                       data-error-required-pt="Senha é obrigatória."
+                       data-error-minlength-pt="A senha deve ter pelo menos 8 caracteres."
+                       data-error-mixedcase-pt="A senha deve incluir letras maiúsculas e minúsculas."
+                       data-error-letters-pt="A senha deve conter pelo menos uma letra."
+                       data-error-numbers-pt="A senha deve conter pelo menos um número."
+                       data-error-symbols-pt="A senha deve incluir pelo menos um símbolo."
 
 
-                data-error-required-ro="Parola este obligatorie."
-                data-error-minlength-ro="Parola trebuie să aibă cel puțin 8 caractere."
-                data-error-mixedcase-ro="Parola trebuie să includă litere mari și mici."
-                data-error-letters-ro="Parola trebuie să conțină cel puțin o literă."
-                data-error-numbers-ro="Parola trebuie să conțină cel puțin o cifră."
-                data-error-symbols-ro="Parola trebuie să includă cel puțin un simbol."
+                       data-error-required-ro="Parola este obligatorie."
+                       data-error-minlength-ro="Parola trebuie să aibă cel puțin 8 caractere."
+                       data-error-mixedcase-ro="Parola trebuie să includă litere mari și mici."
+                       data-error-letters-ro="Parola trebuie să conțină cel puțin o literă."
+                       data-error-numbers-ro="Parola trebuie să conțină cel puțin o cifră."
+                       data-error-symbols-ro="Parola trebuie să includă cel puțin un simbol."
 
 
-                data-error-required-ru="Требуется пароль."
-                data-error-minlength-ru="Пароль должен быть не менее 8 символов."
-                data-error-mixedcase-ru="Пароль должен содержать заглавные и строчные буквы."
-                data-error-letters-ru="Пароль должен содержать хотя бы одну букву."
-                data-error-numbers-ru="Пароль должен содержать хотя бы одну цифру."
-                data-error-symbols-ru="Пароль должен содержать хотя бы один символ."
+                       data-error-required-ru="Требуется пароль."
+                       data-error-minlength-ru="Пароль должен быть не менее 8 символов."
+                       data-error-mixedcase-ru="Пароль должен содержать заглавные и строчные буквы."
+                       data-error-letters-ru="Пароль должен содержать хотя бы одну букву."
+                       data-error-numbers-ru="Пароль должен содержать хотя бы одну цифру."
+                       data-error-symbols-ru="Пароль должен содержать хотя бы один символ."
 
 
-                data-error-required-sr="Лозинка је обавезна."
-                data-error-minlength-sr="Лозинка мора имати најмање 8 знакова."
-                data-error-mixedcase-sr="Лозинка мора садржати велика и мала слова."
-                data-error-letters-sr="Лозинка мора садржати најмање једно слово."
-                data-error-numbers-sr="Лозинка мора садржати најмање један број."
-                data-error-symbols-sr="Лозинка мора садржати најмање један симбол."
+                       data-error-required-sr="Лозинка је обавезна."
+                       data-error-minlength-sr="Лозинка мора имати најмање 8 знакова."
+                       data-error-mixedcase-sr="Лозинка мора садржати велика и мала слова."
+                       data-error-letters-sr="Лозинка мора садржати најмање једно слово."
+                       data-error-numbers-sr="Лозинка мора садржати најмање један број."
+                       data-error-symbols-sr="Лозинка мора садржати најмање један симбол."
 
 
-                data-error-required-si="මුරපදය අවශ්‍ය වේ."
-                data-error-minlength-si="මුරපදය අවම වශයෙන් අක්ෂර 8ක් විය යුතුය."
-                data-error-mixedcase-si="මුරපදයේ සිංහල හා ඉංග්‍රීසි අක්ෂර දෙකම ඇතුළත් විය යුතුය."
-                data-error-letters-si="මුරපදයේ අවම වශයෙන් එක් අක්ෂරයක් තිබිය යුතුය."
-                data-error-numbers-si="මුරපදයේ අවම වශයෙන් එක් අංකයක් තිබිය යුතුය."
-                data-error-symbols-si="මුරපදයේ අවම වශයෙන් එක් සංකේතයක් තිබිය යුතුය."
+                       data-error-required-si="මුරපදය අවශ්‍ය වේ."
+                       data-error-minlength-si="මුරපදය අවම වශයෙන් අක්ෂර 8ක් විය යුතුය."
+                       data-error-mixedcase-si="මුරපදයේ සිංහල හා ඉංග්‍රීසි අක්ෂර දෙකම ඇතුළත් විය යුතුය."
+                       data-error-letters-si="මුරපදයේ අවම වශයෙන් එක් අක්ෂරයක් තිබිය යුතුය."
+                       data-error-numbers-si="මුරපදයේ අවම වශයෙන් එක් අංකයක් තිබිය යුතුය."
+                       data-error-symbols-si="මුරපදයේ අවම වශයෙන් එක් සංකේතයක් තිබිය යුතුය."
 
 
-                data-error-required-sk="Heslo je povinné."
-                data-error-minlength-sk="Heslo musí mať aspoň 8 znakov."
-                data-error-mixedcase-sk="Heslo musí obsahovať veľké aj malé písmená."
-                data-error-letters-sk="Heslo musí obsahovať aspoň jedno písmeno."
-                data-error-numbers-sk="Heslo musí obsahovať aspoň jedno číslo."
-                data-error-symbols-sk="Heslo musí obsahovať aspoň jeden symbol."
+                       data-error-required-sk="Heslo je povinné."
+                       data-error-minlength-sk="Heslo musí mať aspoň 8 znakov."
+                       data-error-mixedcase-sk="Heslo musí obsahovať veľké aj malé písmená."
+                       data-error-letters-sk="Heslo musí obsahovať aspoň jedno písmeno."
+                       data-error-numbers-sk="Heslo musí obsahovať aspoň jedno číslo."
+                       data-error-symbols-sk="Heslo musí obsahovať aspoň jeden symbol."
 
 
-                data-error-required-sl="Geslo je obvezno."
-                data-error-minlength-sl="Geslo mora biti dolgo vsaj 8 znakov."
-                data-error-mixedcase-sl="Geslo mora vsebovati velike in male črke."
-                data-error-letters-sl="Geslo mora vsebovati vsaj eno črko."
-                data-error-numbers-sl="Geslo mora vsebovati vsaj eno številko."
-                data-error-symbols-sl="Geslo mora vsebovati vsaj en simbol."
+                       data-error-required-sl="Geslo je obvezno."
+                       data-error-minlength-sl="Geslo mora biti dolgo vsaj 8 znakov."
+                       data-error-mixedcase-sl="Geslo mora vsebovati velike in male črke."
+                       data-error-letters-sl="Geslo mora vsebovati vsaj eno črko."
+                       data-error-numbers-sl="Geslo mora vsebovati vsaj eno številko."
+                       data-error-symbols-sl="Geslo mora vsebovati vsaj en simbol."
 
 
-                data-error-required-so="Furaha sirta waa loo baahan yahay."
-                data-error-minlength-so="Furaha sirta waa inuu ahaadaa ugu yaraan 8 xaraf."
-                data-error-mixedcase-so="Furaha sirta waa inuu ka kooban yahay xuruuf waaweyn iyo kuwa yaryar."
-                data-error-letters-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal xaraf."
-                data-error-numbers-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal lambar."
-                data-error-symbols-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal calaamad."
+                       data-error-required-so="Furaha sirta waa loo baahan yahay."
+                       data-error-minlength-so="Furaha sirta waa inuu ahaadaa ugu yaraan 8 xaraf."
+                       data-error-mixedcase-so="Furaha sirta waa inuu ka kooban yahay xuruuf waaweyn iyo kuwa yaryar."
+                       data-error-letters-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal xaraf."
+                       data-error-numbers-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal lambar."
+                       data-error-symbols-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal calaamad."
 
 
-                data-error-required-es="Se requiere contraseña."
-                data-error-minlength-es="La contraseña debe tener al menos 8 caracteres."
-                data-error-mixedcase-es="La contraseña debe incluir letras mayúsculas y minúsculas."
-                data-error-letters-es="La contraseña debe contener al menos una letra."
-                data-error-numbers-es="La contraseña debe contener al menos un número."
-                data-error-symbols-es="La contraseña debe incluir al menos un símbolo."
+                       data-error-required-es="Se requiere contraseña."
+                       data-error-minlength-es="La contraseña debe tener al menos 8 caracteres."
+                       data-error-mixedcase-es="La contraseña debe incluir letras mayúsculas y minúsculas."
+                       data-error-letters-es="La contraseña debe contener al menos una letra."
+                       data-error-numbers-es="La contraseña debe contener al menos un número."
+                       data-error-symbols-es="La contraseña debe incluir al menos un símbolo."
 
 
-                data-error-required-sw="Nenosiri linahitajika."
-                data-error-minlength-sw="Nenosiri lazima liwe na urefu wa herufi 8 au zaidi."
-                data-error-mixedcase-sw="Nenosiri lazima lijumuishe herufi kubwa na ndogo."
-                data-error-letters-sw="Nenosiri lazima liwe na angalau herufi moja."
-                data-error-numbers-sw="Nenosiri lazima liwe na angalau namba moja."
-                data-error-symbols-sw="Nenosiri lazima lijumuishe angalau alama moja."
+                       data-error-required-sw="Nenosiri linahitajika."
+                       data-error-minlength-sw="Nenosiri lazima liwe na urefu wa herufi 8 au zaidi."
+                       data-error-mixedcase-sw="Nenosiri lazima lijumuishe herufi kubwa na ndogo."
+                       data-error-letters-sw="Nenosiri lazima liwe na angalau herufi moja."
+                       data-error-numbers-sw="Nenosiri lazima liwe na angalau namba moja."
+                       data-error-symbols-sw="Nenosiri lazima lijumuishe angalau alama moja."
 
 
-                data-error-required-sv="Lösenord krävs."
-                data-error-minlength-sv="Lösenordet måste vara minst 8 tecken långt."
-                data-error-mixedcase-sv="Lösenordet måste innehålla både stora och små bokstäver."
-                data-error-letters-sv="Lösenordet måste innehålla minst en bokstav."
-                data-error-numbers-sv="Lösenordet måste innehålla minst en siffra."
-                data-error-symbols-sv="Lösenordet måste innehålla minst en symbol."
+                       data-error-required-sv="Lösenord krävs."
+                       data-error-minlength-sv="Lösenordet måste vara minst 8 tecken långt."
+                       data-error-mixedcase-sv="Lösenordet måste innehålla både stora och små bokstäver."
+                       data-error-letters-sv="Lösenordet måste innehålla minst en bokstav."
+                       data-error-numbers-sv="Lösenordet måste innehålla minst en siffra."
+                       data-error-symbols-sv="Lösenordet måste innehålla minst en symbol."
 
 
-                data-error-required-tl="Kinakailangan ang password."
-                data-error-minlength-tl="Ang password ay dapat may hindi bababa sa 8 karakter."
-                data-error-mixedcase-tl="Ang password ay dapat may malalaki at maliliit na letra."
-                data-error-letters-tl="Ang password ay dapat may hindi bababa sa isang letra."
-                data-error-numbers-tl="Ang password ay dapat may hindi bababa sa isang numero."
-                data-error-symbols-tl="Ang password ay dapat may hindi bababa sa isang simbolo."
-
-
-                data-error-required-tg="Парол лозим аст."
-                data-error-minlength-tg="Парол бояд на камтар аз 8 аломат дошта бошад."
-                data-error-mixedcase-tg="Парол бояд ҳарфҳои калон ва хурдро дар бар гирад."
-                data-error-letters-tg="Парол бояд ҳадди ақал як ҳарф дошта бошад."
-                data-error-numbers-tg="Парол бояд ҳадди ақал як рақам дошта бошад."
-                data-error-symbols-tg="Парол бояд ҳадди ақал як рамз дошта бошад."
-
-
-                data-error-required-ta="கடவுச்சொல் தேவை."
-                data-error-minlength-ta="கடவுச்சொல் குறைந்தபட்சம் 8 எழுத்துகளைக் கொண்டிருக்க வேண்டும்."
-                data-error-mixedcase-ta="கடவுச்சொல் பெரிய எழுத்துக்கள் மற்றும் சிறிய எழுத்துக்களை கொண்டிருக்க வேண்டும்."
-                data-error-letters-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எழுத்தை கொண்டிருக்க வேண்டும்."
-                data-error-numbers-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எணை கொண்டிருக்க வேண்டும்."
-                data-error-symbols-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு குறியீட்டை கொண்டிருக்க வேண்டும்."
-
-
-                data-error-required-te="పాస్వర్డ్ అవసరం."
-                data-error-minlength-te="పాస్వర్డ్ కనీసం 8 అక్షరాల ఉండాలి."
-                data-error-mixedcase-te="పాస్వర్డ్ లో పెద్ద మరియు చిన్న అక్షరాలు ఉండాలి."
-                data-error-letters-te="పాస్వర్డ్ లో కనీసం ఒక అక్షరం ఉండాలి."
-                data-error-numbers-te="పాస్వర్డ్ లో కనీసం ఒక సంఖ్య ఉండాలి."
-                data-error-symbols-te="పాస్వర్డ్ లో కనీసం ఒక సూచకం ఉండాలి."
-
-
-                data-error-required-th="ต้องระบุรหัสผ่าน"
-                data-error-minlength-th="รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"
-                data-error-mixedcase-th="รหัสผ่านต้องมีทั้งตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก"
-                data-error-letters-th="รหัสผ่านต้องมีตัวอักษรอย่างน้อยหนึ่งตัว"
-                data-error-numbers-th="รหัสผ่านต้องมีตัวเลขอย่างน้อยหนึ่งตัว"
-                data-error-symbols-th="รหัสผ่านต้องมีสัญลักษณ์อย่างน้อยหนึ่งตัว"
-
-
-                data-error-required-tr="Şifre gereklidir."
-                data-error-minlength-tr="Şifre en az 8 karakter olmalıdır."
-                data-error-mixedcase-tr="Şifre hem büyük hem de küçük harf içermelidir."
-                data-error-letters-tr="Şifre en az bir harf içermelidir."
-                data-error-numbers-tr="Şifre en az bir sayı içermelidir."
-                data-error-symbols-tr="Şifre en az bir sembol içermelidir."
-
-
-                data-error-required-uk="Пароль є обов'язковим."
-                data-error-minlength-uk="Пароль повинен містити не менше 8 символів."
-                data-error-mixedcase-uk="Пароль повинен містити великі та малі літери."
-                data-error-letters-uk="Пароль повинен містити щонайменше одну літеру."
-                data-error-numbers-uk="Пароль повинен містити щонайменше одну цифру."
-                data-error-symbols-uk="Пароль повинен містити щонайменше один символ."
-
-
-                data-error-required-ur="پاس ورڈ درکار ہے۔"
-                data-error-minlength-ur="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
-                data-error-mixedcase-ur="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
-                data-error-letters-ur="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
-                data-error-numbers-ur="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
-                data-error-symbols-ur="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
-
-
-                data-error-required-uz="Parol kiritilishi shart."
-                data-error-minlength-uz="Parol kamida 8 ta belgidan iborat bo'lishi kerak."
-                data-error-mixedcase-uz="Parol katta va kichik harflarni o'z ichiga olishi kerak."
-                data-error-letters-uz="Parol kamida bitta harfni o'z ichiga olishi kerak."
-                data-error-numbers-uz="Parol kamida bitta raqamni o'z ichiga olishi kerak."
-                data-error-symbols-uz="Parol kamida bitta belgi o'z ichiga olishi kerak."
-
-
-                data-error-required-vi="Yêu cầu mật khẩu."
-                data-error-minlength-vi="Mật khẩu phải có ít nhất 8 ký tự."
-                data-error-mixedcase-vi="Mật khẩu phải bao gồm cả chữ hoa và chữ thường."
-                data-error-letters-vi="Mật khẩu phải chứa ít nhất một chữ cái."
-                data-error-numbers-vi="Mật khẩu phải chứa ít nhất một số."
-                data-error-symbols-vi="Mật khẩu phải bao gồm ít nhất một ký hiệu."
-
-
-                data-error-required-cy="Mae angen cyfrinair."
-                data-error-minlength-cy="Rhaid i'r cyfrinair fod o leiaf 8 nod."
-                data-error-mixedcase-cy="Rhaid i'r cyfrinair gynnwys llythrennau mawr a bach."
-                data-error-letters-cy="Rhaid i'r cyfrinair gynnwys o leiaf un llythyren."
-                data-error-numbers-cy="Rhaid i'r cyfrinair gynnwys o leiaf un rhif."
-                data-error-symbols-cy="Rhaid i'r cyfrinair gynnwys o leiaf un symbol."
-
-
-                data-error-required-yo="Ọrọ aṣínà nilo."
-                data-error-minlength-yo="Ọrọ aṣínà gbọdọ jẹ o kere ju awọn lẹta 8."
-                data-error-mixedcase-yo="Ọrọ aṣínà gbọdọ ni awọn lẹta nla ati kekere."
-                data-error-letters-yo="Ọrọ aṣínà gbọdọ ni o kere ju lẹta kan."
-                data-error-numbers-yo="Ọrọ aṣínà gbọdọ ni o kere ju nọmba kan."
-                data-error-symbols-yo="Ọrọ aṣínà gbọdọ ni o kere ju aami kan."
-
-
-                data-error-required-zu="Iphasiwedi iyadingeka."
-                data-error-minlength-zu="Iphasiwedi kumele okungenani ibe no-8 izinhlamvu."
-                data-error-mixedcase-zu="Iphasiwedi kumele ibe nezinhlamvu ezinkulu nezincane."
-                data-error-letters-zu="Iphasiwedi kumele ibe no-okungenani uhlamvu olulodwa."
-                data-error-numbers-zu="Iphasiwedi kumele ibe no-okungenani inombolo eyodwa."
-                data-error-symbols-zu="Iphasiwedi kumele ibe no-okungenani uphawu olulodwa."
-
+                       data-error-required-tl="Kinakailangan ang password."
+                       data-error-minlength-tl="Ang password ay dapat may hindi bababa sa 8 karakter."
+                       data-error-mixedcase-tl="Ang password ay dapat may malalaki at maliliit na letra."
+                       data-error-letters-tl="Ang password ay dapat may hindi bababa sa isang letra."
+                       data-error-numbers-tl="Ang password ay dapat may hindi bababa sa isang numero."
+                       data-error-symbols-tl="Ang password ay dapat may hindi bababa sa isang simbolo."
+
+
+                       data-error-required-tg="Парол лозим аст."
+                       data-error-minlength-tg="Парол бояд на камтар аз 8 аломат дошта бошад."
+                       data-error-mixedcase-tg="Парол бояд ҳарфҳои калон ва хурдро дар бар гирад."
+                       data-error-letters-tg="Парол бояд ҳадди ақал як ҳарф дошта бошад."
+                       data-error-numbers-tg="Парол бояд ҳадди ақал як рақам дошта бошад."
+                       data-error-symbols-tg="Парол бояд ҳадди ақал як рамз дошта бошад."
+
+
+                       data-error-required-ta="கடவுச்சொல் தேவை."
+                       data-error-minlength-ta="கடவுச்சொல் குறைந்தபட்சம் 8 எழுத்துகளைக் கொண்டிருக்க வேண்டும்."
+                       data-error-mixedcase-ta="கடவுச்சொல் பெரிய எழுத்துக்கள் மற்றும் சிறிய எழுத்துக்களை கொண்டிருக்க வேண்டும்."
+                       data-error-letters-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எழுத்தை கொண்டிருக்க வேண்டும்."
+                       data-error-numbers-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எணை கொண்டிருக்க வேண்டும்."
+                       data-error-symbols-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு குறியீட்டை கொண்டிருக்க வேண்டும்."
+
+
+                       data-error-required-te="పాస్వర్డ్ అవసరం."
+                       data-error-minlength-te="పాస్వర్డ్ కనీసం 8 అక్షరాల ఉండాలి."
+                       data-error-mixedcase-te="పాస్వర్డ్ లో పెద్ద మరియు చిన్న అక్షరాలు ఉండాలి."
+                       data-error-letters-te="పాస్వర్డ్ లో కనీసం ఒక అక్షరం ఉండాలి."
+                       data-error-numbers-te="పాస్వర్డ్ లో కనీసం ఒక సంఖ్య ఉండాలి."
+                       data-error-symbols-te="పాస్వర్డ్ లో కనీసం ఒక సూచకం ఉండాలి."
+
+
+                       data-error-required-th="ต้องระบุรหัสผ่าน"
+                       data-error-minlength-th="รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"
+                       data-error-mixedcase-th="รหัสผ่านต้องมีทั้งตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก"
+                       data-error-letters-th="รหัสผ่านต้องมีตัวอักษรอย่างน้อยหนึ่งตัว"
+                       data-error-numbers-th="รหัสผ่านต้องมีตัวเลขอย่างน้อยหนึ่งตัว"
+                       data-error-symbols-th="รหัสผ่านต้องมีสัญลักษณ์อย่างน้อยหนึ่งตัว"
+
+
+                       data-error-required-tr="Şifre gereklidir."
+                       data-error-minlength-tr="Şifre en az 8 karakter olmalıdır."
+                       data-error-mixedcase-tr="Şifre hem büyük hem de küçük harf içermelidir."
+                       data-error-letters-tr="Şifre en az bir harf içermelidir."
+                       data-error-numbers-tr="Şifre en az bir sayı içermelidir."
+                       data-error-symbols-tr="Şifre en az bir sembol içermelidir."
+
+
+                       data-error-required-uk="Пароль є обов'язковим."
+                       data-error-minlength-uk="Пароль повинен містити не менше 8 символів."
+                       data-error-mixedcase-uk="Пароль повинен містити великі та малі літери."
+                       data-error-letters-uk="Пароль повинен містити щонайменше одну літеру."
+                       data-error-numbers-uk="Пароль повинен містити щонайменше одну цифру."
+                       data-error-symbols-uk="Пароль повинен містити щонайменше один символ."
+
+
+                       data-error-required-ur="پاس ورڈ درکار ہے۔"
+                       data-error-minlength-ur="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
+                       data-error-mixedcase-ur="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
+                       data-error-letters-ur="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
+                       data-error-numbers-ur="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
+                       data-error-symbols-ur="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
+
+
+                       data-error-required-uz="Parol kiritilishi shart."
+                       data-error-minlength-uz="Parol kamida 8 ta belgidan iborat bo'lishi kerak."
+                       data-error-mixedcase-uz="Parol katta va kichik harflarni o'z ichiga olishi kerak."
+                       data-error-letters-uz="Parol kamida bitta harfni o'z ichiga olishi kerak."
+                       data-error-numbers-uz="Parol kamida bitta raqamni o'z ichiga olishi kerak."
+                       data-error-symbols-uz="Parol kamida bitta belgi o'z ichiga olishi kerak."
+
+
+                       data-error-required-vi="Yêu cầu mật khẩu."
+                       data-error-minlength-vi="Mật khẩu phải có ít nhất 8 ký tự."
+                       data-error-mixedcase-vi="Mật khẩu phải bao gồm cả chữ hoa và chữ thường."
+                       data-error-letters-vi="Mật khẩu phải chứa ít nhất một chữ cái."
+                       data-error-numbers-vi="Mật khẩu phải chứa ít nhất một số."
+                       data-error-symbols-vi="Mật khẩu phải bao gồm ít nhất một ký hiệu."
+
+
+                       data-error-required-cy="Mae angen cyfrinair."
+                       data-error-minlength-cy="Rhaid i'r cyfrinair fod o leiaf 8 nod."
+                       data-error-mixedcase-cy="Rhaid i'r cyfrinair gynnwys llythrennau mawr a bach."
+                       data-error-letters-cy="Rhaid i'r cyfrinair gynnwys o leiaf un llythyren."
+                       data-error-numbers-cy="Rhaid i'r cyfrinair gynnwys o leiaf un rhif."
+                       data-error-symbols-cy="Rhaid i'r cyfrinair gynnwys o leiaf un symbol."
+
+
+                       data-error-required-yo="Ọrọ aṣínà nilo."
+                       data-error-minlength-yo="Ọrọ aṣínà gbọdọ jẹ o kere ju awọn lẹta 8."
+                       data-error-mixedcase-yo="Ọrọ aṣínà gbọdọ ni awọn lẹta nla ati kekere."
+                       data-error-letters-yo="Ọrọ aṣínà gbọdọ ni o kere ju lẹta kan."
+                       data-error-numbers-yo="Ọrọ aṣínà gbọdọ ni o kere ju nọmba kan."
+                       data-error-symbols-yo="Ọrọ aṣínà gbọdọ ni o kere ju aami kan."
+
+
+                       data-error-required-zu="Iphasiwedi iyadingeka."
+                       data-error-minlength-zu="Iphasiwedi kumele okungenani ibe no-8 izinhlamvu."
+                       data-error-mixedcase-zu="Iphasiwedi kumele ibe nezinhlamvu ezinkulu nezincane."
+                       data-error-letters-zu="Iphasiwedi kumele ibe no-okungenani uhlamvu olulodwa."
+                       data-error-numbers-zu="Iphasiwedi kumele ibe no-okungenani inombolo eyodwa."
+                       data-error-symbols-zu="Iphasiwedi kumele ibe no-okungenani uphawu olulodwa."
 
 
                        required>
@@ -3471,9 +3654,12 @@
         cardElementDiv.classList.remove('StripeElement--focus');
     });
 
-    function submitForm() {
+    function submitForm(button) {
+        button.prop("disabled", true);
+
         const emailInput = document.getElementById('email');
         const nameInput = document.getElementById('full_name');
+        const passwordInput = document.getElementById('password');
 
         // Simple validation
         if (!emailInput.value || !nameInput.value) {
@@ -3489,8 +3675,7 @@
                     // Inform the user if there was an error
                     const errorElement = document.getElementById('card-errors');
                     errorElement.textContent = result.error.message;
-                    actionButton.disabled = false;
-                    actionButton.innerHTML = "Join Now";
+                    button.prop('disabled', false);
                 } else {
                     // Send the token and form data to your server
                     //stripeTokenHandler(result.token);
@@ -3499,6 +3684,7 @@
                         ...result.token,
                         name: nameInput.value,
                         email: emailInput.value,
+                        password: passwordInput.value
                     }
 
                     $.ajax({
@@ -3557,6 +3743,23 @@
             });
             loadLanguage();
         });
+    }
+
+    function selectPlan(plan, btn) {
+        $('#plan').val(plan);
+
+        let btncls = {
+            solo: 'btn-primary',
+            group: 'btn-success',
+            pro: 'btn-danger'
+        }[plan];
+
+        $('button[type="submit"]')
+            .removeClass('btn-primary btn-success btn-danger')
+            .addClass(btncls);
+
+        $('.plan').find('button').closest('.card').removeClass('selected');
+        $(btn).closest('.card').addClass('selected');
     }
 
     $(document).ready(function () {
@@ -3619,7 +3822,8 @@
 
         $("#registration-form").on("submit", function (e) {
             e.preventDefault();
-            submitForm();
+            var button = $(this).find(":submit");
+            submitForm(button);
         });
     });
 </script>
