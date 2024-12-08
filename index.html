@@ -4834,22 +4834,6 @@
 
 <script>
 
-    // Detect the user's preferred language and extract the 2-character code
-    function detectPreferredLanguage(language) {
-
-        // Check if navigator.languages is available
-        if (navigator.languages && navigator.languages.length > 0) {
-            language = navigator.languages[0];
-        } else if (navigator.language) {
-            language = navigator.language;
-        }
-
-        // Extract and return the 2-character code (e.g., "en" from "en-US")
-        return language.substring(0, 2);
-    }
-
-    // Use the detected language
-    const defaultLanguage = detectPreferredLanguage('en');
 
     const apiUrl = window.location.hostname.includes('.test')
         ? "//api.costguard.test/api/"
@@ -4977,21 +4961,53 @@
     }
 
 
-    function loadLanguage() {
-        const storedLanguage = localStorage.getItem("selectedLanguage") || defaultLanguage;
-        $("#language-dropdown").val(storedLanguage);
-        updateLanguageContent(storedLanguage);
+    // Detect the user's preferred language and extract the 2-character code
+    function detectPreferredLanguage(language) {
+
+        // Check if navigator.languages or navigator.language is available
+        if (navigator.languages && navigator.languages.length > 0) {
+            language = navigator.languages[0];
+        } else if (navigator.language) {
+            language = navigator.language;
+        }
+
+        // Extract and return the 2-character code (e.g., "en" from "en-US")
+        return language.substring(0, 2);
     }
 
-    function populateLanguages() {
+    // Populate languages and load the selected language
+    function setupLanguages() {
         $.getJSON(apiUrl.concat('languages'), function (data) {
             const dropdown = $("#language-dropdown");
             dropdown.empty();
+
+            let defaultLang = 'en';
+
+            // Detect the user's preferred language
+            const detectedLanguage = detectPreferredLanguage(defaultLang);
+
+            // Get the list of available language codes
+            const availableLanguages = Object.keys(data);
+
+            // Validate the detected language
+            const preferredLanguage = availableLanguages.includes(detectedLanguage)
+                ? detectedLanguage
+                : defaultLang;
+
+            // Sort the languages alphabetically by name
             const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
+
+            // Populate the dropdown
             languages.forEach(([code, name]) => {
                 dropdown.append(new Option(name, code));
             });
-            loadLanguage();
+
+            // Determine the language to load (stored or preferred)
+            const storedLanguage = localStorage.getItem("selectedLanguage") || preferredLanguage;
+
+            // Set the dropdown value and update content
+            dropdown.val(storedLanguage);
+            updateLanguageContent(storedLanguage);
         });
     }
 
@@ -5079,7 +5095,7 @@
             localStorage.setItem("selectedLanguage", selectedLanguage);
             updateLanguageContent(selectedLanguage);
         });
-        populateLanguages();
+        setupLanguages();
 
         $("#registration-form").on("submit", function (e) {
             e.preventDefault();
