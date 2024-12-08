@@ -15,6 +15,7 @@
     <!-- Bootstrap CSS -->
     <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <style>
         body, html {
@@ -91,11 +92,12 @@
 
         /* Wide View */
         @media (min-aspect-ratio: 3/4) {
-            .bg-image{
+            .bg-image {
                 position: absolute;
                 bottom: 0;
                 left: 0;
             }
+
             .content-area {
                 top: 0;
                 right: 0;
@@ -114,7 +116,7 @@
             }
 
             .content-area {
-                bottom:0;
+                bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 60%;
@@ -122,7 +124,7 @@
         }
 
         [data-lang] h1,
-        [data-lang] h4{
+        [data-lang] h4 {
             font-weight: 100;
         }
 
@@ -135,8 +137,8 @@
 <div class="content-area d-flex flex-column ">
     <div class="information">
         <div data-lang="af">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Eenvoudig slimmer besteding</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Eenvoudig slimmer besteding</h4>
             <p class="text-center">Slim | Doeltreffend | Betroubaar</p>
             <p class="text-center">KI-aangedrewe insigte om jou projekbesteding op koers te hou.</p>
             <ul>
@@ -157,8 +159,8 @@
 
 
         <div data-lang="sq">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Shpenzime më të zgjuara</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Shpenzime më të zgjuara</h4>
             <p class="text-center">I zgjuar | Efikas | I besueshëm</p>
             <p class="text-center">Njohuri të fuqizuara nga IA për të mbajtur nën kontroll shpenzimet e projektit tuaj.</p>
             <ul>
@@ -179,8 +181,8 @@
 
 
         <div data-lang="am">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ቀላልና ብልህ የምዝናና አስተዳደር</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ቀላልና ብልህ የምዝናና አስተዳደር</h4>
             <p class="text-center">ብልህ | ተገቢ | ታመን</p>
             <p class="text-center">የዕቅድ ወጪዎችን በቁጥጥር ለማቆየት በሠዎች ሃይል የተቻለ እውቀት።</p>
             <ul>
@@ -201,8 +203,8 @@
 
 
         <div data-lang="ar">
-            <h1 class="text-center mt-4" >كوست جارد</h1>
-            <h4 class="text-center" >إنفاق أكثر ذكاءً</h4>
+            <h1 class="text-center mt-4">كوست جارد</h1>
+            <h4 class="text-center">إنفاق أكثر ذكاءً</h4>
             <p class="text-center">ذكي | فعال | موثوق</p>
             <p class="text-center">رؤى مدعومة بالذكاء الاصطناعي لإبقاء إنفاق مشروعك تحت السيطرة.</p>
             <ul>
@@ -222,8 +224,8 @@
         </div>
 
         <div data-lang="hy">
-            <h1 class="text-center mt-4" >ԿոստԳարդ</h1>
-            <h4 class="text-center" >Պարզապես խելացի ծախսում</h4>
+            <h1 class="text-center mt-4">ԿոստԳարդ</h1>
+            <h4 class="text-center">Պարզապես խելացի ծախսում</h4>
             <p class="text-center">Խելացի | Արդյունավետ | Վստահելի</p>
             <p class="text-center">Արհեստական բանականությամբ առաջնորդվող լուծումներ՝ ձեր նախագծի ծախսերը վերահսկելու համար։</p>
             <ul>
@@ -243,8 +245,8 @@
         </div>
 
         <div data-lang="az">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Sadəcə Daha Ağıllı Xərcləmələr</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Sadəcə Daha Ağıllı Xərcləmələr</h4>
             <p class="text-center">Ağıllı | Effektiv | Etibarlı</p>
             <p class="text-center">Layihə xərclərinizi nəzarət altında saxlamaq üçün AI-dan güc alan anlayışlar.</p>
             <ul>
@@ -264,8 +266,8 @@
         </div>
 
         <div data-lang="eu">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Gastatze adimentsuagoa</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Gastatze adimentsuagoa</h4>
             <p class="text-center">Adimentsua | Eraginkorra | Fidagarria</p>
             <p class="text-center">AI-ak gidatutako ikuspegiak zure proiektuko gastuak kontrolpean mantentzeko.</p>
             <ul>
@@ -285,8 +287,8 @@
         </div>
 
         <div data-lang="be">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Проста разумныя выдаткі</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Проста разумныя выдаткі</h4>
             <p class="text-center">Разумны | Эфектыўны | Надзейны</p>
             <p class="text-center">Інсайты на аснове штучнага інтэлекту для кантролю за выдаткамі вашага праекта.</p>
             <ul>
@@ -306,8 +308,8 @@
         </div>
 
         <div data-lang="bn">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >সহজেই আরও বুদ্ধিমত্তার সাথে খরচ করুন</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">সহজেই আরও বুদ্ধিমত্তার সাথে খরচ করুন</h4>
             <p class="text-center">স্মার্ট | দক্ষ | নির্ভরযোগ্য</p>
             <p class="text-center">আপনার প্রকল্পের খরচ নিয়ন্ত্রণে রাখতে AI চালিত অন্তর্দৃষ্টি।</p>
             <ul>
@@ -328,8 +330,8 @@
 
         <!-- Bosanski (Bosnian) -->
         <div data-lang="bs">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Jednostavno pametnije trošenje</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Jednostavno pametnije trošenje</h4>
             <p class="text-center">Pametno | Efikasno | Pouzdano</p>
             <p class="text-center">AI omogućeni uvidi koji pomažu da vaše projektne troškove držite pod kontrolom.</p>
             <ul>
@@ -350,8 +352,8 @@
 
         <!-- Български (Bulgarian) -->
         <div data-lang="bg">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >По-умно управление на разходите</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">По-умно управление на разходите</h4>
             <p class="text-center">Умен | Ефективен | Надежден</p>
             <p class="text-center">Управлявайте проектните си разходи с помощта на решения, базирани на изкуствен интелект.</p>
             <ul>
@@ -372,8 +374,8 @@
 
         <!-- မြန်မာစာ (Burmese) -->
         <div data-lang="my">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ထိရောက်ပြီး စဉ်ဆက်မပြတ် အသုံးစရိတ် စီမံခန့်ခွဲမှု</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ထိရောက်ပြီး စဉ်ဆက်မပြတ် အသုံးစရိတ် စီမံခန့်ခွဲမှု</h4>
             <p class="text-center">ကျွမ်းကျင် | ထိရောက် | ယုံကြည်စိတ်ချ</p>
             <p class="text-center">AI အခြေခံသိမြင်မှုများဖြင့် သင့်စီမံကိန်း အသုံးစရိတ်များကို ထိန်းချုပ်နိုင်ပါစေ။</p>
             <ul>
@@ -394,8 +396,8 @@
 
         <!-- Català (Catalan) -->
         <div data-lang="ca">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Despeses més intel·ligents</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Despeses més intel·ligents</h4>
             <p class="text-center">Intel·ligent | Eficient | Fiable</p>
             <p class="text-center">Informació impulsada per IA per mantenir les despeses del teu projecte sota control.</p>
             <ul>
@@ -416,8 +418,8 @@
 
         <!-- Chichewa -->
         <div data-lang="ny">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Kulipira Mwanzeru</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Kulipira Mwanzeru</h4>
             <p class="text-center">Wanzeru | Wothandiza | Wodalirika</p>
             <p class="text-center">Njira zoyendetsedwa ndi AI kuti mukhale ndi ulamuliro pa ndalama zanu.</p>
             <ul>
@@ -438,8 +440,8 @@
 
         <!-- 中文 (Chinese) -->
         <div data-lang="zh">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >更聪明的支出管理</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">更聪明的支出管理</h4>
             <p class="text-center">智能 | 高效 | 可靠</p>
             <p class="text-center">由AI驱动的洞察力帮助您控制项目支出。</p>
             <ul>
@@ -460,8 +462,8 @@
 
         <!-- Hrvatski (Croatian) -->
         <div data-lang="hr">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Pametnije trošenje</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Pametnije trošenje</h4>
             <p class="text-center">Pametno | Učinkovito | Pouzdano</p>
             <p class="text-center">AI pogoni uvidi za držanje troškova projekta pod kontrolom.</p>
             <ul>
@@ -482,8 +484,8 @@
 
         <!-- Čeština (Czech) -->
         <div data-lang="cs">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Chytřejší výdaje</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Chytřejší výdaje</h4>
             <p class="text-center">Chytré | Efektivní | Spolehlivé</p>
             <p class="text-center">Poznatky poháněné umělou inteligencí, které pomohou udržet výdaje vašeho projektu pod kontrolou.</p>
             <ul>
@@ -504,8 +506,8 @@
 
         <!-- Dansk (Danish) -->
         <div data-lang="da">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Mere intelligent forbrug</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Mere intelligent forbrug</h4>
             <p class="text-center">Smart | Effektiv | Pålidelig</p>
             <p class="text-center">AI-drevne indsigter for at holde dine projektudgifter under kontrol.</p>
             <ul>
@@ -526,8 +528,8 @@
 
         <!-- Nederlands (Dutch) -->
         <div data-lang="nl">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Slimmer uitgavenbeheer</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Slimmer uitgavenbeheer</h4>
             <p class="text-center">Slim | Efficiënt | Betrouwbaar</p>
             <p class="text-center">Inzichten aangedreven door AI om uw projectuitgaven onder controle te houden.</p>
             <ul>
@@ -548,8 +550,8 @@
 
         <!-- Esperanto -->
         <div data-lang="eo">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Simple Pli Saĝa Elspezado</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Simple Pli Saĝa Elspezado</h4>
             <p class="text-center">Saĝa | Efika | Fidinda</p>
             <p class="text-center">AI-pelitaj komprenoj por teni viajn projektoelspezojn sub kontrolo.</p>
             <ul>
@@ -570,8 +572,8 @@
 
         <!-- Eesti (Estonian) -->
         <div data-lang="et">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Lihtsalt targemad kulutused</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Lihtsalt targemad kulutused</h4>
             <p class="text-center">Tark | Tõhus | Usaldusväärne</p>
             <p class="text-center">Tehisintellekti juhitud teadmised, mis aitavad teie projekti kulutusi kontrolli all hoida.</p>
             <ul>
@@ -592,8 +594,8 @@
 
         <!-- Suomi (Finnish) -->
         <div data-lang="fi">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Älykkäämpää kuluttamista</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Älykkäämpää kuluttamista</h4>
             <p class="text-center">Älykäs | Tehokas | Luotettava</p>
             <p class="text-center">AI-pohjaiset näkemykset, jotka pitävät projektisi kulut hallinnassa.</p>
             <ul>
@@ -614,8 +616,8 @@
 
         <!-- Français (French) -->
         <div data-lang="fr">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Dépenses plus intelligentes</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Dépenses plus intelligentes</h4>
             <p class="text-center">Intelligent | Efficace | Fiable</p>
             <p class="text-center">Des insights basés sur l'IA pour garder vos dépenses de projet sous contrôle.</p>
             <ul>
@@ -636,8 +638,8 @@
 
         <!-- ქართული (Georgian) -->
         <div data-lang="ka">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >უბრალოდ უფრო ჭკვიანი ხარჯვა</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">უბრალოდ უფრო ჭკვიანი ხარჯვა</h4>
             <p class="text-center">ჭკვიანი | ეფექტური | სანდო</p>
             <p class="text-center">AI-ზე დაფუძნებული ხედვა, რომელიც თქვენს პროექტის ხარჯებს კონტროლის ქვეშ ინარჩუნებს.</p>
             <ul>
@@ -659,8 +661,8 @@
 
         <!-- Deutsch (German) -->
         <div data-lang="de">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Einfach intelligenter ausgeben</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Einfach intelligenter ausgeben</h4>
             <p class="text-center">Intelligent | Effizient | Zuverlässig</p>
             <p class="text-center">KI-gestützte Erkenntnisse, um Ihre Projektkosten im Griff zu behalten.</p>
             <ul>
@@ -681,8 +683,8 @@
 
         <!-- Ελληνικά (Greek) -->
         <div data-lang="el">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Πιο έξυπνη διαχείριση δαπανών</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Πιο έξυπνη διαχείριση δαπανών</h4>
             <p class="text-center">Έξυπνο | Αποτελεσματικό | Αξιόπιστο</p>
             <p class="text-center">Πληροφορίες με τη βοήθεια της Τεχνητής Νοημοσύνης για να διατηρήσετε τις δαπάνες του έργου σας υπό έλεγχο.</p>
             <ul>
@@ -703,8 +705,8 @@
 
         <!-- ગુજરાતી (Gujarati) -->
         <div data-lang="gu">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >સરળતાથી વધુ સ્માર્ટ ખર્ચ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">સરળતાથી વધુ સ્માર્ટ ખર્ચ</h4>
             <p class="text-center">સ્માર્ટ | અસરકારક | વિશ્વસનીય</p>
             <p class="text-center">તમારા પ્રોજેક્ટના ખર્ચને નિયંત્રણમાં રાખવા માટે AI પર આધારિત ઝાંખીઓ.</p>
             <ul>
@@ -725,8 +727,8 @@
 
         <!-- Kreyòl Ayisyen (Haitian Creole) -->
         <div data-lang="ht">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Depans ki pi entelijan</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Depans ki pi entelijan</h4>
             <p class="text-center">Entelijan | Efikas | Fyab</p>
             <p class="text-center">Konesans ak AI pou kenbe depans pwojè ou anba kontwòl.</p>
             <ul>
@@ -747,8 +749,8 @@
 
         <!-- Hausa -->
         <div data-lang="ha">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Kudade da Hankali</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Kudade da Hankali</h4>
             <p class="text-center">Mai Kaifin Baka | Ingantacce | Amintacce</p>
             <p class="text-center">Fahimtar da ke aiki da AI don tabbatar da cewa kudaden aikin ku suna karkashin kulawa.</p>
             <ul>
@@ -769,8 +771,8 @@
 
         <!-- עברית (Hebrew) -->
         <div data-lang="he">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >הוצאה חכמה יותר</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">הוצאה חכמה יותר</h4>
             <p class="text-center">חכם | יעיל | אמין</p>
             <p class="text-center">תובנות מבוססות בינה מלאכותית שיסייעו לכם לשמור על הוצאות הפרויקט בשליטה.</p>
             <ul>
@@ -791,8 +793,8 @@
 
         <!-- हिन्दी (Hindi) -->
         <div data-lang="hi">
-            <h1 class="text-center mt-4" >कॉस्टगार्ड</h1>
-            <h4 class="text-center" >बस होशियारी से खर्च करें</h4>
+            <h1 class="text-center mt-4">कॉस्टगार्ड</h1>
+            <h4 class="text-center">बस होशियारी से खर्च करें</h4>
             <p class="text-center">स्मार्ट | कुशल | भरोसेमंद</p>
             <p class="text-center">आपकी परियोजना के खर्च को नियंत्रण में रखने के लिए AI संचालित अंतर्दृष्टि।</p>
             <ul>
@@ -813,8 +815,8 @@
 
         <!-- Magyar (Hungarian) -->
         <div data-lang="hu">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Egyszerűen okosabb költések</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Egyszerűen okosabb költések</h4>
             <p class="text-center">Okos | Hatékony | Megbízható</p>
             <p class="text-center">AI-alapú betekintések, amelyek segítenek a projektkiadásokat ellenőrzés alatt tartani.</p>
             <ul>
@@ -835,8 +837,8 @@
 
         <!-- Íslenska (Icelandic) -->
         <div data-lang="is">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Einungis snjallari útgjöld</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Einungis snjallari útgjöld</h4>
             <p class="text-center">Snjallt | Skilvirkt | Traust</p>
             <p class="text-center">Gervigreindardrifin innsýn sem hjálpar þér að halda verkútgjöldum þínum í skefjum.</p>
             <ul>
@@ -857,8 +859,8 @@
 
         <!-- Igbo -->
         <div data-lang="ig">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Mmefu Ego Ka Ọ Dị Nkenke</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Mmefu Ego Ka Ọ Dị Nkenke</h4>
             <p class="text-center">Ọbụ Ọhụrụ | Dị Mfe | Ezi Aha</p>
             <p class="text-center">Ezi uche sitere na AI iji mee ka mmefu ego ọrụ gị dịkwa ọcha.</p>
             <ul>
@@ -879,8 +881,8 @@
 
         <!-- Bahasa Indonesia (Indonesian) -->
         <div data-lang="id">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Pengeluaran yang Lebih Cerdas</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Pengeluaran yang Lebih Cerdas</h4>
             <p class="text-center">Cerdas | Efisien | Andal</p>
             <p class="text-center">Wawasan yang didukung AI untuk menjaga pengeluaran proyek Anda tetap terkendali.</p>
             <ul>
@@ -901,8 +903,8 @@
 
         <!-- Gaeilge (Irish) -->
         <div data-lang="ga">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Caiteachas Níos Cliste</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Caiteachas Níos Cliste</h4>
             <p class="text-center">Cliste | Éifeachtach | Iontaofa</p>
             <p class="text-center">Léargais faoi thiomáint AI chun caiteachas do thionscadail a choinneáil faoi smacht.</p>
             <ul>
@@ -923,8 +925,8 @@
 
         <!-- Italiano (Italian) -->
         <div data-lang="it">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Spese più intelligenti</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Spese più intelligenti</h4>
             <p class="text-center">Intelligente | Efficiente | Affidabile</p>
             <p class="text-center">Intuizioni basate su AI per mantenere le spese del progetto sotto controllo.</p>
             <ul>
@@ -945,8 +947,8 @@
 
         <!-- 日本語 (Japanese) -->
         <div data-lang="ja">
-            <h1 class="text-center mt-4" >コストガード</h1>
-            <h4 class="text-center" >より賢明な支出</h4>
+            <h1 class="text-center mt-4">コストガード</h1>
+            <h4 class="text-center">より賢明な支出</h4>
             <p class="text-center">スマート | 効率的 | 信頼性</p>
             <p class="text-center">AI によるインサイトで、プロジェクトの支出を管理します。</p>
             <ul>
@@ -967,8 +969,8 @@
 
         <!-- Basa Jawa (Javanese) -->
         <div data-lang="jv">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Pengeluaran sing Luwih Cerdas</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Pengeluaran sing Luwih Cerdas</h4>
             <p class="text-center">Cerdas | Efisien | Dipercaya</p>
             <p class="text-center">Pandangan didhukung AI kanggo njaga pengeluaran proyek tetep ing kontrol.</p>
             <ul>
@@ -989,8 +991,8 @@
 
 
         <div data-lang="en" class="active">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Simply Smarter Spending</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Simply Smarter Spending</h4>
             <p class="text-center">Smart | Efficient | Reliable</p>
             <p class="text-center">AI-powered insights to keep your project spending on track.</p>
             <ul>
@@ -1011,8 +1013,8 @@
 
         <!-- ಕನ್ನಡ (Kannada) -->
         <div data-lang="kn">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ಸರಳವಾಗಿ ಸುಸ್ಥಿರ ವೆಚ್ಚ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ಸರಳವಾಗಿ ಸುಸ್ಥಿರ ವೆಚ್ಚ</h4>
             <p class="text-center">ಚಾಣ | ಪರಿಣಾಮಕಾರೀ | ನಂಬಬಹುದಾದ</p>
             <p class="text-center">ನಿಮ್ಮ ಯೋಜನೆಯ ವೆಚ್ಚಗಳನ್ನು ನಿಯಂತ್ರಣದಲ್ಲಿ ಇಡಲು AI ಪ್ರೇರಿತ ಅಂತರದೃಷ್ಟಿಗಳು.</p>
             <ul>
@@ -1033,8 +1035,8 @@
 
         <!-- کٲشُر (Kashmiri) -->
         <div data-lang="ks">
-            <h1 class="text-center mt-4" >کاسٹ گارڈ</h1>
-            <h4 class="text-center" >زیادہ سمارٹ خرچ</h4>
+            <h1 class="text-center mt-4">کاسٹ گارڈ</h1>
+            <h4 class="text-center">زیادہ سمارٹ خرچ</h4>
             <p class="text-center">سمارٹ | مؤثر | قابل اعتماد</p>
             <p class="text-center">AI کی مدد سے بصیرتیں جو آپ کے پروجیکٹ کے اخراجات کو قابو میں رکھتی ہیں۔</p>
             <ul>
@@ -1055,8 +1057,8 @@
 
         <!-- Қазақ (Kazakh) -->
         <div data-lang="kk">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Жай ғана ақылды шығындар</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Жай ғана ақылды шығындар</h4>
             <p class="text-center">Ақылды | Тиімді | Сенімді</p>
             <p class="text-center">AI негізінде жобалық шығындарыңызды бақылауда ұстауға арналған түсініктер.</p>
             <ul>
@@ -1077,8 +1079,8 @@
 
         <!-- ភាសាខ្មែរ (Khmer) -->
         <div data-lang="km">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ការចំណាយឆ្លាតវៃជាង</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ការចំណាយឆ្លាតវៃជាង</h4>
             <p class="text-center">ឆ្លាតវៃ | ប្រសិទ្ធភាព | ទុកចិត្តបាន</p>
             <p class="text-center">ការយល់ដឹងដោយប្រើ AI ដើម្បីរក្សាការចំណាយគម្រោងរបស់អ្នកឱ្យនៅក្រោមការត្រួតពិនិត្យ។</p>
             <ul>
@@ -1099,8 +1101,8 @@
 
         <!-- Кыргызча (Kyrgyz) -->
         <div data-lang="ky">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Жөн эле акылдуу чыгымдар</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Жөн эле акылдуу чыгымдар</h4>
             <p class="text-center">Акылдуу | Натыйжалуу | Ишенимдүү</p>
             <p class="text-center">Жобо чыгымдарыңызды көзөмөлдө кармап туруу үчүн AI колдонулган түшүнүктөр.</p>
             <ul>
@@ -1121,8 +1123,8 @@
 
         <!-- 한국어 (Korean) -->
         <div data-lang="ko">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >더 스마트한 지출</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">더 스마트한 지출</h4>
             <p class="text-center">스마트 | 효율적 | 신뢰할 수 있는</p>
             <p class="text-center">프로젝트 지출을 제어하기 위해 AI 기반 통찰력을 제공합니다.</p>
             <ul>
@@ -1143,8 +1145,8 @@
 
         <!-- Kurdî (Kurdish) -->
         <div data-lang="ku">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >خەرجکردنێکی زیاتر زانست</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">خەرجکردنێکی زیاتر زانست</h4>
             <p class="text-center">زانستیار | کارامە | قابڵ بەئیماند</p>
             <p class="text-center">زانیارییەکان بە پشتگیری AI بۆ بەهەزگرتنی خەرجکردنەکانت لەسەر پڕۆژەکە.</p>
             <ul>
@@ -1165,8 +1167,8 @@
 
         <!-- ລາວ (Lao) -->
         <div data-lang="lo">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ຄ່າໃຊ້ຈ່າຍສະຫມາດຂຶ້ນ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ຄ່າໃຊ້ຈ່າຍສະຫມາດຂຶ້ນ</h4>
             <p class="text-center">ສະຫມາດ | ມີປະສິດທິພາບ | ເຊື່ອໄດ້</p>
             <p class="text-center">ເຂົ້າເຫັນຂໍ້ມູນສະຫມາດດ້ວຍ AI ສຳລັບຄຸ້ມຄອງຄ່າໃຊ້ຈ່າຍໂຄງການຂອງທ່ານ.</p>
             <ul>
@@ -1187,8 +1189,8 @@
 
         <!-- Latina (Latin) -->
         <div data-lang="la">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Proficientius Sumptus</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Proficientius Sumptus</h4>
             <p class="text-center">Intelligens | Efficiens | Fidelis</p>
             <p class="text-center">Intellectus a machina tractatus ad expensas consilium tuum continendas.</p>
             <ul>
@@ -1209,8 +1211,8 @@
 
         <!-- Latviešu (Latvian) -->
         <div data-lang="lv">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Gudrāki izdevumi</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Gudrāki izdevumi</h4>
             <p class="text-center">Gudrs | Efektīvs | Uzticams</p>
             <p class="text-center">AI virzīti ieskati, lai kontrolētu jūsu projekta izdevumus.</p>
             <ul>
@@ -1231,8 +1233,8 @@
 
         <!-- Lietuvių (Lithuanian) -->
         <div data-lang="lt">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Išmanesnės išlaidos</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Išmanesnės išlaidos</h4>
             <p class="text-center">Išmanus | Efektyvus | Patikimas</p>
             <p class="text-center">AI pagrįstos įžvalgos, padedančios kontroliuoti jūsų projekto išlaidas.</p>
             <ul>
@@ -1253,8 +1255,8 @@
 
         <!-- Македонски (Macedonian) -->
         <div data-lang="mk">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Поинтелигентни трошоци</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Поинтелигентни трошоци</h4>
             <p class="text-center">Интелигентно | Ефикасно | Доверливо</p>
             <p class="text-center">Информации базирани на AI за да ги контролирате вашите проектни трошоци.</p>
             <ul>
@@ -1275,8 +1277,8 @@
 
         <!-- Malagasy -->
         <div data-lang="mg">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Fandaniam-bola hendry kokoa</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Fandaniam-bola hendry kokoa</h4>
             <p class="text-center">Hendry | Mahomby | Azo itokisana</p>
             <p class="text-center">Hevitra avy amin'ny AI hanampiana anao hitazona ny fandaniana amin'ny tetikasa eo ambany fifehezana.</p>
             <ul>
@@ -1297,8 +1299,8 @@
 
         <!-- Bahasa Melayu (Malay) -->
         <div data-lang="ms">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Perbelanjaan yang Lebih Bijak</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Perbelanjaan yang Lebih Bijak</h4>
             <p class="text-center">Bijak | Efisien | Boleh Dipercayai</p>
             <p class="text-center">Pandangan dipacu AI untuk memastikan perbelanjaan projek anda terkawal.</p>
             <ul>
@@ -1319,8 +1321,8 @@
 
         <!-- മലയാളം (Malayalam) -->
         <div data-lang="ml">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >കൂടുതൽ പരിഗണിച്ച ചിലവുകൾ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">കൂടുതൽ പരിഗണിച്ച ചിലവുകൾ</h4>
             <p class="text-center">സ്മാർട്ട് | കാര്യക്ഷമം | വിശ്വസനീയമായ</p>
             <p class="text-center">AI പിന്തുണയുള്ള അറിവുകൾ, നിങ്ങളുടെ പദ്ധതിയുടെ ചിലവുകൾ നിയന്ത്രണത്തിൽ വെക്കാൻ സഹായിക്കുന്നു.</p>
             <ul>
@@ -1341,8 +1343,8 @@
 
         <!-- Malti (Maltese) -->
         <div data-lang="mt">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Infiq Aktar Intelliġenti</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Infiq Aktar Intelliġenti</h4>
             <p class="text-center">Intelliġenti | Effiċjenti | Affidabbli</p>
             <p class="text-center">Għarfien imħaddem mill-AI biex iżżomm l-infiq tal-proġett tiegħek taħt kontroll.</p>
             <ul>
@@ -1363,8 +1365,8 @@
 
         <!-- मराठी (Marathi) -->
         <div data-lang="mr">
-            <h1 class="text-center mt-4" >कॉस्टगार्ड</h1>
-            <h4 class="text-center" >सुज्ञ खर्च</h4>
+            <h1 class="text-center mt-4">कॉस्टगार्ड</h1>
+            <h4 class="text-center">सुज्ञ खर्च</h4>
             <p class="text-center">सुज्ञ | कार्यक्षम | विश्वासार्ह</p>
             <p class="text-center">AI-आधारित अंतर्दृष्टी जी तुम्हाला तुमच्या प्रकल्पाच्या खर्चावर नियंत्रण ठेवण्यास मदत करते.</p>
             <ul>
@@ -1385,8 +1387,8 @@
 
         <!-- Монгол (Mongolian) -->
         <div data-lang="mn">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Илүү ухаалаг зардал</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Илүү ухаалаг зардал</h4>
             <p class="text-center">Ухаалаг | Үр ашигтай | Найдвартай</p>
             <p class="text-center">Төслийнхөө зардлыг хяналтандаа байлгахын тулд AI-д суурилсан ойлголтуудыг ашиглаарай.</p>
             <ul>
@@ -1407,8 +1409,8 @@
 
         <!-- नेपाली (Nepali) -->
         <div data-lang="ne">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >स्मार्ट खर्च व्यवस्थापन</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">स्मार्ट खर्च व्यवस्थापन</h4>
             <p class="text-center">स्मार्ट | प्रभावकारी | भरपर्दो</p>
             <p class="text-center">तपाईंको परियोजनाको खर्चलाई नियन्त्रणमा राख्न AI-आधारित अंतर्दृष्टिहरू।</p>
             <ul>
@@ -1429,8 +1431,8 @@
 
         <!-- Norsk Bokmål (Norwegian Bokmål) -->
         <div data-lang="nb">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Enklere smart forbruk</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Enklere smart forbruk</h4>
             <p class="text-center">Smart | Effektiv | Pålitelig</p>
             <p class="text-center">AI-drevne innsikter for å holde prosjektutgiftene under kontroll.</p>
             <ul>
@@ -1451,8 +1453,8 @@
 
         <!-- Norsk Nynorsk (Norwegian Nynorsk) -->
         <div data-lang="nn">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Smartere utgifter</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Smartere utgifter</h4>
             <p class="text-center">Smart | Effektiv | Påliteleg</p>
             <p class="text-center">AI-drevne innsikter for å halde prosjektutgiftene dine under kontroll.</p>
             <ul>
@@ -1473,8 +1475,8 @@
 
         <!-- Norsk (Norwegian) -->
         <div data-lang="no">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Smartere utgifter</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Smartere utgifter</h4>
             <p class="text-center">Smart | Effektiv | Pålitelig</p>
             <p class="text-center">AI-drevne innsikter for å holde prosjektutgiftene dine under kontroll.</p>
             <ul>
@@ -1495,8 +1497,8 @@
 
         <!-- ଓଡ଼ିଆ (Odia) -->
         <div data-lang="or">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ସହଜ ସ୍ମାର୍ଟ ଖର୍ଚ୍ଚ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ସହଜ ସ୍ମାର୍ଟ ଖର୍ଚ୍ଚ</h4>
             <p class="text-center">ସ୍ମାର୍ଟ | ପ୍ରଭାବଶାଳୀ | ଭରସାଯୋଗ୍ୟ</p>
             <p class="text-center">AI ଆଧାରିତ ଜ୍ଞାନ, ଯାହା ଆପଣଙ୍କର ପ୍ରକଳ୍ପ ଖର୍ଚ୍ଚକୁ ନିୟନ୍ତ୍ରଣରେ ରଖିବାରେ ସାହାଯ୍ୟ କରେ।</p>
             <ul>
@@ -1517,8 +1519,8 @@
 
         <!-- Afaan Oromoo (Oromo) -->
         <div data-lang="om">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Baayʼee Ogeessa Baasii</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Baayʼee Ogeessa Baasii</h4>
             <p class="text-center">Ogeessa | Milkaaʼaa | Amansiisaa</p>
             <p class="text-center">Xinxala saffisaa fi sirrii kan baasii manii kee toʼachuu dandaʼu.</p>
             <ul>
@@ -1539,8 +1541,8 @@
 
         <!-- پښتو (Pashto) -->
         <div data-lang="ps">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >په غوره توګه لګښتونه</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">په غوره توګه لګښتونه</h4>
             <p class="text-center">هوښیار | مؤثر | د باور وړ</p>
             <p class="text-center">ستاسو د پروژې لګښتونه تر کنټرول لاندې ساتلو لپاره د AI پر بنسټ لرلید.</p>
             <ul>
@@ -1561,8 +1563,8 @@
 
         <!-- فارسی (Persian) -->
         <div data-lang="fa">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >مدیریت هزینه هوشمند</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">مدیریت هزینه هوشمند</h4>
             <p class="text-center">هوشمند | کارآمد | قابل اعتماد</p>
             <p class="text-center">بینش‌های مبتنی بر هوش مصنوعی برای کنترل هزینه‌های پروژه شما.</p>
             <ul>
@@ -1583,8 +1585,8 @@
 
         <!-- Polski (Polish) -->
         <div data-lang="pl">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Mądrzejsze wydatki</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Mądrzejsze wydatki</h4>
             <p class="text-center">Inteligentne | Efektywne | Wiarygodne</p>
             <p class="text-center">Wgląd oparty na sztucznej inteligencji, aby utrzymać wydatki projektu pod kontrolą.</p>
             <ul>
@@ -1605,8 +1607,8 @@
 
         <!-- Português (Portuguese) -->
         <div data-lang="pt">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Despesas mais inteligentes</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Despesas mais inteligentes</h4>
             <p class="text-center">Inteligente | Eficiente | Confiável</p>
             <p class="text-center">Insights impulsionados por IA para manter os gastos do seu projeto sob controle.</p>
             <ul>
@@ -1627,8 +1629,8 @@
 
         <!-- Română (Romanian) -->
         <div data-lang="ro">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Cheltuieli mai inteligente</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Cheltuieli mai inteligente</h4>
             <p class="text-center">Inteligent | Eficient | De încredere</p>
             <p class="text-center">Perspective bazate pe AI pentru a menține cheltuielile proiectului sub control.</p>
             <ul>
@@ -1649,8 +1651,8 @@
 
         <!-- Русский (Russian) -->
         <div data-lang="ru">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Более разумные расходы</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Более разумные расходы</h4>
             <p class="text-center">Умный | Эффективный | Надежный</p>
             <p class="text-center">Инсайты на базе ИИ, чтобы держать расходы проекта под контролем.</p>
             <ul>
@@ -1671,8 +1673,8 @@
 
         <!-- Српски (Serbian) -->
         <div data-lang="sr">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Паметније трошење</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Паметније трошење</h4>
             <p class="text-center">Паметно | Ефикасно | Поуздано</p>
             <p class="text-center">АИ погледи који помажу да трошкови пројекта остану под контролом.</p>
             <ul>
@@ -1693,8 +1695,8 @@
 
         <!-- සිංහල (Sinhala) -->
         <div data-lang="si">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >සාධාරණ වියදම්</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">සාධාරණ වියදම්</h4>
             <p class="text-center">බුද්ධිමත් | කාර්යක්ෂම | විශ්වාසනීය</p>
             <p class="text-center">ඔබගේ ව්‍යාපෘති වියදම් පාලනයට තබා ගැනීමට AI ආධාරක දැක්ම.</p>
             <ul>
@@ -1715,8 +1717,8 @@
 
         <!-- Slovenčina (Slovak) -->
         <div data-lang="sk">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Inteligentnejšie výdavky</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Inteligentnejšie výdavky</h4>
             <p class="text-center">Inteligentné | Efektívne | Spoľahlivé</p>
             <p class="text-center">Poznatky založené na AI na udržanie výdavkov projektu pod kontrolou.</p>
             <ul>
@@ -1737,8 +1739,8 @@
 
         <!-- Slovenščina (Slovenian) -->
         <div data-lang="sl">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Pametnejši izdatki</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Pametnejši izdatki</h4>
             <p class="text-center">Pametno | Učinkovito | Zanesljivo</p>
             <p class="text-center">Vpogledi, podprti z umetno inteligenco, za nadzor nad stroški vašega projekta.</p>
             <ul>
@@ -1759,8 +1761,8 @@
 
         <!-- Soomaali (Somali) -->
         <div data-lang="so">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Kharashaad Garaadka Leh</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Kharashaad Garaadka Leh</h4>
             <p class="text-center">Caqli Badan | Wax-ku-ool ah | Lagu Kalsoonaan Karo</p>
             <p class="text-center">Aragtiyo ku shaqeynaya AI si loo xakameeyo kharashaadka mashruucaaga.</p>
             <ul>
@@ -1781,8 +1783,8 @@
 
         <!-- Kiswahili (Swahili) -->
         <div data-lang="sw">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Matumizi ya Akili Zaidi</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Matumizi ya Akili Zaidi</h4>
             <p class="text-center">Akili | Ufanisi | Wa Kuaminika</p>
             <p class="text-center">Uwezo wa AI kusaidia kudhibiti matumizi ya mradi wako.</p>
             <ul>
@@ -1804,8 +1806,8 @@
 
         <!-- Svenska (Swedish) -->
         <div data-lang="sv">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Smarta utgifter</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Smarta utgifter</h4>
             <p class="text-center">Smart | Effektiv | Tillförlitlig</p>
             <p class="text-center">AI-drivna insikter för att hålla dina projektkostnader under kontroll.</p>
             <ul>
@@ -1827,8 +1829,8 @@
 
         <!-- Tagalog (Tagalog) -->
         <div data-lang="tl">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Mas Matalinong Paggasta</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Mas Matalinong Paggasta</h4>
             <p class="text-center">Matalino | Epektibo | Maaasahan</p>
             <p class="text-center">Mga pananaw na pinapagana ng AI upang mapanatili ang paggasta ng iyong proyekto sa kontrol.</p>
             <ul>
@@ -1850,8 +1852,8 @@
 
         <!-- Тоҷикӣ (Tajik) -->
         <div data-lang="tg">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Хароҷоти оқилона</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Хароҷоти оқилона</h4>
             <p class="text-center">Ақлнок | Самаранок | Боваринок</p>
             <p class="text-center">Таҳлилҳои ба AI асосёфта барои нигоҳ доштани хароҷоти лоиҳаи шумо таҳти назорат.</p>
             <ul>
@@ -1872,8 +1874,8 @@
 
         <!-- தமிழ் (Tamil) -->
         <div data-lang="ta">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >சாதாரணமாகச் செலவழி</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">சாதாரணமாகச் செலவழி</h4>
             <p class="text-center">விவேகம் | செயல்திறன் | நம்பகத்தன்மை</p>
             <p class="text-center">உங்கள் திட்ட செலவுகளை கட்டுக்குள் வைத்திருக்க AI ஆதரித்த பார்வைகள்.</p>
             <ul>
@@ -1894,8 +1896,8 @@
 
         <!-- తెలుగు (Telugu) -->
         <div data-lang="te">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >మెరుగైన ఖర్చులు</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">మెరుగైన ఖర్చులు</h4>
             <p class="text-center">తెలివైనది | సమర్థవంతమైనది | నమ్మకమైనది</p>
             <p class="text-center">మీ ప్రాజెక్ట్ ఖర్చులను నియంత్రణలో ఉంచడానికి AI ఆధారిత అంతర్దృష్టులు.</p>
             <ul>
@@ -1916,8 +1918,8 @@
 
         <!-- ไทย (Thai) -->
         <div data-lang="th">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >การใช้จ่ายที่ชาญฉลาด</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">การใช้จ่ายที่ชาญฉลาด</h4>
             <p class="text-center">ฉลาด | มีประสิทธิภาพ | เชื่อถือได้</p>
             <p class="text-center">ข้อมูลเชิงลึกที่ขับเคลื่อนด้วย AI เพื่อควบคุมค่าใช้จ่ายในโครงการของคุณ</p>
             <ul>
@@ -1938,8 +1940,8 @@
 
         <!-- Türkçe (Turkish) -->
         <div data-lang="tr">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Daha Akıllı Harcamalar</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Daha Akıllı Harcamalar</h4>
             <p class="text-center">Akıllı | Etkili | Güvenilir</p>
             <p class="text-center">Projelerinizin harcamalarını kontrol altında tutmak için yapay zeka destekli içgörüler.</p>
             <ul>
@@ -1960,8 +1962,8 @@
 
         <!-- Українська (Ukrainian) -->
         <div data-lang="uk">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Розумніші витрати</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Розумніші витрати</h4>
             <p class="text-center">Розумно | Ефективно | Надійно</p>
             <p class="text-center">Інсайти на основі AI, які допоможуть вам контролювати витрати вашого проекту.</p>
             <ul>
@@ -1982,8 +1984,8 @@
 
         <!-- اردو (Urdu) -->
         <div data-lang="ur">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >زیادہ سمجھدار خرچ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">زیادہ سمجھدار خرچ</h4>
             <p class="text-center">سمارٹ | مؤثر | قابل اعتماد</p>
             <p class="text-center">AI پر مبنی بصیرت جو آپ کے پروجیکٹ کے اخراجات کو قابو میں رکھنے میں مدد دیتی ہے۔</p>
             <ul>
@@ -2004,8 +2006,8 @@
 
         <!-- Oʻzbek (Uzbek) -->
         <div data-lang="uz">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Aqlli xarajatlar</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Aqlli xarajatlar</h4>
             <p class="text-center">Aqlli | Samarali | Ishonchli</p>
             <p class="text-center">AI asoslangan tushunchalar sizning loyiha xarajatlaringizni nazorat qilishga yordam beradi.</p>
             <ul>
@@ -2026,8 +2028,8 @@
 
         <!-- Tiếng Việt (Vietnamese) -->
         <div data-lang="vi">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Chi tiêu thông minh hơn</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Chi tiêu thông minh hơn</h4>
             <p class="text-center">Thông minh | Hiệu quả | Đáng tin cậy</p>
             <p class="text-center">Thông tin chi tiết được hỗ trợ bởi AI để giữ chi tiêu dự án của bạn trong tầm kiểm soát.</p>
             <ul>
@@ -2048,8 +2050,8 @@
 
         <!-- Cymraeg (Welsh) -->
         <div data-lang="cy">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Gwariant Mwy Deallus</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Gwariant Mwy Deallus</h4>
             <p class="text-center">Deallus | Effeithlon | Dibynadwy</p>
             <p class="text-center">Mewnwelediadau wedi'u pweru gan AI i gadw gwariant eich prosiect dan reolaeth.</p>
             <ul>
@@ -2070,8 +2072,8 @@
 
         <!-- Yorùbá (Yoruba) -->
         <div data-lang="yo">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Iṣowo ọlọgbọn</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Iṣowo ọlọgbọn</h4>
             <p class="text-center">Ọlọgbọn | To munadoko | Gbẹkẹle</p>
             <p class="text-center">Awọn oye ti a ṣe atilẹyin nipasẹ AI lati ṣetọju inawo iṣẹ akanṣe rẹ labẹ iṣakoso.</p>
             <ul>
@@ -2092,8 +2094,8 @@
 
         <!-- IsiZulu (Zulu) -->
         <div data-lang="zu">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Izindleko Ezihlakaniphile</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Izindleko Ezihlakaniphile</h4>
             <p class="text-center">Hlakaniphile | Okusebenza kahle | Kuthenjwa</p>
             <p class="text-center">Ukuqonda okuqhutshwa yi-AI ukuze ugcine izindleko zakho zephrojekthi zingaphansi kokulawula.</p>
             <ul>
@@ -2115,8 +2117,8 @@
 
         <!-- ਪੰਜਾਬੀ (Punjabi) -->
         <div data-lang="pa">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >ਹੋਸ਼ੀਅਾਰ ਖਰਚਾ</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">ਹੋਸ਼ੀਅਾਰ ਖਰਚਾ</h4>
             <p class="text-center">ਸਮਝਦਾਰ | ਪ੍ਰਭਾਵਸ਼ਾਲੀ | ਭਰੋਸੇਯੋਗ</p>
             <p class="text-center">ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਦੇ ਖਰਚਿਆਂ ਨੂੰ ਕਾਬੂ ਵਿੱਚ ਰੱਖਣ ਲਈ AI-ਚਲਾਏ ਗਏ ਅੰਦਰੂਨੀ ਦਰਸ਼ਨ।</p>
             <ul>
@@ -2137,8 +2139,8 @@
 
 
         <div data-lang="es">
-            <h1 class="text-center mt-4" >CostGuard</h1>
-            <h4 class="text-center" >Gastos más inteligentes</h4>
+            <h1 class="text-center mt-4">CostGuard</h1>
+            <h4 class="text-center">Gastos más inteligentes</h4>
             <p class="text-center">Inteligente | Eficiente | Confiable</p>
             <p class="text-center">Información impulsada por IA para mantener sus gastos de proyecto bajo control.</p>
             <ul>
@@ -2255,13 +2257,19 @@
             Register
         </h3>
 
-        <form>
+        <form id="registration-form">
             <div class="mb-3">
                 <select id="language-dropdown" class="form-select"></select>
             </div>
 
             <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Email"
+                <input type="email"
+                       value="billy@yourmom.com"
+                       class="form-control"
+                       placeholder="Email"
+                       name="email"
+                       id="email"
+
                        data-placeholder-af="E-pos"
                        data-placeholder-sq="Emaili"
                        data-placeholder-am="ኢሜል"
@@ -2358,7 +2366,854 @@
             </div>
 
             <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Full Name"
+                <input type="password"
+                       class="form-control"
+                       placeholder="Password"
+                       name="password"
+                       id="password"
+                       data-placeholder-af="Wagwoord"
+                       data-placeholder-sq="Fjalëkalim"
+                       data-placeholder-am="የይለፍ ቃል"
+                       data-placeholder-ar="كلمة المرور"
+                       data-placeholder-hy="Գաղտնաբառ"
+                       data-placeholder-az="Şifrə"
+                       data-placeholder-eu="Pasahitza"
+                       data-placeholder-be="Пароль"
+                       data-placeholder-bn="পাসওয়ার্ড"
+                       data-placeholder-bs="Lozinka"
+                       data-placeholder-bg="Парола"
+                       data-placeholder-my="စကားဝှက်"
+                       data-placeholder-ca="Contrasenya"
+                       data-placeholder-ny="Mawu Achinsinsi"
+                       data-placeholder-zh="密码"
+                       data-placeholder-hr="Lozinka"
+                       data-placeholder-cs="Heslo"
+                       data-placeholder-da="Adgangskode"
+                       data-placeholder-nl="Wachtwoord"
+                       data-placeholder-en="Password"
+                       data-placeholder-eo="Pasvorto"
+                       data-placeholder-et="Parool"
+                       data-placeholder-fi="Salasana"
+                       data-placeholder-fr="Mot de passe"
+                       data-placeholder-ka="პაროლი"
+                       data-placeholder-de="Passwort"
+                       data-placeholder-el="Κωδικός πρόσβασης"
+                       data-placeholder-gu="પાસવર્ડ"
+                       data-placeholder-ht="Modpas"
+                       data-placeholder-ha="Kalmar wucewa"
+                       data-placeholder-he="סיסמה"
+                       data-placeholder-hi="पासवर्ड"
+                       data-placeholder-hu="Jelszó"
+                       data-placeholder-is="Lykilorð"
+                       data-placeholder-ig="Okwuntù"
+                       data-placeholder-id="Kata Sandi"
+                       data-placeholder-ga="Pasfhocal"
+                       data-placeholder-it="Password"
+                       data-placeholder-ja="パスワード"
+                       data-placeholder-jv="Sandi"
+                       data-placeholder-kn="ಪಾಸ್ವರ್ಡ್"
+                       data-placeholder-ks="پاس ورڈ"
+                       data-placeholder-kk="Құпия сөз"
+                       data-placeholder-km="លេខសម្ងាត់"
+                       data-placeholder-ky="Сыр сөз"
+                       data-placeholder-ko="비밀번호"
+                       data-placeholder-ku="Şîfre"
+                       data-placeholder-lo="ລະຫັດຜ່ານ"
+                       data-placeholder-la="Tessera"
+                       data-placeholder-lv="Parole"
+                       data-placeholder-lt="Slaptažodis"
+                       data-placeholder-mk="Лозинка"
+                       data-placeholder-mg="Teny miafina"
+                       data-placeholder-ms="Kata laluan"
+                       data-placeholder-ml="പാസ്‌വേഡ്"
+                       data-placeholder-mt="Password"
+                       data-placeholder-mr="पासवर्ड"
+                       data-placeholder-mn="Нууц үг"
+                       data-placeholder-ne="पासवर्ड"
+                       data-placeholder-nb="Passord"
+                       data-placeholder-nn="Passord"
+                       data-placeholder-no="Passord"
+                       data-placeholder-or="ପାସୱାର୍ଡ"
+                       data-placeholder-om="Jecha"
+                       data-placeholder-pa="ਪਾਸਵਰਡ"
+                       data-placeholder-ps="رمز"
+                       data-placeholder-fa="گذرواژه"
+                       data-placeholder-pl="Hasło"
+                       data-placeholder-pt="Senha"
+                       data-placeholder-ro="Parolă"
+                       data-placeholder-ru="Пароль"
+                       data-placeholder-sr="Лозинка"
+                       data-placeholder-si="මුරපදය"
+                       data-placeholder-sk="Heslo"
+                       data-placeholder-sl="Geslo"
+                       data-placeholder-so="Ereyga sirta ah"
+                       data-placeholder-es="Contraseña"
+                       data-placeholder-sw="Nenosiri"
+                       data-placeholder-sv="Lösenord"
+                       data-placeholder-tl="Password"
+                       data-placeholder-tg="Рамз"
+                       data-placeholder-ta="கடவுச்சொல்"
+                       data-placeholder-te="పాస్వర్డ్"
+                       data-placeholder-th="รหัสผ่าน"
+                       data-placeholder-tr="Şifre"
+                       data-placeholder-uk="Пароль"
+                       data-placeholder-ur="پاس ورڈ"
+                       data-placeholder-uz="Parol"
+                       data-placeholder-vi="Mật khẩu"
+                       data-placeholder-cy="Cyfrinair"
+                       data-placeholder-yo="Ọrọ aṣínà"
+                       data-placeholder-zu="Iphasiwedi"
+
+
+                data-error-required-af="Wagwoord is nodig."
+                data-error-minlength-af="Wagwoord moet minstens 8 karakters lank wees."
+                data-error-mixedcase-af="Wagwoord moet beide hoofletters en kleinletters bevat."
+                data-error-letters-af="Wagwoord moet ten minste een letter bevat."
+                data-error-numbers-af="Wagwoord moet ten minste een nommer bevat."
+                data-error-symbols-af="Wagwoord moet ten minste een simbool bevat."
+
+
+                data-error-required-sq="Fjalëkalimi është i nevojshëm."
+                data-error-minlength-sq="Fjalëkalimi duhet të jetë të paktën 8 karaktere."
+                data-error-mixedcase-sq="Fjalëkalimi duhet të përfshijë shkronja të mëdha dhe të vogla."
+                data-error-letters-sq="Fjalëkalimi duhet të përmbajë të paktën një shkronjë."
+                data-error-numbers-sq="Fjalëkalimi duhet të përmbajë të paktën një numër."
+                data-error-symbols-sq="Fjalëkalimi duhet të përfshijë të paktën një simbol."
+
+
+                data-error-required-am="የይለፍ ቃል ያስፈልጋል።"
+                data-error-minlength-am="የይለፍ ቃል ቢያንስ 8 ቁምፊ መሆን አለበት።"
+                data-error-mixedcase-am="የይለፍ ቃል የታችኛውንና የላይኛውን ፊደል ማካተት አለበት።"
+                data-error-letters-am="የይለፍ ቃል ቢያንስ አንድ ፊደል መካተት አለበት።"
+                data-error-numbers-am="የይለፍ ቃል ቢያንስ አንድ ቁጥር መካተት አለበት።"
+                data-error-symbols-am="የይለፍ ቃል ቢያንስ አንድ ምልክት መካተት አለበት።"
+
+
+                data-error-required-ar="كلمة المرور مطلوبة."
+                data-error-minlength-ar="يجب أن تتكون كلمة المرور من 8 أحرف على الأقل."
+                data-error-mixedcase-ar="يجب أن تحتوي كلمة المرور على أحرف كبيرة وصغيرة."
+                data-error-letters-ar="يجب أن تحتوي كلمة المرور على حرف واحد على الأقل."
+                data-error-numbers-ar="يجب أن تحتوي كلمة المرور على رقم واحد على الأقل."
+                data-error-symbols-ar="يجب أن تحتوي كلمة المرور على رمز واحد على الأقل."
+
+
+                data-error-required-hy="Գաղտնաբառը պարտադիր է:"
+                data-error-minlength-hy="Գաղտնաբառը պետք է լինի առնվազն 8 նիշ:"
+                data-error-mixedcase-hy="Գաղտնաբառը պետք է պարունակի մեծատառեր և փոքրատառեր:"
+                data-error-letters-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ տառ:"
+                data-error-numbers-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ թիվ:"
+                data-error-symbols-hy="Գաղտնաբառը պետք է պարունակի առնվազն մեկ խորհրդանիշ:"
+
+
+                data-error-required-az="Şifrə tələb olunur."
+                data-error-minlength-az="Şifrə ən azı 8 simvol olmalıdır."
+                data-error-mixedcase-az="Şifrə həm böyük, həm də kiçik hərfləri ehtiva etməlidir."
+                data-error-letters-az="Şifrə ən azı bir hərf ehtiva etməlidir."
+                data-error-numbers-az="Şifrə ən azı bir rəqəm ehtiva etməlidir."
+                data-error-symbols-az="Şifrə ən azı bir simvol ehtiva etməlidir."
+
+
+                data-error-required-eu="Pasahitza beharrezkoa da."
+                data-error-minlength-eu="Pasahitzak gutxienez 8 karaktere izan behar ditu."
+                data-error-mixedcase-eu="Pasahitzak letra larriz eta xehez osatuta egon behar du."
+                data-error-letters-eu="Pasahitzak gutxienez letra bat izan behar du."
+                data-error-numbers-eu="Pasahitzak gutxienez zenbaki bat izan behar du."
+                data-error-symbols-eu="Pasahitzak gutxienez ikur bat izan behar du."
+
+
+                data-error-required-be="Патрабуецца пароль."
+                data-error-minlength-be="Пароль павінен быць не менш за 8 сімвалаў."
+                data-error-mixedcase-be="Пароль павінен ўключаць вялікія і малыя літары."
+                data-error-letters-be="Пароль павінен мець хаця б адну літару."
+                data-error-numbers-be="Пароль павінен ўключаць хаця б адну лічбу."
+                data-error-symbols-be="Пароль павінен ўключаць хаця б адзін сімвал."
+
+
+                data-error-required-bn="পাসওয়ার্ড আবশ্যক।"
+                data-error-minlength-bn="পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।"
+                data-error-mixedcase-bn="পাসওয়ার্ডে বড় হাতের এবং ছোট হাতের অক্ষর থাকতে হবে।"
+                data-error-letters-bn="পাসওয়ার্ডে অন্তত একটি অক্ষর থাকতে হবে।"
+                data-error-numbers-bn="পাসওয়ার্ডে অন্তত একটি সংখ্যা থাকতে হবে।"
+                data-error-symbols-bn="পাসওয়ার্ডে অন্তত একটি চিহ্ন থাকতে হবে।"
+
+
+                data-error-required-bs="Lozinka je obavezna."
+                data-error-minlength-bs="Lozinka mora imati najmanje 8 karaktera."
+                data-error-mixedcase-bs="Lozinka mora sadržavati velika i mala slova."
+                data-error-letters-bs="Lozinka mora sadržavati najmanje jedno slovo."
+                data-error-numbers-bs="Lozinka mora sadržavati najmanje jedan broj."
+                data-error-symbols-bs="Lozinka mora sadržavati najmanje jedan simbol."
+
+
+                data-error-required-bg="Паролата е задължителна."
+                data-error-minlength-bg="Паролата трябва да е поне 8 символа."
+                data-error-mixedcase-bg="Паролата трябва да съдържа главни и малки букви."
+                data-error-letters-bg="Паролата трябва да съдържа поне една буква."
+                data-error-numbers-bg="Паролата трябва да съдържа поне една цифра."
+                data-error-symbols-bg="Паролата трябва да съдържа поне един символ."
+
+
+                data-error-required-my="စကားဝှက် လိုအပ်ပါသည်။"
+                data-error-minlength-my="စကားဝှက်တွင် အနည်းဆုံး အက္ခရာ ၈ လုံး ပါရှိရမည်။"
+                data-error-mixedcase-my="စကားဝှက်တွင် လက်တင်စာလုံးအကြီးနှင့် အငယ်များ ပါရှိရမည်။"
+                data-error-letters-my="စကားဝှက်တွင် အက္ခရာ အနည်းဆုံး တစ်လုံး ပါရှိရမည်။"
+                data-error-numbers-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော ကိန်းဂဏန်း ပါရှိရမည်။"
+                data-error-symbols-my="စကားဝှက်တွင် အနည်းဆုံး တစ်ခုသော သင်္ကေတ ပါရှိရမည်။"
+
+
+                data-error-required-ca="La contrasenya és obligatòria."
+                data-error-minlength-ca="La contrasenya ha de tenir almenys 8 caràcters."
+                data-error-mixedcase-ca="La contrasenya ha d'incloure majúscules i minúscules."
+                data-error-letters-ca="La contrasenya ha de contenir almenys una lletra."
+                data-error-numbers-ca="La contrasenya ha de contenir almenys un número."
+                data-error-symbols-ca="La contrasenya ha d'incloure almenys un símbol."
+
+
+                data-error-required-ny="Achinsinsi akufunika."
+                data-error-minlength-ny="Achinsinsi ayenera kukhala osachepera zilembo 8."
+                data-error-mixedcase-ny="Achinsinsi ayenera kukhala ndi zilembo zazikulu ndi zazing'ono."
+                data-error-letters-ny="Achinsinsi ayenera kukhala ndi kalata imodzi osachepera."
+                data-error-numbers-ny="Achinsinsi ayenera kukhala ndi nambala imodzi osachepera."
+                data-error-symbols-ny="Achinsinsi ayenera kukhala ndi chizindikiro chimodzi osachepera."
+
+
+                data-error-required-zh="需要密码。"
+                data-error-minlength-zh="密码必须至少包含8个字符。"
+                data-error-mixedcase-zh="密码必须包含大小写字母。"
+                data-error-letters-zh="密码必须至少包含一个字母。"
+                data-error-numbers-zh="密码必须至少包含一个数字。"
+                data-error-symbols-zh="密码必须至少包含一个符号。"
+
+
+                data-error-required-hr="Lozinka je obavezna."
+                data-error-minlength-hr="Lozinka mora imati najmanje 8 znakova."
+                data-error-mixedcase-hr="Lozinka mora sadržavati velika i mala slova."
+                data-error-letters-hr="Lozinka mora sadržavati barem jedno slovo."
+                data-error-numbers-hr="Lozinka mora sadržavati barem jedan broj."
+                data-error-symbols-hr="Lozinka mora sadržavati barem jedan simbol."
+
+
+                data-error-required-cs="Heslo je povinné."
+                data-error-minlength-cs="Heslo musí mít alespoň 8 znaků."
+                data-error-mixedcase-cs="Heslo musí obsahovat velká i malá písmena."
+                data-error-letters-cs="Heslo musí obsahovat alespoň jedno písmeno."
+                data-error-numbers-cs="Heslo musí obsahovat alespoň jedno číslo."
+                data-error-symbols-cs="Heslo musí obsahovat alespoň jeden symbol."
+
+
+                data-error-required-da="Adgangskode er påkrævet."
+                data-error-minlength-da="Adgangskoden skal være mindst 8 tegn."
+                data-error-mixedcase-da="Adgangskoden skal indeholde både store og små bogstaver."
+                data-error-letters-da="Adgangskoden skal indeholde mindst ét bogstav."
+                data-error-numbers-da="Adgangskoden skal indeholde mindst ét tal."
+                data-error-symbols-da="Adgangskoden skal indeholde mindst ét symbol."
+
+
+                data-error-required-nl="Wachtwoord is verplicht."
+                data-error-minlength-nl="Wachtwoord moet minimaal 8 tekens bevatten."
+                data-error-mixedcase-nl="Wachtwoord moet zowel hoofdletters als kleine letters bevatten."
+                data-error-letters-nl="Wachtwoord moet ten minste één letter bevatten."
+                data-error-numbers-nl="Wachtwoord moet ten minste één cijfer bevatten."
+                data-error-symbols-nl="Wachtwoord moet ten minste één symbool bevatten."
+
+
+                data-error-required-en="Password is required."
+                data-error-minlength-en="Password must be at least 8 characters."
+                data-error-mixedcase-en="Password must include both uppercase and lowercase letters."
+                data-error-letters-en="Password must contain at least one letter."
+                data-error-numbers-en="Password must contain at least one number."
+                data-error-symbols-en="Password must include at least one symbol."
+
+
+                data-error-required-eo="Pasvorto estas bezonata."
+                data-error-minlength-eo="Pasvorto devas havi almenaŭ 8 signojn."
+                data-error-mixedcase-eo="Pasvorto devas inkluzivi majusklojn kaj minusklojn."
+                data-error-letters-eo="Pasvorto devas enhavi almenaŭ unu literon."
+                data-error-numbers-eo="Pasvorto devas enhavi almenaŭ unu numeron."
+                data-error-symbols-eo="Pasvorto devas inkluzivi almenaŭ unu simbolon."
+
+
+                data-error-required-et="Parool on nõutav."
+                data-error-minlength-et="Parool peab olema vähemalt 8 tähemärki pikk."
+                data-error-mixedcase-et="Parool peab sisaldama nii suuri kui ka väikeseid tähti."
+                data-error-letters-et="Parool peab sisaldama vähemalt ühte tähte."
+                data-error-numbers-et="Parool peab sisaldama vähemalt ühte numbrit."
+                data-error-symbols-et="Parool peab sisaldama vähemalt ühte sümbolit."
+
+
+                data-error-required-fi="Salasana on pakollinen."
+                data-error-minlength-fi="Salasanan tulee olla vähintään 8 merkkiä pitkä."
+                data-error-mixedcase-fi="Salasanan tulee sisältää sekä isoja että pieniä kirjaimia."
+                data-error-letters-fi="Salasanan tulee sisältää vähintään yksi kirjain."
+                data-error-numbers-fi="Salasanan tulee sisältää vähintään yhden numeron."
+                data-error-symbols-fi="Salasanan tulee sisältää vähintään yhden symbolin."
+
+
+                data-error-required-fr="Le mot de passe est requis."
+                data-error-minlength-fr="Le mot de passe doit contenir au moins 8 caractères."
+                data-error-mixedcase-fr="Le mot de passe doit inclure des lettres majuscules et minuscules."
+                data-error-letters-fr="Le mot de passe doit contenir au moins une lettre."
+                data-error-numbers-fr="Le mot de passe doit contenir au moins un chiffre."
+                data-error-symbols-fr="Le mot de passe doit inclure au moins un symbole."
+
+
+                data-error-required-ka="პაროლი სავალდებულოა."
+                data-error-minlength-ka="პაროლი უნდა იყოს მინიმუმ 8 სიმბოლო."
+                data-error-mixedcase-ka="პაროლში უნდა იყოს როგორც დიდი, ასევე მცირე ასოები."
+                data-error-letters-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ასოს."
+                data-error-numbers-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ ციფრს."
+                data-error-symbols-ka="პაროლი უნდა შეიცავდეს მინიმუმ ერთ სიმბოლოს."
+
+
+                data-error-required-de="Passwort ist erforderlich."
+                data-error-minlength-de="Das Passwort muss mindestens 8 Zeichen lang sein."
+                data-error-mixedcase-de="Das Passwort muss Groß- und Kleinbuchstaben enthalten."
+                data-error-letters-de="Das Passwort muss mindestens einen Buchstaben enthalten."
+                data-error-numbers-de="Das Passwort muss mindestens eine Zahl enthalten."
+                data-error-symbols-de="Das Passwort muss mindestens ein Symbol enthalten."
+
+
+                data-error-required-el="Απαιτείται κωδικός πρόσβασης."
+                data-error-minlength-el="Ο κωδικός πρέπει να είναι τουλάχιστον 8 χαρακτήρες."
+                data-error-mixedcase-el="Ο κωδικός πρέπει να περιέχει κεφαλαία και πεζά γράμματα."
+                data-error-letters-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα γράμμα."
+                data-error-numbers-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον έναν αριθμό."
+                data-error-symbols-el="Ο κωδικός πρέπει να περιέχει τουλάχιστον ένα σύμβολο."
+
+
+                data-error-required-gu="પાસવર્ડ જરૂરી છે."
+                data-error-minlength-gu="પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરોનો હોવો જોઈએ."
+                data-error-mixedcase-gu="પાસવર્ડમાં અપર અને લોવરકેસ અક્ષરો હોવા જોઈએ."
+                data-error-letters-gu="પાસવર્ડમાં ઓછામાં ઓછો એક અક્ષર હોવો જોઈએ."
+                data-error-numbers-gu="પાસવર્ડમાં ઓછામાં ઓછો એક નંબર હોવો જોઈએ."
+                data-error-symbols-gu="પાસવર્ડમાં ઓછામાં ઓછું એક પ્રતીક હોવું જોઈએ."
+
+
+                data-error-required-ht="Modpas obligatwa."
+                data-error-minlength-ht="Modpas dwe gen omwen 8 karaktè."
+                data-error-mixedcase-ht="Modpas dwe gen lèt majiskil ak miniskil."
+                data-error-letters-ht="Modpas dwe gen omwen yon lèt."
+                data-error-numbers-ht="Modpas dwe gen omwen yon chif."
+                data-error-symbols-ht="Modpas dwe gen omwen yon senbòl."
+
+
+                data-error-required-ha="Kalmar sirri tana da bukata."
+                data-error-minlength-ha="Kalmar sirri dole ta kasance aƙalla haruffa 8."
+                data-error-mixedcase-ha="Kalmar sirri dole ta haɗa manyan da ƙananan haruffa."
+                data-error-letters-ha="Kalmar sirri dole ta ƙunshi aƙalla harafi ɗaya."
+                data-error-numbers-ha="Kalmar sirri dole ta ƙunshi aƙalla lamba ɗaya."
+                data-error-symbols-ha="Kalmar sirri dole ta ƙunshi aƙalla alama ɗaya."
+
+
+                data-error-required-he="נדרש סיסמה."
+                data-error-minlength-he="הסיסמה חייבת להיות לפחות 8 תווים."
+                data-error-mixedcase-he="הסיסמה חייבת להכיל אותיות גדולות וקטנות."
+                data-error-letters-he="הסיסמה חייבת להכיל לפחות אות אחת."
+                data-error-numbers-he="הסיסמה חייבת להכיל לפחות מספר אחד."
+                data-error-symbols-he="הסיסמה חייבת להכיל לפחות סימן אחד."
+
+
+                data-error-required-hi="पासवर्ड आवश्यक है।"
+                data-error-minlength-hi="पासवर्ड कम से कम 8 वर्णों का होना चाहिए।"
+                data-error-mixedcase-hi="पासवर्ड में बड़े और छोटे अक्षर शामिल होने चाहिए।"
+                data-error-letters-hi="पासवर्ड में कम से कम एक अक्षर होना चाहिए।"
+                data-error-numbers-hi="पासवर्ड में कम से कम एक संख्या होनी चाहिए।"
+                data-error-symbols-hi="पासवर्ड में कम से कम एक प्रतीक होना चाहिए।"
+
+
+                data-error-required-hu="A jelszó megadása kötelező."
+                data-error-minlength-hu="A jelszónak legalább 8 karakter hosszúnak kell lennie."
+                data-error-mixedcase-hu="A jelszónak tartalmaznia kell kis- és nagybetűket is."
+                data-error-letters-hu="A jelszónak tartalmaznia kell legalább egy betűt."
+                data-error-numbers-hu="A jelszónak tartalmaznia kell legalább egy számot."
+                data-error-symbols-hu="A jelszónak tartalmaznia kell legalább egy szimbólumot."
+
+
+                data-error-required-is="Lykilorð er nauðsynlegt."
+                data-error-minlength-is="Lykilorð verður að vera að minnsta kosti 8 stafir."
+                data-error-mixedcase-is="Lykilorð verður að innihalda bæði há- og lágstafi."
+                data-error-letters-is="Lykilorð verður að innihalda að minnsta kosti einn staf."
+                data-error-numbers-is="Lykilorð verður að innihalda að minnsta kosti eina tölu."
+                data-error-symbols-is="Lykilorð verður að innihalda að minnsta kosti eitt tákn."
+
+
+                data-error-required-ig="Achọrọ paswọọdụ."
+                data-error-minlength-ig="Paswọọdụ ga-adịkarịsịa mkpụrụokwu 8."
+                data-error-mixedcase-ig="Paswọọdụ ga-agụnye obere na nnukwu akwụkwọ ozi."
+                data-error-letters-ig="Paswọọdụ ga-enwe opekata mpe otu akwụkwọ ozi."
+                data-error-numbers-ig="Paswọọdụ ga-enwe opekata mpe otu nọmba."
+                data-error-symbols-ig="Paswọọdụ ga-agụnye opekata mpe otu akara."
+
+
+                data-error-required-id="Kata sandi diperlukan."
+                data-error-minlength-id="Kata sandi harus minimal 8 karakter."
+                data-error-mixedcase-id="Kata sandi harus mencakup huruf besar dan kecil."
+                data-error-letters-id="Kata sandi harus mengandung setidaknya satu huruf."
+                data-error-numbers-id="Kata sandi harus mengandung setidaknya satu angka."
+                data-error-symbols-id="Kata sandi harus mencakup setidaknya satu simbol."
+
+
+                data-error-required-ga="Teastaíonn pasfhocal."
+                data-error-minlength-ga="Caithfidh an pasfhocal a bheith ar a laghad 8 gcarachtar."
+                data-error-mixedcase-ga="Caithfidh an pasfhocal litreacha móra agus beaga a áireamh."
+                data-error-letters-ga="Caithfidh an pasfhocal litir amháin ar a laghad a bheith ann."
+                data-error-numbers-ga="Caithfidh an pasfhocal uimhir amháin ar a laghad a bheith ann."
+                data-error-symbols-ga="Caithfidh an pasfhocal siombail amháin ar a laghad a áireamh."
+
+
+                data-error-required-it="La password è obbligatoria."
+                data-error-minlength-it="La password deve contenere almeno 8 caratteri."
+                data-error-mixedcase-it="La password deve includere lettere maiuscole e minuscole."
+                data-error-letters-it="La password deve contenere almeno una lettera."
+                data-error-numbers-it="La password deve contenere almeno un numero."
+                data-error-symbols-it="La password deve includere almeno un simbolo."
+
+
+                data-error-required-ja="パスワードは必須です。"
+                data-error-minlength-ja="パスワードは少なくとも8文字である必要があります。"
+                data-error-mixedcase-ja="パスワードには大文字と小文字を含める必要があります。"
+                data-error-letters-ja="パスワードには少なくとも1つの文字が含まれている必要があります。"
+                data-error-numbers-ja="パスワードには少なくとも1つの数字が含まれている必要があります。"
+                data-error-symbols-ja="パスワードには少なくとも1つの記号を含める必要があります。"
+
+
+                data-error-required-jv="Tembung sandhi dibutuhake."
+                data-error-minlength-jv="Tembung sandhi kudu paling ora 8 karakter."
+                data-error-mixedcase-jv="Tembung sandhi kudu ngemot huruf gedhe lan cilik."
+                data-error-letters-jv="Tembung sandhi kudu ngemot paling ora siji huruf."
+                data-error-numbers-jv="Tembung sandhi kudu ngemot paling ora siji angka."
+                data-error-symbols-jv="Tembung sandhi kudu ngemot paling ora siji simbol."
+
+
+                data-error-required-kn="ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
+                data-error-minlength-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಾಗಿರಬೇಕು."
+                data-error-mixedcase-kn="ಪಾಸ್ವರ್ಡ್ ದೊಡ್ಡ ಅಕ್ಷರ ಮತ್ತು ಸಣ್ಣ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರಬೇಕು."
+                data-error-letters-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಅಕ್ಷರವನ್ನು ಹೊಂದಿರಬೇಕು."
+                data-error-numbers-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಖ್ಯೆ ಹೊಂದಿರಬೇಕು."
+                data-error-symbols-kn="ಪಾಸ್ವರ್ಡ್ ಕನಿಷ್ಠ ಒಂದು ಸಂಕೇತವನ್ನು ಹೊಂದಿರಬೇಕು."
+
+
+                data-error-required-ks="پاس ورڈ لازمی ہے۔"
+                data-error-minlength-ks="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
+                data-error-mixedcase-ks="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
+                data-error-letters-ks="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
+                data-error-numbers-ks="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
+                data-error-symbols-ks="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
+
+
+                data-error-required-kk="Құпия сөз қажет."
+                data-error-minlength-kk="Құпия сөз кемінде 8 таңбадан тұруы керек."
+                data-error-mixedcase-kk="Құпия сөзде бас және кіші әріптер болуы керек."
+                data-error-letters-kk="Құпия сөзде кемінде бір әріп болуы керек."
+                data-error-numbers-kk="Құпия сөзде кемінде бір сан болуы керек."
+                data-error-symbols-kk="Құпия сөзде кемінде бір символ болуы керек."
+
+
+                data-error-required-km="ទាមទារ​ពាក្យ​សម្ងាត់។"
+                data-error-minlength-km="ពាក្យសម្ងាត់​ត្រូវមានយ៉ាងហោចណាស់ 8 តួអក្សរ។"
+                data-error-mixedcase-km="ពាក្យសម្ងាត់ត្រូវមានអក្សរធំនិងអក្សរតូច។"
+                data-error-letters-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់អក្សរមួយ។"
+                data-error-numbers-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់លេខមួយ។"
+                data-error-symbols-km="ពាក្យសម្ងាត់ត្រូវមានយ៉ាងហោចណាស់និមិត្តសញ្ញាមួយ។"
+
+
+                data-error-required-ky="Сыр сөз талап кылынат."
+                data-error-minlength-ky="Сыр сөз кеминде 8 символ болушу керек."
+                data-error-mixedcase-ky="Сыр сөздө чоң жана кичине тамгалар болушу керек."
+                data-error-letters-ky="Сыр сөздө кеминде бир тамга болушу керек."
+                data-error-numbers-ky="Сыр сөздө кеминде бир сан болушу керек."
+                data-error-symbols-ky="Сыр сөздө кеминде бир символ болушу керек."
+
+
+                data-error-required-ko="비밀번호가 필요합니다."
+                data-error-minlength-ko="비밀번호는 최소 8자 이상이어야 합니다."
+                data-error-mixedcase-ko="비밀번호에는 대문자와 소문자가 모두 포함되어야 합니다."
+                data-error-letters-ko="비밀번호에는 최소한 하나의 글자가 포함되어야 합니다."
+                data-error-numbers-ko="비밀번호에는 최소한 하나의 숫자가 포함되어야 합니다."
+                data-error-symbols-ko="비밀번호에는 최소한 하나의 기호가 포함되어야 합니다."
+
+
+                data-error-required-ku="تێپەڕەوشە پێویستە."
+                data-error-minlength-ku="تێپەڕەوشە دەبێت کەمەوە ٨ پیت بێت."
+                data-error-mixedcase-ku="تێپەڕەوشە دەبێت هەردوو پیت گەورە و بچووک تێدایە."
+                data-error-letters-ku="تێپەڕەوشە دەبێت کەمەوە یەک پیت تێدایە."
+                data-error-numbers-ku="تێپەڕەوشە دەبێت کەمەوە یەک ژمارە تێدایە."
+                data-error-symbols-ku="تێپەڕەوشە دەبێت کەمەوە یەک هێما تێدایە."
+
+
+                data-error-required-lo="ຈໍາເປັນຕ້ອງໃສ່ລະຫັດຜ່ານ."
+                data-error-minlength-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍ 8 ຕົວອັກສອນ."
+                data-error-mixedcase-lo="ລະຫັດຜ່ານຕ້ອງມີຕົວອັກສອນໃຫຍ່ແລະນ້ອຍ."
+                data-error-letters-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງຕົວອັກສອນ."
+                data-error-numbers-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງໂຕເລກ."
+                data-error-symbols-lo="ລະຫັດຜ່ານຕ້ອງມີຢ່າງນ້ອຍຫນຶ່ງສັນຍາລັກ."
+
+
+                data-error-required-la="Tessera necessaria est."
+                data-error-minlength-la="Tessera saltem 8 characteres habere debet."
+                data-error-mixedcase-la="Tessera litteras maiusculas et minusculas includere debet."
+                data-error-letters-la="Tessera saltem unam litteram continere debet."
+                data-error-numbers-la="Tessera saltem unum numerum continere debet."
+                data-error-symbols-la="Tessera saltem unum symbolum includere debet."
+
+
+                data-error-required-lv="Parole ir obligāta."
+                data-error-minlength-lv="Parolei jābūt vismaz 8 rakstzīmes garai."
+                data-error-mixedcase-lv="Parolei jāsatur gan lielie, gan mazie burti."
+                data-error-letters-lv="Parolei jāsatur vismaz viens burts."
+                data-error-numbers-lv="Parolei jāsatur vismaz viens cipars."
+                data-error-symbols-lv="Parolei jāsatur vismaz viens simbols."
+
+
+                data-error-required-lt="Slaptažodis yra privalomas."
+                data-error-minlength-lt="Slaptažodis turi būti bent 8 simbolių."
+                data-error-mixedcase-lt="Slaptažodyje turi būti didžiosios ir mažosios raidės."
+                data-error-letters-lt="Slaptažodyje turi būti bent viena raidė."
+                data-error-numbers-lt="Slaptažodyje turi būti bent vienas skaičius."
+                data-error-symbols-lt="Slaptažodyje turi būti bent vienas simbolis."
+
+
+                data-error-required-mk="Лозинката е задолжителна."
+                data-error-minlength-mk="Лозинката мора да има најмалку 8 знаци."
+                data-error-mixedcase-mk="Лозинката мора да содржи големи и мали букви."
+                data-error-letters-mk="Лозинката мора да содржи барем една буква."
+                data-error-numbers-mk="Лозинката мора да содржи барем една бројка."
+                data-error-symbols-mk="Лозинката мора да содржи барем еден симбол."
+
+
+                data-error-required-mg="Teny miafina ilaina."
+                data-error-minlength-mg="Teny miafina dia tsy maintsy misy tarehintsoratra 8 farafahakeliny."
+                data-error-mixedcase-mg="Teny miafina dia tsy maintsy misy tarehintsoratra lehibe sy madinika."
+                data-error-letters-mg="Teny miafina dia tsy maintsy misy tarehintsoratra iray farafahakeliny."
+                data-error-numbers-mg="Teny miafina dia tsy maintsy misy isa iray farafahakeliny."
+                data-error-symbols-mg="Teny miafina dia tsy maintsy misy marika iray farafahakeliny."
+
+
+                data-error-required-ms="Kata laluan diperlukan."
+                data-error-minlength-ms="Kata laluan mesti sekurang-kurangnya 8 aksara."
+                data-error-mixedcase-ms="Kata laluan mesti mengandungi huruf besar dan kecil."
+                data-error-letters-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu huruf."
+                data-error-numbers-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu nombor."
+                data-error-symbols-ms="Kata laluan mesti mengandungi sekurang-kurangnya satu simbol."
+
+
+                data-error-required-ml="പാസ്‌വേഡ് ആവശ്യമുണ്ട്."
+                data-error-minlength-ml="പാസ്‌വേഡ് കുറഞ്ഞത് 8 അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
+                data-error-mixedcase-ml="പാസ്‌വേഡിൽ ചെറിയയും വലിയയും അക്ഷരങ്ങൾ ഉണ്ടായിരിക്കണം."
+                data-error-letters-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു അക്ഷരം ഉണ്ടായിരിക്കണം."
+                data-error-numbers-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു സംഖ്യ ഉണ്ടായിരിക്കണം."
+                data-error-symbols-ml="പാസ്‌വേഡിൽ കുറഞ്ഞത് ഒരു ചിഹ്നം ഉണ്ടായിരിക്കണം."
+
+
+                data-error-required-mt="Il-password hija meħtieġa."
+                data-error-minlength-mt="Il-password għandha tkun ta' mill-inqas 8 karattri."
+                data-error-mixedcase-mt="Il-password għandha tinkludi ittri kbar u żgħar."
+                data-error-letters-mt="Il-password għandha tinkludi mill-inqas ittra waħda."
+                data-error-numbers-mt="Il-password għandha tinkludi mill-inqas numru wieħed."
+                data-error-symbols-mt="Il-password għandha tinkludi mill-inqas simbolu wieħed."
+
+
+                data-error-required-mr="पासवर्ड आवश्यक आहे."
+                data-error-minlength-mr="पासवर्ड कमीत कमी 8 अक्षरांचा असावा."
+                data-error-mixedcase-mr="पासवर्डमध्ये मोठे आणि छोटे अक्षरे असावीत."
+                data-error-letters-mr="पासवर्डमध्ये कमीत कमी एक अक्षर असावे."
+                data-error-numbers-mr="पासवर्डमध्ये कमीत कमी एक संख्या असावी."
+                data-error-symbols-mr="पासवर्डमध्ये कमीत कमी एक चिन्ह असावे."
+
+
+                data-error-required-mn="Нууц үг шаардлагатай."
+                data-error-minlength-mn="Нууц үг хамгийн багадаа 8 тэмдэгттэй байх ёстой."
+                data-error-mixedcase-mn="Нууц үг нь том болон жижиг үсэг агуулсан байх ёстой."
+                data-error-letters-mn="Нууц үг дор хаяж нэг үсэг агуулсан байх ёстой."
+                data-error-numbers-mn="Нууц үг дор хаяж нэг тоо агуулсан байх ёстой."
+                data-error-symbols-mn="Нууц үг дор хаяж нэг тэмдэгт агуулсан байх ёстой."
+
+
+                data-error-required-ne="पासवर्ड आवश्यक छ।"
+                data-error-minlength-ne="पासवर्ड कम्तीमा ८ अक्षरको हुनुपर्छ।"
+                data-error-mixedcase-ne="पासवर्डमा ठूलो र सानो अक्षरहरू समावेश हुनुपर्छ।"
+                data-error-letters-ne="पासवर्डमा कम्तीमा एक अक्षर हुनुपर्छ।"
+                data-error-numbers-ne="पासवर्डमा कम्तीमा एक संख्या हुनुपर्छ।"
+                data-error-symbols-ne="पासवर्डमा कम्तीमा एक प्रतीक समावेश हुनुपर्छ।"
+
+
+                data-error-required-nb="Passord er påkrevd."
+                data-error-minlength-nb="Passordet må være minst 8 tegn."
+                data-error-mixedcase-nb="Passordet må inneholde både store og små bokstaver."
+                data-error-letters-nb="Passordet må inneholde minst én bokstav."
+                data-error-numbers-nb="Passordet må inneholde minst ett tall."
+                data-error-symbols-nb="Passordet må inneholde minst ett symbol."
+
+
+                data-error-required-nn="Passord er påkravd."
+                data-error-minlength-nn="Passordet må vere minst 8 teikn."
+                data-error-mixedcase-nn="Passordet må innehalde både store og små bokstavar."
+                data-error-letters-nn="Passordet må innehalde minst éin bokstav."
+                data-error-numbers-nn="Passordet må innehalde minst eitt tal."
+                data-error-symbols-nn="Passordet må innehalde minst eitt symbol."
+
+
+                data-error-required-no="Passord er påkrevd."
+                data-error-minlength-no="Passordet må være minst 8 tegn."
+                data-error-mixedcase-no="Passordet må inneholde både store og små bokstaver."
+                data-error-letters-no="Passordet må inneholde minst én bokstav."
+                data-error-numbers-no="Passordet må inneholde minst ett tall."
+                data-error-symbols-no="Passordet må inneholde minst ett symbol."
+
+
+                data-error-required-or="ପାସୱାର୍ଡ ଆବଶ୍ୟକ।"
+                data-error-minlength-or="ପାସୱାର୍ଡ କମ୍ଵେ କମ୍ 8ଟି ଅକ୍ଷରର ହେଉଥିବା ଉଚିତ।"
+                data-error-mixedcase-or="ପାସୱାର୍ଡରେ ବଡ଼ ଓ ଛୋଟ ଅକ୍ଷର ଦୁହେଁ ଥିବା ଉଚିତ।"
+                data-error-letters-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ଅକ୍ଷର ଥିବା ଉଚିତ।"
+                data-error-numbers-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ସଂଖ୍ୟା ଥିବା ଉଚିତ।"
+                data-error-symbols-or="ପାସୱାର୍ଡରେ କମ୍ଵେ କମ୍ ଗୋଟିଏ ପ୍ରତୀକ ଥିବା ଉଚିତ।"
+
+
+                data-error-required-om="Jecha iccitii barbaachisa."
+                data-error-minlength-om="Jecha iccitii xiqqaa dhaabbataa taʼuuf qubee 8 qabaachuu qaba."
+                data-error-mixedcase-om="Jecha iccitii qubee guddaa fi xinnaa qabachuu qaba."
+                data-error-letters-om="Jecha iccitii qubee tokko yookaan isaa ol qabaachuu qaba."
+                data-error-numbers-om="Jecha iccitii lakkoofsa tokko yookaan isaa ol qabaachuu qaba."
+                data-error-symbols-om="Jecha iccitii mallattoo tokko yookaan isaa ol qabaachuu qaba."
+
+
+                data-error-required-pa="ਪਾਸਵਰਡ ਦੀ ਲੋੜ ਹੈ।"
+                data-error-minlength-pa="ਪਾਸਵਰਡ ਘੱਟੋ ਘੱਟ 8 ਅੱਖਰਾਂ ਦਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+                data-error-mixedcase-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਵੱਡੇ ਅਤੇ ਛੋਟੇ ਅੱਖਰ ਦੋਵੇਂ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।"
+                data-error-letters-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਅੱਖਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+                data-error-numbers-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਗਿਣਤੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।"
+                data-error-symbols-pa="ਪਾਸਵਰਡ ਵਿੱਚ ਘੱਟੋ ਘੱਟ ਇੱਕ ਚਿੰਨ੍ਹ ਸ਼ਾਮਲ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।"
+
+
+                data-error-required-ps="پاسورډ ته اړتیا ده."
+                data-error-minlength-ps="پاسورډ باید لږ تر لږه 8 حروف وي."
+                data-error-mixedcase-ps="پاسورډ باید لوی او کوچني حروف ولري."
+                data-error-letters-ps="پاسورډ باید لږ تر لږه یوه حرف ولري."
+                data-error-numbers-ps="پاسورډ باید لږ تر لږه یو شمېر ولري."
+                data-error-symbols-ps="پاسورډ باید لږ تر لږه یو سمبول ولري."
+
+
+                data-error-required-fa="رمز عبور الزامی است."
+                data-error-minlength-fa="رمز عبور باید حداقل 8 کاراکتر باشد."
+                data-error-mixedcase-fa="رمز عبور باید شامل حروف بزرگ و کوچک باشد."
+                data-error-letters-fa="رمز عبور باید حداقل یک حرف داشته باشد."
+                data-error-numbers-fa="رمز عبور باید حداقل یک عدد داشته باشد."
+                data-error-symbols-fa="رمز عبور باید حداقل یک نماد داشته باشد."
+
+
+                data-error-required-pl="Hasło jest wymagane."
+                data-error-minlength-pl="Hasło musi mieć co najmniej 8 znaków."
+                data-error-mixedcase-pl="Hasło musi zawierać wielkie i małe litery."
+                data-error-letters-pl="Hasło musi zawierać co najmniej jedną literę."
+                data-error-numbers-pl="Hasło musi zawierać co najmniej jedną cyfrę."
+                data-error-symbols-pl="Hasło musi zawierać co najmniej jeden symbol."
+
+
+                data-error-required-pt="Senha é obrigatória."
+                data-error-minlength-pt="A senha deve ter pelo menos 8 caracteres."
+                data-error-mixedcase-pt="A senha deve incluir letras maiúsculas e minúsculas."
+                data-error-letters-pt="A senha deve conter pelo menos uma letra."
+                data-error-numbers-pt="A senha deve conter pelo menos um número."
+                data-error-symbols-pt="A senha deve incluir pelo menos um símbolo."
+
+
+                data-error-required-ro="Parola este obligatorie."
+                data-error-minlength-ro="Parola trebuie să aibă cel puțin 8 caractere."
+                data-error-mixedcase-ro="Parola trebuie să includă litere mari și mici."
+                data-error-letters-ro="Parola trebuie să conțină cel puțin o literă."
+                data-error-numbers-ro="Parola trebuie să conțină cel puțin o cifră."
+                data-error-symbols-ro="Parola trebuie să includă cel puțin un simbol."
+
+
+                data-error-required-ru="Требуется пароль."
+                data-error-minlength-ru="Пароль должен быть не менее 8 символов."
+                data-error-mixedcase-ru="Пароль должен содержать заглавные и строчные буквы."
+                data-error-letters-ru="Пароль должен содержать хотя бы одну букву."
+                data-error-numbers-ru="Пароль должен содержать хотя бы одну цифру."
+                data-error-symbols-ru="Пароль должен содержать хотя бы один символ."
+
+
+                data-error-required-sr="Лозинка је обавезна."
+                data-error-minlength-sr="Лозинка мора имати најмање 8 знакова."
+                data-error-mixedcase-sr="Лозинка мора садржати велика и мала слова."
+                data-error-letters-sr="Лозинка мора садржати најмање једно слово."
+                data-error-numbers-sr="Лозинка мора садржати најмање један број."
+                data-error-symbols-sr="Лозинка мора садржати најмање један симбол."
+
+
+                data-error-required-si="මුරපදය අවශ්‍ය වේ."
+                data-error-minlength-si="මුරපදය අවම වශයෙන් අක්ෂර 8ක් විය යුතුය."
+                data-error-mixedcase-si="මුරපදයේ සිංහල හා ඉංග්‍රීසි අක්ෂර දෙකම ඇතුළත් විය යුතුය."
+                data-error-letters-si="මුරපදයේ අවම වශයෙන් එක් අක්ෂරයක් තිබිය යුතුය."
+                data-error-numbers-si="මුරපදයේ අවම වශයෙන් එක් අංකයක් තිබිය යුතුය."
+                data-error-symbols-si="මුරපදයේ අවම වශයෙන් එක් සංකේතයක් තිබිය යුතුය."
+
+
+                data-error-required-sk="Heslo je povinné."
+                data-error-minlength-sk="Heslo musí mať aspoň 8 znakov."
+                data-error-mixedcase-sk="Heslo musí obsahovať veľké aj malé písmená."
+                data-error-letters-sk="Heslo musí obsahovať aspoň jedno písmeno."
+                data-error-numbers-sk="Heslo musí obsahovať aspoň jedno číslo."
+                data-error-symbols-sk="Heslo musí obsahovať aspoň jeden symbol."
+
+
+                data-error-required-sl="Geslo je obvezno."
+                data-error-minlength-sl="Geslo mora biti dolgo vsaj 8 znakov."
+                data-error-mixedcase-sl="Geslo mora vsebovati velike in male črke."
+                data-error-letters-sl="Geslo mora vsebovati vsaj eno črko."
+                data-error-numbers-sl="Geslo mora vsebovati vsaj eno številko."
+                data-error-symbols-sl="Geslo mora vsebovati vsaj en simbol."
+
+
+                data-error-required-so="Furaha sirta waa loo baahan yahay."
+                data-error-minlength-so="Furaha sirta waa inuu ahaadaa ugu yaraan 8 xaraf."
+                data-error-mixedcase-so="Furaha sirta waa inuu ka kooban yahay xuruuf waaweyn iyo kuwa yaryar."
+                data-error-letters-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal xaraf."
+                data-error-numbers-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal lambar."
+                data-error-symbols-so="Furaha sirta waa inuu ka kooban yahay ugu yaraan hal calaamad."
+
+
+                data-error-required-es="Se requiere contraseña."
+                data-error-minlength-es="La contraseña debe tener al menos 8 caracteres."
+                data-error-mixedcase-es="La contraseña debe incluir letras mayúsculas y minúsculas."
+                data-error-letters-es="La contraseña debe contener al menos una letra."
+                data-error-numbers-es="La contraseña debe contener al menos un número."
+                data-error-symbols-es="La contraseña debe incluir al menos un símbolo."
+
+
+                data-error-required-sw="Nenosiri linahitajika."
+                data-error-minlength-sw="Nenosiri lazima liwe na urefu wa herufi 8 au zaidi."
+                data-error-mixedcase-sw="Nenosiri lazima lijumuishe herufi kubwa na ndogo."
+                data-error-letters-sw="Nenosiri lazima liwe na angalau herufi moja."
+                data-error-numbers-sw="Nenosiri lazima liwe na angalau namba moja."
+                data-error-symbols-sw="Nenosiri lazima lijumuishe angalau alama moja."
+
+
+                data-error-required-sv="Lösenord krävs."
+                data-error-minlength-sv="Lösenordet måste vara minst 8 tecken långt."
+                data-error-mixedcase-sv="Lösenordet måste innehålla både stora och små bokstäver."
+                data-error-letters-sv="Lösenordet måste innehålla minst en bokstav."
+                data-error-numbers-sv="Lösenordet måste innehålla minst en siffra."
+                data-error-symbols-sv="Lösenordet måste innehålla minst en symbol."
+
+
+                data-error-required-tl="Kinakailangan ang password."
+                data-error-minlength-tl="Ang password ay dapat may hindi bababa sa 8 karakter."
+                data-error-mixedcase-tl="Ang password ay dapat may malalaki at maliliit na letra."
+                data-error-letters-tl="Ang password ay dapat may hindi bababa sa isang letra."
+                data-error-numbers-tl="Ang password ay dapat may hindi bababa sa isang numero."
+                data-error-symbols-tl="Ang password ay dapat may hindi bababa sa isang simbolo."
+
+
+                data-error-required-tg="Парол лозим аст."
+                data-error-minlength-tg="Парол бояд на камтар аз 8 аломат дошта бошад."
+                data-error-mixedcase-tg="Парол бояд ҳарфҳои калон ва хурдро дар бар гирад."
+                data-error-letters-tg="Парол бояд ҳадди ақал як ҳарф дошта бошад."
+                data-error-numbers-tg="Парол бояд ҳадди ақал як рақам дошта бошад."
+                data-error-symbols-tg="Парол бояд ҳадди ақал як рамз дошта бошад."
+
+
+                data-error-required-ta="கடவுச்சொல் தேவை."
+                data-error-minlength-ta="கடவுச்சொல் குறைந்தபட்சம் 8 எழுத்துகளைக் கொண்டிருக்க வேண்டும்."
+                data-error-mixedcase-ta="கடவுச்சொல் பெரிய எழுத்துக்கள் மற்றும் சிறிய எழுத்துக்களை கொண்டிருக்க வேண்டும்."
+                data-error-letters-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எழுத்தை கொண்டிருக்க வேண்டும்."
+                data-error-numbers-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு எணை கொண்டிருக்க வேண்டும்."
+                data-error-symbols-ta="கடவுச்சொல் குறைந்தபட்சம் ஒரு குறியீட்டை கொண்டிருக்க வேண்டும்."
+
+
+                data-error-required-te="పాస్వర్డ్ అవసరం."
+                data-error-minlength-te="పాస్వర్డ్ కనీసం 8 అక్షరాల ఉండాలి."
+                data-error-mixedcase-te="పాస్వర్డ్ లో పెద్ద మరియు చిన్న అక్షరాలు ఉండాలి."
+                data-error-letters-te="పాస్వర్డ్ లో కనీసం ఒక అక్షరం ఉండాలి."
+                data-error-numbers-te="పాస్వర్డ్ లో కనీసం ఒక సంఖ్య ఉండాలి."
+                data-error-symbols-te="పాస్వర్డ్ లో కనీసం ఒక సూచకం ఉండాలి."
+
+
+                data-error-required-th="ต้องระบุรหัสผ่าน"
+                data-error-minlength-th="รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร"
+                data-error-mixedcase-th="รหัสผ่านต้องมีทั้งตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก"
+                data-error-letters-th="รหัสผ่านต้องมีตัวอักษรอย่างน้อยหนึ่งตัว"
+                data-error-numbers-th="รหัสผ่านต้องมีตัวเลขอย่างน้อยหนึ่งตัว"
+                data-error-symbols-th="รหัสผ่านต้องมีสัญลักษณ์อย่างน้อยหนึ่งตัว"
+
+
+                data-error-required-tr="Şifre gereklidir."
+                data-error-minlength-tr="Şifre en az 8 karakter olmalıdır."
+                data-error-mixedcase-tr="Şifre hem büyük hem de küçük harf içermelidir."
+                data-error-letters-tr="Şifre en az bir harf içermelidir."
+                data-error-numbers-tr="Şifre en az bir sayı içermelidir."
+                data-error-symbols-tr="Şifre en az bir sembol içermelidir."
+
+
+                data-error-required-uk="Пароль є обов'язковим."
+                data-error-minlength-uk="Пароль повинен містити не менше 8 символів."
+                data-error-mixedcase-uk="Пароль повинен містити великі та малі літери."
+                data-error-letters-uk="Пароль повинен містити щонайменше одну літеру."
+                data-error-numbers-uk="Пароль повинен містити щонайменше одну цифру."
+                data-error-symbols-uk="Пароль повинен містити щонайменше один символ."
+
+
+                data-error-required-ur="پاس ورڈ درکار ہے۔"
+                data-error-minlength-ur="پاس ورڈ کم از کم 8 حروف کا ہونا چاہیے۔"
+                data-error-mixedcase-ur="پاس ورڈ میں بڑے اور چھوٹے حروف دونوں شامل ہونے چاہئیں۔"
+                data-error-letters-ur="پاس ورڈ میں کم از کم ایک حرف ہونا چاہیے۔"
+                data-error-numbers-ur="پاس ورڈ میں کم از کم ایک نمبر ہونا چاہیے۔"
+                data-error-symbols-ur="پاس ورڈ میں کم از کم ایک علامت شامل ہونی چاہیے۔"
+
+
+                data-error-required-uz="Parol kiritilishi shart."
+                data-error-minlength-uz="Parol kamida 8 ta belgidan iborat bo'lishi kerak."
+                data-error-mixedcase-uz="Parol katta va kichik harflarni o'z ichiga olishi kerak."
+                data-error-letters-uz="Parol kamida bitta harfni o'z ichiga olishi kerak."
+                data-error-numbers-uz="Parol kamida bitta raqamni o'z ichiga olishi kerak."
+                data-error-symbols-uz="Parol kamida bitta belgi o'z ichiga olishi kerak."
+
+
+                data-error-required-vi="Yêu cầu mật khẩu."
+                data-error-minlength-vi="Mật khẩu phải có ít nhất 8 ký tự."
+                data-error-mixedcase-vi="Mật khẩu phải bao gồm cả chữ hoa và chữ thường."
+                data-error-letters-vi="Mật khẩu phải chứa ít nhất một chữ cái."
+                data-error-numbers-vi="Mật khẩu phải chứa ít nhất một số."
+                data-error-symbols-vi="Mật khẩu phải bao gồm ít nhất một ký hiệu."
+
+
+                data-error-required-cy="Mae angen cyfrinair."
+                data-error-minlength-cy="Rhaid i'r cyfrinair fod o leiaf 8 nod."
+                data-error-mixedcase-cy="Rhaid i'r cyfrinair gynnwys llythrennau mawr a bach."
+                data-error-letters-cy="Rhaid i'r cyfrinair gynnwys o leiaf un llythyren."
+                data-error-numbers-cy="Rhaid i'r cyfrinair gynnwys o leiaf un rhif."
+                data-error-symbols-cy="Rhaid i'r cyfrinair gynnwys o leiaf un symbol."
+
+
+                data-error-required-yo="Ọrọ aṣínà nilo."
+                data-error-minlength-yo="Ọrọ aṣínà gbọdọ jẹ o kere ju awọn lẹta 8."
+                data-error-mixedcase-yo="Ọrọ aṣínà gbọdọ ni awọn lẹta nla ati kekere."
+                data-error-letters-yo="Ọrọ aṣínà gbọdọ ni o kere ju lẹta kan."
+                data-error-numbers-yo="Ọrọ aṣínà gbọdọ ni o kere ju nọmba kan."
+                data-error-symbols-yo="Ọrọ aṣínà gbọdọ ni o kere ju aami kan."
+
+
+                data-error-required-zu="Iphasiwedi iyadingeka."
+                data-error-minlength-zu="Iphasiwedi kumele okungenani ibe no-8 izinhlamvu."
+                data-error-mixedcase-zu="Iphasiwedi kumele ibe nezinhlamvu ezinkulu nezincane."
+                data-error-letters-zu="Iphasiwedi kumele ibe no-okungenani uhlamvu olulodwa."
+                data-error-numbers-zu="Iphasiwedi kumele ibe no-okungenani inombolo eyodwa."
+                data-error-symbols-zu="Iphasiwedi kumele ibe no-okungenani uphawu olulodwa."
+
+
+
+                       required>
+                <div id="password-error" style="color: red; display: none;"></div>
+            </div>
+
+
+            <div class="mb-3">
+                <input type="text"
+                       value="billy williams"
+                       class="form-control"
+                       placeholder="Full Name"
+                       name="full_name"
+                       id="full_name"
                        data-placeholder-af="Volle Naam"
                        data-placeholder-sq="Emri i plotë"
                        data-placeholder-am="ሙሉ ስም"
@@ -2454,8 +3309,14 @@
 
             </div>
 
+            <div class="form-floating mb-3 position-relative">
+                <div id="card-errors" role="alert" class="text-danger mt-2"></div>
+                <div id="card-element" class="form-control" placeholder="Credit or Debit Card Number"></div>
+                <!-- Stripe's Card Element will be inserted here -->
+            </div>
 
-            <button type="submit" class="btn btn-primary w-100"
+            <button type="submit"
+                    class="btn btn-primary w-100"
                     data-label-af="Skep 'n Rekening"
                     data-label-sq="Krijo një Llogari"
                     data-label-am="መለያ ይፍጠሩ"
@@ -2556,61 +3417,210 @@
 </div>
 
 <script>
+    const defaultLanguage = "en";
+    const apiUrl = window.location.hostname.includes('.test')
+        ? "http://api.costguard.test/api/"
+        : "https://api.costguard.io/api/";
+
+    const stripe = Stripe("pk_test_51QTQWQBf6hlTgk0U9vP2iDqx8vqR5AHEzs6WR1neGObUIrAu3hvvbVJKdQBfWP81alIAC0RIiC7hkAant0gjNuMx00VrjdiokU");
+    const elements = stripe.elements();
+    const style = {
+        base: {
+            color: '#333333',
+            fontWeight: '400',
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSize: '16px',
+            '::placeholder': {
+                color: '#333333',
+            },
+        },
+        invalid: {
+            color: '#dc3545',
+            iconColor: '#dc3545',
+        },
+    };
+    const card = elements.create('card', {style: style, hidePostalCode: true});
+    card.mount('#card-element');
+    // Handle real-time validation errors
+    card.on('change', function (event) {
+        const displayError = document.getElementById('card-errors');
+        const cardElementDiv = document.getElementById('card-element');
+
+        if (event.error) {
+            displayError.textContent = event.error.message;
+        } else {
+            displayError.textContent = '';
+        }
+
+        // Add or remove 'not-empty' class based on card input
+        if (event.complete || event.value) {
+            cardElementDiv.classList.add('not-empty');
+        } else {
+            cardElementDiv.classList.remove('not-empty');
+        }
+    });
+
+    // Handle focus events on the card element
+    card.on('focus', function () {
+        const cardElementDiv = document.getElementById('card-element');
+        cardElementDiv.classList.add('StripeElement--focus');
+    });
+
+    card.on('blur', function () {
+        const cardElementDiv = document.getElementById('card-element');
+        cardElementDiv.classList.remove('StripeElement--focus');
+    });
+
+    function submitForm() {
+        const emailInput = document.getElementById('email');
+        const nameInput = document.getElementById('full_name');
+
+        // Simple validation
+        if (!emailInput.value || !nameInput.value) {
+            alert('Please fill out all required fields.');
+            actionButton.disabled = false;
+            actionButton.innerHTML = "Join Now";
+            return;
+        }
+
+        stripe.createToken(card)
+            .then(function (result) {
+                if (result.error) {
+                    // Inform the user if there was an error
+                    const errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                    actionButton.disabled = false;
+                    actionButton.innerHTML = "Join Now";
+                } else {
+                    // Send the token and form data to your server
+                    //stripeTokenHandler(result.token);
+
+                    var token = {
+                        ...result.token,
+                        name: nameInput.value,
+                        email: emailInput.value,
+                    }
+
+                    $.ajax({
+                        url: apiUrl.concat('member'),
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(token),
+                        success: function (response) {
+                            alert("Account created successfully!");
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Error: " + xhr.responseText);
+                        }
+                    });
+                }
+            });
+    }
+
+    function updateLanguageContent(selectedLanguage) {
+        $("[data-lang]").removeClass("active");
+        $(`[data-lang="${selectedLanguage}"]`).addClass("active");
+
+        // Update placeholders
+        $("[data-placeholder-en]").each(function () {
+            const placeholderText = $(this).data(`placeholder-${selectedLanguage}`);
+            $(this).attr("placeholder", placeholderText || $(this).data("placeholder-en"));
+        });
+
+        // Update button labels
+        $("[data-label-en]").each(function () {
+            const buttonText = $(this).data(`label-${selectedLanguage}`);
+            $(this).text(buttonText || $(this).data("label-en"));
+        });
+
+        // Update header labels
+        $("[data-label-en]").each(function () {
+            const headerText = $(this).data(`label-${selectedLanguage}`);
+            $(this).text(headerText || $(this).data("label-en"));
+        });
+    }
+
+
+    function loadLanguage() {
+        const storedLanguage = localStorage.getItem("selectedLanguage") || defaultLanguage;
+        $("#language-dropdown").val(storedLanguage);
+        updateLanguageContent(storedLanguage);
+    }
+
+    function populateLanguages() {
+        $.getJSON(apiUrl.concat('languages'), function (data) {
+            const dropdown = $("#language-dropdown");
+            dropdown.empty();
+            const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
+            languages.forEach(([code, name]) => {
+                dropdown.append(new Option(name, code));
+            });
+            loadLanguage();
+        });
+    }
+
     $(document).ready(function () {
-        const defaultLanguage = "en";
-        const apiUrl = window.location.hostname.includes('.test')
-            ? "http://api.costguard.test"
-            : "https://api.costguard.io";
+        // Password validation on blur
+        $('#password').on('blur', function () {
+            const password = $(this).val();
+            const errorContainer = $('#password-error');
+            const language = localStorage.getItem("selectedLanguage") || "en";
 
-        function updateLanguageContent(selectedLanguage) {
-            $("[data-lang]").removeClass("active");
-            $(`[data-lang="${selectedLanguage}"]`).addClass("active");
+            // Validation rules
+            const rules = {
+                minLength: 8,
+                mixedCase: /(?=.*[a-z])(?=.*[A-Z])/,
+                letters: /[a-zA-Z]/,
+                numbers: /[0-9]/,
+                symbols: /[^a-zA-Z0-9]/,
+            };
 
-            // Update placeholders
-            $("[data-placeholder-en]").each(function () {
-                const placeholderText = $(this).data(`placeholder-${selectedLanguage}`);
-                $(this).attr("placeholder", placeholderText || $(this).data("placeholder-en"));
-            });
+            // Get localized error messages
+            const getMessage = (key) => $(this).data(`error-${key}-${language}`);
 
-            // Update button labels
-            $("[data-label-en]").each(function () {
-                const buttonText = $(this).data(`label-${selectedLanguage}`);
-                $(this).text(buttonText || $(this).data("label-en"));
-            });
+            // Error handling
+            const errors = [];
+            if (!password) {
+                errors.push(getMessage('required'));
+            } else {
+                if (password.length < rules.minLength) {
+                    errors.push(getMessage('minlength'));
+                }
+                if (!rules.mixedCase.test(password)) {
+                    errors.push(getMessage('mixedcase'));
+                }
+                if (!rules.letters.test(password)) {
+                    errors.push(getMessage('letters'));
+                }
+                if (!rules.numbers.test(password)) {
+                    errors.push(getMessage('numbers'));
+                }
+                if (!rules.symbols.test(password)) {
+                    errors.push(getMessage('symbols'));
+                }
+            }
 
-            // Update header labels
-            $("[data-label-en]").each(function () {
-                const headerText = $(this).data(`label-${selectedLanguage}`);
-                $(this).text(headerText || $(this).data("label-en"));
-            });
-        }
-
-
-        function loadLanguage() {
-            const storedLanguage = localStorage.getItem("selectedLanguage") || defaultLanguage;
-            $("#language-dropdown").val(storedLanguage);
-            updateLanguageContent(storedLanguage);
-        }
-
-        function populateLanguages() {
-            $.getJSON(apiUrl.concat('/api/languages'), function (data) {
-                const dropdown = $("#language-dropdown");
-                dropdown.empty();
-                const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
-                languages.forEach(([code, name]) => {
-                    dropdown.append(new Option(name, code));
-                });
-                loadLanguage();
-            });
-        }
+            // Display errors
+            if (errors.length > 0) {
+                errorContainer.html(errors.join('<br>')).show();
+                $(this).addClass('is-invalid');
+            } else {
+                errorContainer.hide();
+                $(this).removeClass('is-invalid').addClass('is-valid');
+            }
+        });
 
         $("#language-dropdown").on("change", function () {
             const selectedLanguage = $(this).val();
             localStorage.setItem("selectedLanguage", selectedLanguage);
             updateLanguageContent(selectedLanguage);
         });
-
         populateLanguages();
+
+        $("#registration-form").on("submit", function (e) {
+            e.preventDefault();
+            submitForm();
+        });
     });
 </script>
 
