@@ -23,6 +23,10 @@
             scroll-behavior: smooth;
         }
 
+        .error {
+            border: 2px solid red;
+        }
+
         body, html {
             background-image: url('assets/bg.webp');
             background-repeat: no-repeat;
@@ -3680,7 +3684,7 @@
         </div>
 
         <div class="mb-3">
-            <select id="plan" name="plan" class="form-select">
+            <select id="plan" name="plan" class="form-select" required disabled>
                 <option value="solo">Solo</option>
                 <option value="group">Group</option>
                 <option value="pro">Pro</option>
@@ -4624,7 +4628,6 @@
                    data-error-numbers-zu="Iphasiwedi kumele ibe no-okungenani inombolo eyodwa."
                    data-error-symbols-zu="Iphasiwedi kumele ibe no-okungenani uphawu olulodwa."
 
-
                    required>
             <div id="password-error" style="color: red; display: none;"></div>
         </div>
@@ -4632,10 +4635,11 @@
 
         <div class="mb-3">
             <input type="text"
-                   class="form-control"
+                   class="form-control required"
                    placeholder="Full Name"
                    name="full_name"
                    id="full_name"
+
                    data-placeholder-af="Volle Naam"
                    data-placeholder-sq="Emri i plotë"
                    data-placeholder-am="ሙሉ ስም"
@@ -4727,7 +4731,8 @@
                    data-placeholder-vi="Họ và tên"
                    data-placeholder-cy="Enw llawn"
                    data-placeholder-yo="Orukọ kikun"
-                   data-placeholder-zu="Igama eliphelele" required>
+                   data-placeholder-zu="Igama eliphelele"
+                   required>
 
         </div>
 
@@ -4739,7 +4744,7 @@
 
         <div id="legal" class="mb-3">
             <p class="form-text text-muted">
-                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="agreed" id="agreed">
+                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="agreed" id="agreed" required>
                 <span
                         data-label-af="Ek erken dat hierdie stelsel hoogs eksperimenteel is en dat ek dit op my eie risiko gebruik. Ek verstaan verder dat al my kwitansies na derdeparty-stelsels gestuur sal word vir berging en/of analise. Ek aanvaar dat ek geen regsaksie teen CostGuard of sy operateurs vir enige rede kan neem nie."
                         data-label-sq="Unë pranoj që ky sistem është shumë eksperimental dhe se po e përdor në rrezikun tim të vetë. Gjithashtu kuptoj që të gjitha faturat e mia do të transmetohen në sisteme të palës së tretë për ruajtje dhe/ose analizë. Pranoj se nuk mund të ndërmarr asnjë veprim ligjor kundër CostGuard ose operatorëve të saj për asnjë arsye."
@@ -5090,8 +5095,26 @@
     });
 
     function submitForm(button) {
-        button.prop("disabled", true);
 
+        let isValid = true;
+
+        // Loop through all fields with the 'required' class
+        $('.required').each(function () {
+            if ($(this).val().trim() === '') {
+                isValid = false;
+                $(this).addClass('error'); // Add red border
+            } else {
+                $(this).removeClass('error'); // Remove red border if filled
+            }
+        });
+
+        // Prevent form submission if there are invalid fields
+        if (!isValid) {
+            event.preventDefault();
+            return;
+        }
+
+        button.prop("disabled", true);
 
         // Process the form and convert it to JSON
         const formJSON = $('form')
