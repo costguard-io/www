@@ -19,6 +19,10 @@
     <script src="//js.stripe.com/v3/"></script>
 
     <style>
+        *{
+            scroll-behavior: smooth;
+        }
+
         body, html {
             background-image: url('assets/bg.webp');
             background-repeat: no-repeat;
@@ -2579,7 +2583,7 @@
                                 Solo access
                             </p>
                             <div class="mt-auto">
-                                <button onclick="selectPlan('solo', this)"
+                                <a href="#registration-form" onclick="selectPlan('solo', this)"
                                         class="btn btn-primary"
                                         data-label-af="Kies Slegs"
                                         data-label-sq="Zgjidh Solo"
@@ -2674,7 +2678,7 @@
                                         data-label-yo="Yan Solo"
                                         data-label-zu="Khetha Solo">
                                     Choose Solo
-                                </button>
+                                </a>
                             </div>
 
                         </div>
@@ -3068,7 +3072,7 @@
                             </p>
 
                             <div class="mt-auto">
-                                <button onclick="selectPlan('group', this)"
+                                <a href="#registration-form" onclick="selectPlan('group', this)"
                                         class="btn btn-success"
                                         data-label-af="Kies Groep"
                                         data-label-sq="Zgjidh Grup"
@@ -3163,7 +3167,7 @@
                                         data-label-yo="Yan Ẹgbẹ́"
                                         data-label-zu="Khetha Iqembu">
                                     Choose Group
-                                </button>
+                                </a>
 
                             </div>
                         </div>
@@ -3465,7 +3469,7 @@
                             </p>
 
                             <div class="mt-auto">
-                                <button onclick="selectPlan('pro', this)"
+                                <a href="#registration-form" onclick="selectPlan('pro', this)"
                                         class="btn btn-danger"
                                         data-label-af="Kies Pro"
                                         data-label-sq="Zgjidh Pro"
@@ -3560,7 +3564,7 @@
                                         data-label-yo="Yan Pro"
                                         data-label-zu="Khetha Pro">
                                     Choose Pro
-                                </button>
+                                </a>
 
                             </div>
                         </div>
@@ -3573,7 +3577,6 @@
     </div>
 
     <form id="registration-form">
-
         <h3 class="fs-4"
             data-label-af="Registreer"
             data-label-sq="Regjistrohu"
@@ -5105,7 +5108,7 @@
         });
     }
 
-    function selectPlan(plan, btn) {
+    function selectPlan(plan, a) {
         $('#plan').val(plan);
 
         let btncls = {
@@ -5118,18 +5121,10 @@
             .removeClass('btn-primary btn-success btn-danger')
             .addClass(btncls);
 
-        $('.plan').find('button').closest('.card').removeClass('selected');
-        $(btn).closest('.card').addClass('selected');
+        $('.plan').find('a').closest('.card').removeClass('selected');
+        $(a).closest('.card').addClass('selected');
 
-        setTimeout(function () {
-            // Calculate the relative offset of the <form> inside .content-area
-            var formOffset = Math.round($('form').position().top + $('form').height());
 
-            // Smoothly scroll .content-area to the form's position
-            $('.content-area').animate({
-                scrollTop: formOffset
-            }, 3000, 'easeOutExpo'); // Smooth animation with nice easing
-        }, 700); // Delay for effect
 
     }
 
@@ -5235,6 +5230,7 @@
             var button = $(this).find(":submit");
             submitForm(button);
         });
+
     });
 </script>
 
