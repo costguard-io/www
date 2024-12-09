@@ -235,15 +235,15 @@
 
         .selected::after {
             content: '✓';
-            font-size: 18px;
+            font-size: 36px;
             color: #cdcdcd;
             font-weight: bold;
             background: #fff;
             border-radius: 50%;
             padding: 5px;
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 25px;
+            right: 15px;
 
             display: block;
             width: 35px;
@@ -3674,7 +3674,7 @@
                 <select id="language-dropdown" class="form-select"></select>
             </div>
 
-            <div class="mb-3" style="display: none;">
+            <div class="mb-3">
                 <select id="plan" name="plan" class="form-select">
                     <option value="solo">Solo</option>
                     <option value="group">Group</option>
@@ -5031,11 +5031,13 @@
 
         setTimeout(function () {
             // Calculate the relative offset of the <form> inside .content-area
-            var formOffset = $('form').position().top + $('.content-area').scrollTop();
+            var formOffset = Math.round($('form').position().top - $('form').height());
+
+            console.log(formOffset);
 
             // Smoothly scroll .content-area to the form's position
             $('.content-area').animate({
-                scrollTop: formOffset
+                scrollTop:formOffset
             }, 3000, 'easeOutExpo'); // Smooth animation with nice easing
         }, 700); // Delay for effect
 
