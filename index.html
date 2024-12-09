@@ -5033,8 +5033,6 @@
             // Calculate the relative offset of the <form> inside .content-area
             var formOffset = Math.round($('form').position().top - $('form').height());
 
-            console.log(formOffset);
-
             // Smoothly scroll .content-area to the form's position
             $('.content-area').animate({
                 scrollTop:formOffset
