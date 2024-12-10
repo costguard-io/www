@@ -3683,8 +3683,8 @@
             <select id="language-dropdown" name="language" class="form-select"></select>
         </div>
 
-        <div class="mb-3">
-            <select id="plan" name="plan" class="form-select" required disabled>
+        <div class="mb-3" style="display: none;">
+            <select id="plan" name="plan" class="form-select" required>
                 <option value="solo">Solo</option>
                 <option value="group">Group</option>
                 <option value="pro">Pro</option>
@@ -5146,7 +5146,45 @@
                             alert("Account created successfully!");
                         },
                         error: function (xhr, status, error) {
-                            alert("Error: " + xhr.responseText);
+                            let errorMessages = '';
+
+                            try {
+                                // Attempt to parse the responseText as JSON
+                                const response = JSON.parse(xhr.responseText);
+
+                                if (response.errors) {
+                                    errorMessages = 'Please fix the following errors:\n\n';
+
+                                    // Iterate over each field in the errors object
+                                    for (const field in response.errors) {
+                                        if (response.errors.hasOwnProperty(field)) {
+                                            // Iterate over each error message for the field
+                                            response.errors[field].forEach(err => {
+                                                // Optionally, map error keys to human-readable messages
+                                                // const message = mapErrorKeyToMessage(err, field);
+                                                // errorMessages += `• ${message}\n`;
+
+                                                // If errors already contain readable messages, use them directly
+                                                errorMessages += `• ${field}: ${err}\n`;
+                                            });
+                                        }
+                                    }
+                                } else if (response.message) {
+                                    // Handle other error messages sent by Laravel (e.g., authentication errors)
+                                    errorMessages = `Error: ${response.message}`;
+                                } else {
+                                    // Fallback for unexpected error structures
+                                    errorMessages = 'An unexpected error occurred.';
+                                }
+                            } catch (e) {
+                                // If responseText is not JSON or parsing fails
+                                errorMessages = `Error: ${xhr.responseText || 'An unexpected error occurred.'}`;
+                            }
+
+                            // Display the formatted error messages
+                            alert(errorMessages);
+
+                            // Re-enable the button (assuming 'button' is defined in your scope)
                             button.prop('disabled', false);
                         }
                     });
