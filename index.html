@@ -28,7 +28,7 @@
         }
 
         body, html {
-            background-image: url('assets/bg.webp');
+            background-image: url('assets/bg_blue.webp');
             background-repeat: no-repeat;
             background-position: bottom 50% left 50%;
             background-size: cover;
@@ -5042,10 +5042,14 @@
 
 <script>
     const apiUrl = window.location.hostname.includes('.test')
-        ? "//api.costguard.test/api/"
-        : "//api.costguard.io/api/";
+        ? '//api.costguard.test/api/'
+        : '//api.costguard.io/api/';
 
-    const stripe = Stripe("pk_test_51QTQWQBf6hlTgk0U9vP2iDqx8vqR5AHEzs6WR1neGObUIrAu3hvvbVJKdQBfWP81alIAC0RIiC7hkAant0gjNuMx00VrjdiokU");
+    const stripeKey = window.location.hostname.includes('.test')
+        ? 'pk_test_51QTQWQBf6hlTgk0U9vP2iDqx8vqR5AHEzs6WR1neGObUIrAu3hvvbVJKdQBfWP81alIAC0RIiC7hkAant0gjNuMx00VrjdiokU'
+        : 'pk_live_51QTQWQBf6hlTgk0UCQblUE2hmMIUSoWG6eeZq7WiM2Futy4WrGA2GfVZkT9qRcUFvf4be56x4ZiAwU4Dpj1ruYx900bI6llX2h';
+
+    const stripe = Stripe(stripeKey);
     const elements = stripe.elements();
     const style = {
         base: {
