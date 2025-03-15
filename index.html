@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="//favicon.CostGuard.io/favicon.ico">
     <link rel="shortcut icon" href="//favicon.CostGuard.io/favicon.ico"/>
     <link rel="icon" type="image/png" href="//favicon.CostGuard.io/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="//favicon.CostGuard.io/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="//favicon.CostGuard.io/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -258,12 +257,72 @@
             height: 35px;
         }
 
+        #top-right-language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Remove blue focus outline on the select element */
+        #top-right-language-selector .form-select:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        #top-right-language-selector .form-select {
+            border: none;
+            background: transparent;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Thin blue progress bar */
+        #progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background-color: #52d1e4;
+            /*background-color: #00BFFF;*/
+            /*background-color: #1E90FF;*/
+            /*transition: width 0.3s ease-out;*/
+            margin-bottom: 1px;
+        }
+
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #333;
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
     </style>
 </head>
 <body>
 
 <div class="bg-image"></div>
+
+<!-- Stylish language selector in top right -->
+<div id="top-right-language-selector" class="language-selector">
+    <span class="spinner" id="language-spinner" style="display: none;"></span>
+    <select id="top-right-language-dropdown" name="language" class="form-select"></select>
+    <div id="progress-bar"></div>
+</div>
 
 <div class="content-area d-flex flex-column ">
     <div class="information">
@@ -5401,18 +5460,12 @@
     };
     const card = elements.create('card', {style: style, hidePostalCode: true});
     card.mount('#card-element');
-    // Handle real-time validation errors
+
+    // Real-time validation errors
     card.on('change', function (event) {
         const displayError = document.getElementById('card-errors');
         const cardElementDiv = document.getElementById('card-element');
-
-        if (event.error) {
-            displayError.textContent = event.error.message;
-        } else {
-            displayError.textContent = '';
-        }
-
-        // Add or remove 'not-empty' class based on card input
+        displayError.textContent = event.error ? event.error.message : '';
         if (event.complete || event.value) {
             cardElementDiv.classList.add('not-empty');
         } else {
@@ -5420,206 +5473,137 @@
         }
     });
 
-    // Handle focus events on the card element
+    // Focus events on the card element
     card.on('focus', function () {
-        const cardElementDiv = document.getElementById('card-element');
-        cardElementDiv.classList.add('StripeElement--focus');
+        document.getElementById('card-element').classList.add('StripeElement--focus');
     });
-
     card.on('blur', function () {
-        const cardElementDiv = document.getElementById('card-element');
-        cardElementDiv.classList.remove('StripeElement--focus');
+        document.getElementById('card-element').classList.remove('StripeElement--focus');
     });
 
     function submitForm(button) {
-
         let isValid = true;
-
-        // Loop through all fields with the 'required' class
         $('.required').each(function () {
             if ($(this).val().trim() === '') {
                 isValid = false;
-                $(this).addClass('error'); // Add red border
+                $(this).addClass('error');
             } else {
-                $(this).removeClass('error'); // Remove red border if filled
+                $(this).removeClass('error');
             }
         });
-
-        // Prevent form submission if there are invalid fields
         if (!isValid) {
             event.preventDefault();
             return;
         }
-
         button.prop("disabled", true);
-
-        // Process the form and convert it to JSON
         const formJSON = $('form')
             .serializeArray()
             .reduce((acc, {name, value}) => ({...acc, [name]: value}), {});
 
-        stripe.createToken(card)
-            .then(function (result) {
-                if (result.error) {
-                    // Inform the user if there was an error
-                    const errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = result.error.message;
-                    button.prop('disabled', false);
-                } else {
-                    // Send the token and form data to your server
-                    //stripeTokenHandler(result.token);
-
-                    var token = {
-                        ...result.token,
-                        ...formJSON
-                    }
-
-                    $.ajax({
-                        url: apiUrl.concat('member'),
-                        type: 'POST',
-                        contentType: 'application/json',
-                        data: JSON.stringify(token),
-                        success: function (response) {
-                            alert("Account created successfully!");
-                        },
-                        error: function (xhr, status, error) {
-                            let errorMessages = '';
-
-                            try {
-                                // Attempt to parse the responseText as JSON
-                                const response = JSON.parse(xhr.responseText);
-
-                                if (response.errors) {
-                                    errorMessages = 'Please fix the following errors:\n\n';
-
-                                    // Iterate over each field in the errors object
-                                    for (const field in response.errors) {
-                                        if (response.errors.hasOwnProperty(field)) {
-                                            // Iterate over each error message for the field
-                                            response.errors[field].forEach(err => {
-                                                // Optionally, map error keys to human-readable messages
-                                                // const message = mapErrorKeyToMessage(err, field);
-                                                // errorMessages += `• ${message}\n`;
-
-                                                // If errors already contain readable messages, use them directly
-                                                errorMessages += `• ${field}: ${err}\n`;
-                                            });
-                                        }
+        stripe.createToken(card).then(function (result) {
+            if (result.error) {
+                document.getElementById('card-errors').textContent = result.error.message;
+                button.prop('disabled', false);
+            } else {
+                const token = { ...result.token, ...formJSON };
+                $.ajax({
+                    url: apiUrl.concat('member'),
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(token),
+                    success: function (response) {
+                        alert("Account created successfully!");
+                    },
+                    error: function (xhr, status, error) {
+                        let errorMessages = '';
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.errors) {
+                                errorMessages = 'Please fix the following errors:\n\n';
+                                for (const field in response.errors) {
+                                    if (response.errors.hasOwnProperty(field)) {
+                                        response.errors[field].forEach(err => {
+                                            errorMessages += `• ${field}: ${err}\n`;
+                                        });
                                     }
-                                } else if (response.message) {
-                                    // Handle other error messages sent by Laravel (e.g., authentication errors)
-                                    errorMessages = `Error: ${response.message}`;
-                                } else {
-                                    // Fallback for unexpected error structures
-                                    errorMessages = 'An unexpected error occurred.';
                                 }
-                            } catch (e) {
-                                // If responseText is not JSON or parsing fails
-                                errorMessages = `Error: ${xhr.responseText || 'An unexpected error occurred.'}`;
+                            } else if (response.message) {
+                                errorMessages = `Error: ${response.message}`;
+                            } else {
+                                errorMessages = 'An unexpected error occurred.';
                             }
-
-                            // Display the formatted error messages
-                            alert(errorMessages);
-
-                            // Re-enable the button (assuming 'button' is defined in your scope)
-                            button.prop('disabled', false);
+                        } catch (e) {
+                            errorMessages = `Error: ${xhr.responseText || 'An unexpected error occurred.'}`;
                         }
-                    });
-                }
-            });
+                        alert(errorMessages);
+                        button.prop('disabled', false);
+                    }
+                });
+            }
+        });
     }
 
     function updateLanguageContent(selectedLanguage) {
         $("[data-lang]").removeClass("active");
         $(`[data-lang="${selectedLanguage}"]`).addClass("active");
-
-        // Update placeholders
         $("[data-placeholder-en]").each(function () {
             const placeholderText = $(this).data(`placeholder-${selectedLanguage}`);
             $(this).attr("placeholder", placeholderText || $(this).data("placeholder-en"));
         });
-
-        // Update button labels
         $("[data-label-en]").each(function () {
-            const buttonText = $(this).data(`label-${selectedLanguage}`);
-            $(this).text(buttonText || $(this).data("label-en"));
-        });
-
-        // Update header labels
-        $("[data-label-en]").each(function () {
-            const headerText = $(this).data(`label-${selectedLanguage}`);
-            $(this).text(headerText || $(this).data("label-en"));
+            const labelText = $(this).data(`label-${selectedLanguage}`);
+            $(this).text(labelText || $(this).data("label-en"));
         });
     }
 
-
-    // Detect the user's preferred language and extract the 2-character code
     function detectPreferredLanguage(language) {
-
-        // Check if navigator.languages or navigator.language is available
         if (navigator.languages && navigator.languages.length > 0) {
             language = navigator.languages[0];
         } else if (navigator.language) {
             language = navigator.language;
         }
-
-        // Extract and return the 2-character code (e.g., "en" from "en-US")
         return language.substring(0, 2);
     }
 
-    // Populate languages and load the selected language
+    // Populate both language dropdowns
+    function populateLanguageDropdowns(data) {
+        const mainDropdown = $("#language-dropdown");
+        const topRightDropdown = $("#top-right-language-dropdown");
+        mainDropdown.empty();
+        topRightDropdown.empty();
+        const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
+        languages.forEach(([code, name]) => {
+            mainDropdown.append(new Option(name, code));
+            topRightDropdown.append(new Option(name, code));
+        });
+    }
+
     function setupLanguages() {
+        $("#language-spinner").show();
         $.getJSON(apiUrl.concat('languages'), function (data) {
-            const dropdown = $("#language-dropdown");
-            dropdown.empty();
-
-            let defaultLang = 'en';
-
-            // Detect the user's preferred language
+            const defaultLang = 'en';
             const detectedLanguage = detectPreferredLanguage(defaultLang);
-
-            // Get the list of available language codes
             const availableLanguages = Object.keys(data);
-
-            // Validate the detected language
             const preferredLanguage = availableLanguages.includes(detectedLanguage)
                 ? detectedLanguage
                 : defaultLang;
-
-            // Sort the languages alphabetically by name
-            const languages = Object.entries(data).sort(([, nameA], [, nameB]) => nameA.localeCompare(nameB));
-
-            // Populate the dropdown
-            languages.forEach(([code, name]) => {
-                dropdown.append(new Option(name, code));
-            });
-
-            // Determine the language to load (stored or preferred)
+            populateLanguageDropdowns(data);
             const storedLanguage = localStorage.getItem("selectedLanguage") || preferredLanguage;
-
-            // Set the dropdown value and update content
-            dropdown.val(storedLanguage);
+            $("#language-dropdown").val(storedLanguage);
+            $("#top-right-language-dropdown").val(storedLanguage);
+            $("#language-spinner").hide();
             updateLanguageContent(storedLanguage);
         });
     }
 
     function selectPlan(plan, a) {
         $('#plan').val(plan);
-
-        let btncls = {
-            solo: 'btn-primary',
-            group: 'btn-success',
-            pro: 'btn-danger'
-        }[plan];
-
+        let btncls = { solo: 'btn-primary', group: 'btn-success', pro: 'btn-danger' }[plan];
         $('button[type="submit"]')
             .removeClass('btn-primary btn-success btn-danger')
             .addClass(btncls);
-
         $('.plan').find('a').closest('.card').removeClass('selected');
         $(a).closest('.card').addClass('selected');
-
-
     }
 
     $(document).ready(function () {
@@ -5628,12 +5612,10 @@
         var $bgImage = $('.bg-image');
 
         function resetHeights() {
-            // Remove any inline styles so they revert to original CSS
             $contentArea.css('height', '');
             $bgImage.css('height', '');
         }
 
-        // On scroll, only adjust if in tall mode
         $contentArea.on('scroll', function () {
             if (tallMediaQuery.matches) {
                 var scrollPos = $(this).scrollTop();
@@ -5647,28 +5629,22 @@
             }
         });
 
-        // Listen for changes in the media query
         tallMediaQuery.addEventListener('change', function (e) {
-            // If we no longer match tall mode, reset the heights
             if (!e.matches) {
                 resetHeights();
             }
         });
 
-        // Also listen on resize, if needed (older browsers):
         $(window).on('resize', function () {
             if (!tallMediaQuery.matches) {
                 resetHeights();
             }
         });
 
-        // Password validation on blur
         $('#password').on('blur', function () {
             const password = $(this).val();
             const errorContainer = $('#password-error');
             const language = localStorage.getItem("selectedLanguage") || "en";
-
-            // Validation rules
             const rules = {
                 minLength: 8,
                 mixedCase: /(?=.*[a-z])(?=.*[A-Z])/,
@@ -5676,11 +5652,7 @@
                 numbers: /[0-9]/,
                 symbols: /[^a-zA-Z0-9]/,
             };
-
-            // Get localized error messages
             const getMessage = (key) => $(this).data(`error-${key}-${language}`);
-
-            // Error handling
             const errors = [];
             if (!password) {
                 errors.push(getMessage('required'));
@@ -5701,8 +5673,6 @@
                     errors.push(getMessage('symbols'));
                 }
             }
-
-            // Display errors
             if (errors.length > 0) {
                 errorContainer.html(errors.join('<br>')).show();
                 $(this).addClass('is-invalid');
@@ -5712,21 +5682,40 @@
             }
         });
 
-        $("#language-dropdown").on("change", function () {
+        // Two-way binding for language dropdowns
+        $("#language-dropdown, #top-right-language-dropdown").on("change", function () {
             const selectedLanguage = $(this).val();
             localStorage.setItem("selectedLanguage", selectedLanguage);
             updateLanguageContent(selectedLanguage);
+            $("#language-dropdown").val(selectedLanguage);
+            $("#top-right-language-dropdown").val(selectedLanguage);
         });
+
         setupLanguages();
+
+        const dropdown = document.getElementById('top-right-language-dropdown');
+        const progressBar = document.getElementById('progress-bar');
+
+        dropdown.addEventListener('change', function() {
+            // 1. Show the progress bar and reset width to 0%
+            $("#progress-bar").show().css("width", "0%");
+            // 2. Animate from 0% to 100% over 300ms with easing ("swing")
+            $("#progress-bar").animate({ width: "100%" }, 300, "swing", function() {
+                // 3. Hide the progress bar after animation
+                $(this).hide();
+                // 4. Reset the width to 0%
+                $(this).css("width", "0%");
+            });
+        });
 
         $("#registration-form").on("submit", function (e) {
             e.preventDefault();
             var button = $(this).find(":submit");
             submitForm(button);
         });
-
     });
 </script>
+
 
 <!-- Bootstrap JS -->
 <script src="//cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
