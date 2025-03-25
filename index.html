@@ -3892,7 +3892,7 @@
 
         <div class="mb-3">
             <p class="form-text text-muted" id="terminate">
-                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="auto_unsubscribe" id="auto_unsubscribe" checked required>
+                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="auto_unsubscribe" id="auto_unsubscribe" value="1" checked>
                 <span
                         data-label-af="Beëindig outomaties my intekeningbetalings en verwyder my data as my rekening vir meer as 90 dae inaktief is."
                         data-label-sq="Përfundo automatikisht pagesat e abonimit tim dhe fshi të dhënat e mia nëse llogaria ime është inaktive për më shumë se 90 ditë."
@@ -3999,7 +3999,7 @@
 
         <div id="legal" class="mb-3">
             <p class="form-text text-muted">
-                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="agreed" id="agreed" required>
+                <input class="form-check-input" style="margin-right: 10px;" type="checkbox" name="agreed" id="agreed" required value="1">
                 <span
                         data-label-af="Ek erken dat hierdie stelsel hoogs eksperimenteel is en dat ek dit op my eie risiko gebruik. Ek verstaan verder dat al my kwitansies na derdeparty-stelsels gestuur sal word vir berging en/of analise. Ek aanvaar dat ek geen regsaksie teen CostGuard of sy operateurs vir enige rede kan neem nie."
                         data-label-sq="Unë pranoj që ky sistem është shumë eksperimental dhe se po e përdor në rrezikun tim të vetë. Gjithashtu kuptoj që të gjitha faturat e mia do të transmetohen në sisteme të palës së tretë për ruajtje dhe/ose analizë. Pranoj se nuk mund të ndërmarr asnjë veprim ligjor kundër CostGuard ose operatorëve të saj për asnjë arsye."
@@ -4472,7 +4472,9 @@
                     contentType: 'application/json',
                     data: JSON.stringify(token),
                     success: function (response) {
-                        alert("Account created successfully!");
+                        //alert("Account created successfully!");
+                        console.log(response.data.appUrl);
+                        window.location.href = response.data.appUrl;
                     },
                     error: function (xhr, status, error) {
                         let errorMessages = '';
